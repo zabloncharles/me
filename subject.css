@@ -10,10 +10,9 @@
 }
 body {
   background-color: #fdfdfd;
-  height: 96vh;
+  height: 100vh;
 }
 .big-box {
-  margin: 20px;
   height: 100%;
 
   /*background-color: rgb(214, 215, 215);
@@ -29,7 +28,6 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  border-radius: 20px;
   display: flex;
   flex-direction: column;
   justify-content: top;
