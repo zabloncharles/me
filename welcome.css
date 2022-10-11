@@ -7,8 +7,7 @@
   border-radius: 19px;
 }
 .big-box {
-  margin: 20px;
-  height: 96vh;
+  height: 100vh;
   /*background-color: rgb(214, 215, 215);
   https://images.hdqwalls.com/wallpapers/fox-minimal-qw.jpg
   https://images.hdqwalls.com/wallpapers/one-moment-4j.jpg
@@ -22,18 +21,15 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  border-radius: 20px;
   display: flex;
   flex-direction: column;
   justify-content: top;
   border: none;
-  
 }
 
-
-.me{
+.me {
   height: 190px;
-  margin-top: -150px ;
+  margin-top: -150px;
 }
 .birds {
   width: 900px;
@@ -48,18 +44,16 @@
     height: 400px;
     top: 60px;
   }
-  .welcome-container{
+  .welcome-container {
     height: 100%;
-
   }
-  .welcome-title{
+  .welcome-title {
     font-size: 8.3rem;
   }
   .welcome-desc {
-  font-size: 1.3rem;
- width: 94%;
-
-}
+    font-size: 1.3rem;
+    width: 94%;
+  }
 }
 .welcome-container {
   flex: 1;
@@ -69,10 +63,9 @@
   justify-content: center;
   align-items: center;
   gap: 20px;
-    z-index: 100;
- 
+  z-index: 100;
 }
-.rain{
+.rain {
   position: absolute;
   filter: contrast(200%);
 }
@@ -83,17 +76,17 @@
 .welcome-title {
   font-family: "Playfair Display", serif;
   font-size: 5.3rem;
-    background: -webkit-linear-gradient(rgb(255, 255, 255), rgb(125, 88, 23));
+  background: -webkit-linear-gradient(rgb(255, 255, 255), rgb(125, 88, 23));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 .welcome-desc {
-  font-family:Times, serif;
+  font-family: Times, serif;
   font-size: 1.3rem;
   color: white;
   width: 80%;
   text-align: center;
-  line-height: 29PX;
+  line-height: 29px;
 }
 .join-button {
   background-color: blue;
@@ -101,7 +94,7 @@
   border-radius: 20px;
   color: white;
   transition: padding 0.7s, color 0.7s;
-z-index: 10;
+  z-index: 10;
 }
 .join-button:hover {
   cursor: pointer;
@@ -109,7 +102,6 @@ z-index: 10;
   background-color: rgb(59, 80, 200);
   color: black;
   padding: 10px 23px;
-
 }
 .welcome-footer {
   flex: 0.1;
