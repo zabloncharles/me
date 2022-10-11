@@ -37,16 +37,6 @@ A few of the things you can do with Fusion:
   <img src = "https://user-images.githubusercontent.com/74889517/182246135-efb33494-dd50-49c6-a9f1-84ef322ce95c.png" >
 </p>
 
-<p align="center">
-  <img src = "https://user-images.githubusercontent.com/74889517/182249015-9292982d-095e-4414-8af5-76909f905cfa.png" >
-</p>
-
-<p align="center">
-  <img src = "https://user-images.githubusercontent.com/74889517/182249026-b848efe2-f972-42e5-baad-fd9038d9caaf.png" >
-</p>
-
-
-
 
 ## Feedback
 
