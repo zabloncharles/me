@@ -1,0 +1,296 @@
+* {
+  margin: 0;
+}
+.header {
+  display: flex;
+  height: 80px;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 40px;
+  border-bottom: #c2bfbf 1px solid;
+}
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 5px;
+}
+.logo {
+  background-image: url(thumbnails/cloudcode.png);
+  height: 40px;
+  width: 40px;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: contain;
+  align-items: bottom;
+  padding-top: 10px;
+  justify-content: center;
+}
+.logo-name {
+  font-size: 29px;
+  font-family: "Playfair Display", serif;
+  color: white;
+}
+.right-header {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+}
+.features {
+  font-family: "Playfair Display";
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature-container {
+  display: flex;
+  flex-direction: column;
+}
+.feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.feature-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+  font-size: 16px;
+}
+
+.tab-selected {
+  color: #ebb462;
+}
+.tab-unselected {
+  color: #bebebe;
+  display: none;
+}
+.hamburger,
+.hamburger-image {
+  width: 40px;
+  height: 40px;
+  transition: all 0.7s;
+}
+.hamburger-image,
+.feature-label:hover {
+  cursor: pointer;
+  color: #fffffe;
+}
+.hamburger-image:hover {
+  width: 42px;
+  height: 42px;
+  cursor: pointer;
+  background-blend-mode: color-dodge;
+  background-color: #f7f6f682;
+  border-radius: 10px;
+}
+.button {
+  background-color: #f7f6f6;
+  padding: 10px 20px;
+  border-radius: 19px;
+}
+body {
+  background-color: #fdfdfd;
+  height: 96vh;
+}
+.big-box {
+  margin: 20px;
+  height: 100%;
+
+  /*background-color: rgb(214, 215, 215);
+  https://images.hdqwalls.com/wallpapers/fox-minimal-qw.jpg
+  https://images.hdqwalls.com/wallpapers/one-moment-4j.jpg
+  https://images.hdqwalls.com/wallpapers/boy-with-dog-o0.jpg
+  https://images.hdqwalls.com/download/valley-river-minimal-8k-xo-1366x768.jpg
+  https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/4bb75b1d-3cb5-445c-bd55-682084d96bbf/dbbacbz-4f11d070-c282-4ff3-906d-5e13eb2e578d.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzRiYjc1YjFkLTNjYjUtNDQ1Yy1iZDU1LTY4MjA4NGQ5NmJiZlwvZGJiYWNiei00ZjExZDA3MC1jMjgyLTRmZjMtOTA2ZC01ZTEzZWIyZTU3OGQucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.ZaOae4jaIfctIOYB3HC9EkaAiAoi0endJC1AQKXeEac
+  
+  
+  */
+  background-image: url("https://images.hdqwalls.com/wallpapers/fox-minimal-qw.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  border: none;
+  z-index: -1;
+}
+.topic-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.topic-title-desc {
+  font-size: large;
+  color: white;
+}
+.topic-title {
+  font-family: "Playfair Display", serif;
+  font-size: 70px;
+  color: white;
+}
+.topic-desc {
+  font-size: 20px;
+  color: white;
+  width: 90%;
+  overflow: scroll;
+}
+.topic-button {
+  background-color: blue;
+  padding: 10px 30px;
+  border-radius: 10px;
+  color: white;
+  transition: padding 0.7s, color 0.7s;
+  cursor: pointer;
+}
+.topic-button:hover {
+  padding: 10px 25px;
+  background-color: rgba(0, 0, 255, 0.371);
+}
+.thai {
+  display: flex;
+  font-size: 52px;
+  color: rgba(255, 255, 255, 0.041);
+}
+.join-button:hover {
+  cursor: pointer;
+  border-radius: 50px;
+  background-color: rgb(59, 80, 200);
+  color: black;
+  padding: 10px 23px;
+}
+.topic-footer {
+  flex: 0.1;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 150px;
+}
+.body-contain {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 40px;
+  height: 100vh;
+}
+.left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+  color: white;
+  gap: 5px;
+}
+
+.time {
+  writing-mode: vertical-lr;
+  text-orientation: sideways-left;
+  margin-right: 39px;
+}
+.left-header {
+  flex: 1;
+  background-color: #cdcacab5;
+
+  width: 3px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border: #000000 1px solid;
+  margin-right: 40px;
+}
+.circle {
+  width: 30px;
+  height: 30px;
+  background-color: inherit;
+  border-radius: 30px;
+}
+.unselected-circle {
+  width: 10px;
+  height: 10px;
+  background-color: inherit;
+  border-radius: 30px;
+}
+.right-container {
+  flex: 0.7;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.topic-card {
+  background-color: #d1d1d1;
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+  flex: 1;
+  height: 30rem;
+  border-radius: 15px;
+  padding-top: 10px;
+}
+.single-topic {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 2.8%;
+  flex-direction: row;
+  padding: 10px 10px;
+  border:#a5a3a3 solid 1px;
+  border-radius: 10px;
+  margin: 5px 10px;
+  transition: all 0.4s;
+  background: linear-gradient(145deg, #e0e0e0, #bcbcbc);
+  box-shadow: 20px 20px 60px #b2b2b2, -20px -20px 60px #f0f0f0;
+}
+.single-number {
+  background-color: orange;
+  padding: 10px 15px;
+  border-radius: 50px;
+}
+.single-text {
+  display: flex;
+  flex-direction: column;
+}
+.single-topic:hover {
+  padding: 17px 16px;
+  margin: 2px 8px;
+  cursor: pointer;
+}
+
+@media (max-width: 50rem) {
+  .features {
+    display: none;
+  }
+  .left {
+    display: none;
+  }
+  .body-contain {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .topic-container {
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+    text-align: center;
+  }
+  .topic-card {
+    flex: 1;
+    width: 80vw;
+    height: 14rem;
+  }
+}

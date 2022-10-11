@@ -1,0 +1,362 @@
+* {
+  margin: 0;
+}
+.button {
+  background-color: #f7f6f6;
+  padding: 10px 20px;
+  border-radius: 19px;
+}
+body {
+  background-color: #fdfdfd;
+  height: 96vh;
+}
+.big-box {
+  margin: 20px;
+  height: 100%;
+
+  /*background-color: rgb(214, 215, 215);
+  https://images.hdqwalls.com/wallpapers/fox-minimal-qw.jpg
+  https://images.hdqwalls.com/wallpapers/one-moment-4j.jpg
+  https://images.hdqwalls.com/wallpapers/boy-with-dog-o0.jpg
+  https://images.hdqwalls.com/download/valley-river-minimal-8k-xo-1366x768.jpg
+  https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/4bb75b1d-3cb5-445c-bd55-682084d96bbf/dbbacbz-4f11d070-c282-4ff3-906d-5e13eb2e578d.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzRiYjc1YjFkLTNjYjUtNDQ1Yy1iZDU1LTY4MjA4NGQ5NmJiZlwvZGJiYWNiei00ZjExZDA3MC1jMjgyLTRmZjMtOTA2ZC01ZTEzZWIyZTU3OGQucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.ZaOae4jaIfctIOYB3HC9EkaAiAoi0endJC1AQKXeEac
+  
+  
+  */
+  background-image: url("https://images.hdqwalls.com/wallpapers/fox-minimal-qw.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  border: none;
+
+  overflow: hidden;
+  z-index: -1;
+}
+.topic-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.topic-title-desc {
+  font-size: large;
+  color: white;
+}
+.topic-title {
+  font-family: "Playfair Display", serif;
+  font-size: 70px;
+  color: white;
+}
+.topic-desc {
+  font-size: 20px;
+  color: white;
+  width: 90%;
+  overflow: scroll;
+}
+.topic-button {
+  background-color: blue;
+  padding: 10px 30px;
+  border-radius: 10px;
+  color: white;
+  transition: padding 0.7s, color 0.7s;
+  cursor: pointer;
+}
+.topic-button:hover {
+  padding: 10px 25px;
+  background-color: rgba(0, 0, 255, 0.371);
+}
+.thai {
+  display: flex;
+  font-size: 52px;
+  color: rgba(255, 255, 255, 0.041);
+}
+.join-button:hover {
+  cursor: pointer;
+  border-radius: 50px;
+  background-color: rgb(59, 80, 200);
+  color: black;
+  padding: 10px 23px;
+}
+.topic-footer {
+  flex: 0.1;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 150px;
+}
+.more-info-dotted {
+  border: black dotted 1px;
+  border-radius: 40px;
+  display: flex;
+  height: 69px;
+align-self: center;
+  justify-content: center;
+  align-items: center;
+  
+  border-radius: 80px;
+}
+.more-info {
+  background-color: rgb(239, 218, 166);
+  display: flex;
+  height: 64px;
+  justify-content: space-between;
+  padding: 0px 11px;
+overflow: hidden;
+  align-items: center;
+  border-radius: 40px;
+  gap: 5px;
+}
+.more-globe {
+  background-image: url("https://www.freepnglogos.com/uploads/globe-png/blue-globe-transparent-sporetesting-39.png");
+  width: 60px;
+  height: 60px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.more-title {
+  font-size: 15px;
+  width: 130px;
+}
+.more-desc {
+  width: 360px;
+}
+.cross-section {
+  backdrop-filter: blur(20px);
+  height: 80px;
+  display: flex;
+  margin-top: 120px;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 40px;
+}
+.subject {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.subject-image {
+height: 60px;
+
+}
+.down-arrow{
+    display: flex;
+    height: 140px;
+    margin-top:20px;
+}
+
+.right-topic-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+.right-topic-title-desc {
+  font-size: large;
+  color: white;
+}
+.right-title {
+  font-family: "Playfair Display", serif;
+  font-size: 70px;
+  color: white;
+}
+.right-topic-desc {
+  font-size: 20px;
+  color: white;
+  width: 90%;
+  overflow: scroll;
+}
+.right-topic-button {
+  background-color: blue;
+  padding: 10px 30px;
+  border-radius: 10px;
+  color: white;
+  transition: padding 0.7s, color 0.7s;
+  cursor: pointer;
+}
+.right-topic-button:hover {
+  padding: 10px 25px;
+  background-color: rgba(0, 0, 255, 0.371);
+}
+.right-thai {
+  display: flex;
+  font-size: 52px;
+  color: rgba(255, 255, 255, 0.041);
+}
+.right-join-button:hover {
+  cursor: pointer;
+  border-radius: 50px;
+  background-color: rgb(59, 80, 200);
+  color: black;
+  padding: 10px 23px;
+}
+.more-info-tabs {
+  
+  
+  display: flex;
+  height: 40%;
+  flex-shrink: 0;
+  gap: 25px;
+}
+.more-card {
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 200px;
+  padding: 30px 40px;
+  border-radius: 14px;
+  gap: 9px;
+  backdrop-filter: blur(5px);
+  border: #0000003c 0.3px solid;
+}
+.card-number {
+  font-size: large;
+  color: orange;
+}
+.card-title {
+  font-size: 18px;
+  color: white;
+}
+.card-desc {
+    color: white;
+  font-size: 12px;
+}
+
+.body-contain {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 40px;
+  height: 100vh;
+}
+.left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+  color: white;
+  gap: 5px;
+}
+
+.time {
+  writing-mode: vertical-lr;
+  text-orientation: sideways-left;
+  margin-right: 39px;
+}
+.left-header {
+  flex: 1;
+  background-color: #cdcacab5;
+
+  width: 3px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border: #000000 1px solid;
+  margin-right: 40px;
+}
+.circle {
+  width: 30px;
+  height: 30px;
+  background-color: inherit;
+  border-radius: 30px;
+}
+.unselected-circle {
+  width: 10px;
+  height: 10px;
+  background-color: inherit;
+  border-radius: 30px;
+}
+.right-container {
+  flex: 0.7;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.scroll-projects-space {
+  display: flex;
+  flex-direction: column;
+
+  padding: 20px;
+  height: 100%;
+  overflow: scroll;
+}
+.topic-section-row {
+ display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    flex-shrink: 0;
+}
+.topic-items{
+      display: flex;
+}
+.projects-container {
+  display: flex;
+  height: 100%;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+  background-color: #ebb462;
+
+  gap: 15px;
+  justify-content: space-around;
+}
+
+.lottie-card {
+  background-color: #000000;
+}
+body {
+  overflow: hidden;
+}
+.hands {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: -120px;
+
+  right: 0;
+  bottom: 0;
+  width: 700px;
+  height: 700px;
+  text-align: center;
+}
+
+
+@media (max-width: 50rem) {
+  .features {
+    display: none;
+  }
+  .left {
+    display: none;
+  }
+  .body-contain {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .topic-container {
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+    text-align: center;
+  }
+  .topic-card {
+    flex: 1;
+    width: 80vw;
+    height: 14rem;
+  }
+}

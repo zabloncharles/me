@@ -1,0 +1,238 @@
+* {
+  margin: 0;
+}
+.header {
+  display: flex;
+  height: 80px;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 40px;
+  border-bottom: #c2bfbf 1px solid;
+}
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.logo {
+ background-image:url(thumbnails/cloudcode.png);  
+height: 40px;
+  width: 40px;
+  background-repeat: no-repeat;
+  background-position:bottom;
+  background-size: contain;
+  align-items: bottom;
+  padding-top: 10px;
+  justify-content: center;
+}
+.logo-name {
+  font-size: 29px;
+}
+.features {
+    font-family: Arial;
+    
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+}
+
+.feature-container {
+    display: flex;
+    flex-direction: column;
+}
+.feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.feature-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+  font-size: 16px;
+}
+
+.tab-selected {
+    color: #ebb462;
+}
+.tab-unselected{
+    color: #bebebe;
+    display: none;
+}
+.button {
+  background-color: #f7f6f6;
+  padding: 10px 20px;
+  border-radius: 19px;
+}
+.big-box {
+  margin: 20px;
+  /*background-color: rgb(214, 215, 215);*/
+  background-image: url("https://cutewallpaper.org/25/animated-mountains-wallpaper-hd/183007759.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: none;
+  z-index: -1;
+}
+.background-image {
+  /*background-image: url("https://previews.123rf.com/images/sergdibrova/sergdibrova1109/sergdibrova110900130/10744991-bulles-de-savon-color%C3%A9es-naturelles-sur-le-dessus-du-fond-blanc.jpg");
+ background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  */
+  background-color: rgb(215, 0, 248);
+}
+.intro {
+  flex: 1;
+  display: flex;
+  justify-content: space-around;
+  margin: 50px 20px;
+
+  /* border-top: 0.3px solid rgb(119, 54, 54); */
+}
+
+.introduction-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  height: 310px;
+  width: 330px;
+  padding: 40px 60px;
+  margin-left: 50px;
+  gap: 20px;
+  border-radius: 50px;
+  background: #e0e0e0;
+  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+  transition: padding 0.3s ease-in-out;
+}
+
+.introduction-card:hover {
+  padding: 39px 19px 19px 49px;
+  border-radius: 50px;
+  background: #e0e0e0;
+  box-shadow: inset 20px 20px 60px #bebebe, inset -20px -20px 60px #ffffff;
+  cursor: pointer;
+}
+.intro-title {
+  font-size: 2.1rem;
+  overflow: hidden;
+  font-family: "Monoton", cursive;
+}
+.intro-description {
+  font-size: 23px;
+}
+
+.intro-button {
+  background-color: rgb(255, 255, 255);
+  padding: 10px 20px;
+  border-radius: 19px;
+width: 79px;
+  border: solid;
+  border-width: 1px;
+  border-color: rgb(210, 207, 207);
+}
+.intro-button:hover {
+  border-radius: 50px;
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
+  box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
+}
+
+.intro-image {
+  background-image: url("https://cdn3d.iconscout.com/3d/premium/thumb/freelancer-working-on-laptop-2996975-2493532.png");
+  width: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  align-items: center;
+  justify-content: center;
+}
+.more-info-dotted {
+  border: black dotted 1px;
+  border-radius: 40px;
+  display: flex;
+  height: 69px;
+align-self: center;
+  justify-content: center;
+  align-items: center;
+  
+  border-radius: 80px;
+}
+.more-info {
+  background-color: rgb(239, 218, 166);
+  display: flex;
+  height: 64px;
+  justify-content: space-between;
+  padding: 0px 11px;
+overflow: hidden;
+  align-items: center;
+  border-radius: 40px;
+  gap: 5px;
+}
+.more-globe {
+  background-image: url("https://www.freepnglogos.com/uploads/globe-png/blue-globe-transparent-sporetesting-39.png");
+  width: 60px;
+  height: 60px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.more-title {
+  font-size: 15px;
+  width: 130px;
+}
+.more-desc {
+  width: 360px;
+}
+.cross-section {
+  backdrop-filter: blur(20px);
+  height: 80px;
+  display: flex;
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.subject {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.subject-image {
+height: 60px;
+
+}
+.more-info-tabs {
+  display: flex;
+  flex-direction: row;
+}
+.more-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  height: 100px;
+  padding: 30px 40px;
+  gap: 9px;
+}
+.card-number {
+  font-size: large;
+  color: orange;
+}
+.card-title {
+  font-size: 18px;
+}
+.card-desc {
+  font-size: 12px;
+}
