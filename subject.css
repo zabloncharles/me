@@ -148,7 +148,6 @@ body {
   padding: 20px 20px;
   overflow: scroll;
   gap: 15px;
-  background-color: rgba(255, 255, 255, 0.953);
   border-radius: 20px;
 }
 .topic-and-lesson {
@@ -171,11 +170,19 @@ body {
 .lesson {
   flex: 1;
 
-  padding: 10px 10px;
+  padding: 5px 2px;
   border-radius: 10px;
   overflow: scroll;
-  background: #303030;
-  box-shadow: 20px 20px 60px #292929, -20px -20px 60px #151515;
+}
+.typing {
+  background-color: #121212;
+   border-radius: 11px;
+   padding: 9px 16px;
+   animation: all 2s;;
+}
+.old {
+  padding: 9px 16px;
+   color: #948f8f;
 }
 
 .topic-card {
@@ -184,21 +191,18 @@ body {
   min-width: 170px;
   height: 260px;
   background: #ffffff;
-  box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
   padding: 10px;
   gap: 1%;
   border-radius: 13px;
+
 }
 .topic-card-selected {
   display: flex;
   flex-direction: column;
   min-width: 170px;
   height: 260px;
-  box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
   padding: 10px;
   gap: 1%;
-  background: linear-gradient(145deg, #e6e6e6, #ffffff);
-  box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
   border-radius: 13px;
 }
 .topic-picture {
@@ -253,7 +257,7 @@ body {
   cursor: pointer;
 }
 
-.card-button {
+.card-button,.card-button-selected {
   background-color: blue;
   display: flex;
   justify-content: center;
@@ -262,8 +266,11 @@ body {
   color: white;
   cursor: pointer;
 }
-.card-button:hover {
-  background-color: rgb(31, 31, 175);
+.card-button-selected{
+  background-color: rgb(25, 25, 29);
+}
+.card-button:hover,.card-button-selected:hover {
+  background-color: rgb(175, 110, 31);
 }
 
 @media (max-width: 50rem) {
@@ -324,124 +331,6 @@ body {
   }
   100% {
     visibility: visible;
-  }
-}
-
-.css-typing p {
-  border-right: 0.15em solid orange;
-  font-family: "Courier";
-  font-size: 14px;
-  white-space: nowrap;
-  overflow: hidden;
-}
-.css-typing p:nth-child(1) {
-  width: 41.3em;
-  -webkit-animation: type 2s steps(40, end);
-  animation: type 2s steps(40, end);
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-}
-
-.css-typing p:nth-child(2) {
-  width: 31.5em;
-  opacity: 0;
-  -webkit-animation: type2 2s steps(40, end);
-  animation: type2 2s steps(40, end);
-  -webkit-animation-delay: 2s;
-  animation-delay: 2s;
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-}
-
-.css-typing p:nth-child(3) {
-  width: 7.3em;
-  opacity: 0;
-  -webkit-animation: type3 5s steps(20, end),
-    blink 0.5s step-end infinite alternate;
-  animation: type3 5s steps(20, end), blink 0.5s step-end infinite alternate;
-  -webkit-animation-delay: 4s;
-  animation-delay: 4s;
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-}
-
-@keyframes type {
-  0% {
-    width: 0;
-  }
-  99.9% {
-    border-right: 0.15em solid orange;
-  }
-  100% {
-    border: none;
-  }
-}
-
-@-webkit-keyframes type {
-  0% {
-    width: 0;
-  }
-  99.9% {
-    border-right: 0.15em solid orange;
-  }
-  100% {
-    border: none;
-  }
-}
-
-@keyframes type2 {
-  0% {
-    width: 0;
-  }
-  1% {
-    opacity: 1;
-  }
-  99.9% {
-    border-right: 0.15em solid orange;
-  }
-  100% {
-    opacity: 1;
-    border: none;
-  }
-}
-
-@-webkit-keyframes type2 {
-  0% {
-    width: 0;
-  }
-  1% {
-    opacity: 1;
-  }
-  99.9% {
-    border-right: 0.15em solid orange;
-  }
-  100% {
-    opacity: 1;
-    border: none;
-  }
-}
-
-@keyframes type3 {
-  0% {
-    width: 0;
-  }
-  1% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes type3 {
-  0% {
-    width: 0;
-  }
-  1% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 1;
   }
 }
 

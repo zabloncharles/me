@@ -8,11 +8,9 @@
 }
 body {
   background-color: #fdfdfd;
-  
 }
 .big-box {
- 
-  height: 100%;
+  height: 100vh;
 
   /*background-color: rgb(214, 215, 215);
   https://images.hdqwalls.com/wallpapers/fox-minimal-qw.jpg
@@ -20,20 +18,16 @@ body {
   https://images.hdqwalls.com/wallpapers/boy-with-dog-o0.jpg
   https://images.hdqwalls.com/download/valley-river-minimal-8k-xo-1366x768.jpg
   https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/4bb75b1d-3cb5-445c-bd55-682084d96bbf/dbbacbz-4f11d070-c282-4ff3-906d-5e13eb2e578d.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzRiYjc1YjFkLTNjYjUtNDQ1Yy1iZDU1LTY4MjA4NGQ5NmJiZlwvZGJiYWNiei00ZjExZDA3MC1jMjgyLTRmZjMtOTA2ZC01ZTEzZWIyZTU3OGQucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.ZaOae4jaIfctIOYB3HC9EkaAiAoi0endJC1AQKXeEac
-  
-  
   */
-  background-image: url("https://images.hdqwalls.com/wallpapers/fox-minimal-qw.jpg");
-  background-position: center;
+  background-image: url("https://images.hdqwalls.com/download/night-mountains-minimalist-8k-wo-5120x2880.jpg");
+  background-position: left;
+
   background-repeat: no-repeat;
   background-size: cover;
-  
   display: flex;
   flex-direction: column;
   justify-content: top;
   border: none;
-
-  overflow: hidden;
   z-index: -1;
 }
 .topic-container {
@@ -92,50 +86,15 @@ body {
   align-items: center;
   gap: 150px;
 }
-.more-info-dotted {
-  border: black dotted 1px;
-  border-radius: 40px;
-  display: flex;
-  height: 69px;
-align-self: center;
-  justify-content: center;
-  align-items: center;
-  
-  border-radius: 80px;
-}
-.more-info {
-  background-color: rgb(239, 218, 166);
-  display: flex;
-  height: 64px;
-  justify-content: space-between;
-  padding: 0px 11px;
-overflow: hidden;
-  align-items: center;
-  border-radius: 40px;
-  gap: 5px;
-}
-.more-globe {
-  background-image: url("https://www.freepnglogos.com/uploads/globe-png/blue-globe-transparent-sporetesting-39.png");
-  width: 60px;
-  height: 60px;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.more-title {
-  font-size: 15px;
-  width: 130px;
-}
-.more-desc {
-  width: 360px;
-}
+
 .cross-section {
-  backdrop-filter: blur(20px);
-  height: 80px;
-  display: flex;
   margin-top: 120px;
+  backdrop-filter: blur(12px);
+  height: 80px;
+  
+  display: flex;
   justify-content: space-evenly;
   align-items: center;
-  border-radius: 40px;
 }
 .subject {
   display: flex;
@@ -143,13 +102,12 @@ overflow: hidden;
   align-items: center;
 }
 .subject-image {
-height: 60px;
-
+  height: 60px;
 }
-.down-arrow{
-    display: flex;
-    height: 140px;
-    margin-top:20px;
+.down-arrow {
+  display: flex;
+  height: 120px;
+  margin-top: 50px;
 }
 
 .right-topic-container {
@@ -173,8 +131,8 @@ height: 60px;
 .right-topic-desc {
   font-size: 20px;
   color: white;
+  text-align: end;
   width: 90%;
-  overflow: scroll;
 }
 .right-topic-button {
   background-color: blue;
@@ -201,15 +159,12 @@ height: 60px;
   padding: 10px 23px;
 }
 .more-info-tabs {
-  
-  
   display: flex;
   height: 40%;
   flex-shrink: 0;
   gap: 25px;
 }
 .more-card {
-  
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -231,7 +186,7 @@ height: 60px;
   color: white;
 }
 .card-desc {
-    color: white;
+  color: white;
   font-size: 12px;
 }
 
@@ -285,7 +240,18 @@ height: 60px;
   flex: 0.7;
   display: flex;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
+  
+}
+.images {
+  width: 400px;
+  height: 330px;
+  padding: 20px;
+  border-radius: 30px;
+  transition: filter 2s;
+}
+.images:hover {
+filter: hue-rotate(3.142rad);
 }
 .scroll-projects-space {
   display: flex;
@@ -296,14 +262,14 @@ height: 60px;
   overflow: scroll;
 }
 .topic-section-row {
- display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100%;
-    flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  flex-shrink: 0;
 }
-.topic-items{
-      display: flex;
+.topic-items {
+  display: flex;
 }
 .projects-container {
   display: flex;
@@ -327,14 +293,14 @@ body {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: -120px;
-
+  display: none;
   right: 0;
   bottom: 0;
   width: 700px;
   height: 700px;
   text-align: center;
+  background-color: #000000;
 }
-
 
 @media (max-width: 50rem) {
   .features {
