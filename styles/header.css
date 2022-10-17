@@ -16,7 +16,7 @@
   gap: 5px;
 }
 .logo {
-  background-image: url(thumbnails/cloudcode.png);
+  background-image: url(../thumbnails/cloudcode.png);
   height: 40px;
   width: 40px;
   background-repeat: no-repeat;
@@ -29,7 +29,7 @@
 .logo-name {
   font-size: 29px;
   font-family: "Playfair Display", serif;
-  color: white;
+  color: rgb(3, 3, 3);
 }
 .right-header {
   display: flex;
