@@ -1,35 +1,9 @@
-* {
-  margin: 0;
-}
 .button {
   background-color: #f7f6f6;
   padding: 10px 20px;
   border-radius: 19px;
 }
-body {
-  background-color: #fdfdfd;
-}
-.big-box {
-  height: 100vh;
 
-  /*background-color: rgb(214, 215, 215);
-  https://images.hdqwalls.com/wallpapers/fox-minimal-qw.jpg
-  https://images.hdqwalls.com/wallpapers/one-moment-4j.jpg
-  https://images.hdqwalls.com/wallpapers/boy-with-dog-o0.jpg
-  https://images.hdqwalls.com/download/valley-river-minimal-8k-xo-1366x768.jpg
-  https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/4bb75b1d-3cb5-445c-bd55-682084d96bbf/dbbacbz-4f11d070-c282-4ff3-906d-5e13eb2e578d.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzRiYjc1YjFkLTNjYjUtNDQ1Yy1iZDU1LTY4MjA4NGQ5NmJiZlwvZGJiYWNiei00ZjExZDA3MC1jMjgyLTRmZjMtOTA2ZC01ZTEzZWIyZTU3OGQucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.ZaOae4jaIfctIOYB3HC9EkaAiAoi0endJC1AQKXeEac
-  */
-  background-image: url("https://images.hdqwalls.com/download/night-mountains-minimalist-8k-wo-5120x2880.jpg");
-  background-position: left;
-
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
-  justify-content: top;
-  border: none;
-  z-index: -1;
-}
 .topic-container {
   flex: 1;
   display: flex;

@@ -2,10 +2,10 @@
 <html>
 
 <head>
-    <title>Fusion: Algorithms & Data Structers</title>
+    <title>Fusion: Learn Data Structures & Algorithms</title>
     <link rel="icon" type="image/x-icon" href="thumbnails/cloudcode.png">
-    <link rel="stylesheet" href="subject.css" />
-    <link rel="stylesheet" href="header.css" />
+    <link rel="stylesheet" href="../styles/subject.css" />
+    <link rel="stylesheet" href="../styles/header.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lobster+Two&family=Monoton&display=swap" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   
+
 
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant&family=Lobster+Two&family=Playfair+Display&display=swap"
@@ -26,7 +26,7 @@
         <div class="header">
             <div class="logo-container">
                 <div class="logo"></div>
-                <a href="index.html">
+                <a href="../index.html">
                     <div class="logo-name">Fusion</div>
                 </a>
             </div>
@@ -34,20 +34,22 @@
                 <div class="features">
                     <div class="feature">
                         <div class="feature-label">
-                            <a href="welcome.html">
+                            <a href="../index.html">
                                 <div>HOME</div>
                             </a>
                         </div>
 
-                   
+
                     </div>
-                    <div class="feature">       
-                            <a href="projects.html"><div>PROJECTS</div></a>
+                    <div class="feature">
+                        <a href="../pages/projects.html">
+                            <div>PROJECTS</div>
+                        </a>
                     </div>
                     <div class="feature-selected">
                         <div>COURSE</div>
                     </div>
-                  
+
 
                 </div>
 
@@ -75,27 +77,36 @@
                     <div class="topic-container">
                         <div class="topic-title-desc" id="topic-title">WHAT IS AN ALGORITHM?</div>
                         <div class="topic-title" id="topic-big-title">OVERVIEW</div>
+                        <div class="orange-text" id="lesson-number">LESSON ONE</div>
                         <div class="topic-desc" id="topic-desc">In computer programming terms, an algorithm is a set of
                             well-defined
                             instructions written to solve a particular problem. It
                             takes a set of input(s) and produces the desired output.
                         </div>
+                        <div class="next-buttons">
                         <div class="topic-button" id="next-button" onclick="tappedGetStarted()">GET STARTED</div>
+                        <div class="topic-button" id="next-button" onclick="tappedGetStarted()">NEXT CHAPTER</div>
+                        </div>
 
                     </div>
-                    <div class="ide">
+                    <div class="ide" id="ide">
                         <!--<div class="lesson" id="typedtext"> -->
                         <div class="lesson" id="typedtext">
 
-                           <div id="console-prompt">Get Started<a class="blink">?</a></div> 
-
-
+                <div id="console-prompt">Get Started<a class="blink">?</a></div>
+                <div class="ide-color" id="change-id" onclick="changeIde()">IDE</div>
+                <div class="ide-button-container">
+                    <div class="ide-button" id="number-of-words">0/35</div>
+                    <div class="ide-button" id="next-line" onclick="handleNextLine()">Next</div>
+                     
+                    </div>
                         </div>
                     </div>
 
                 </div>
 
                 <div class="bottom-container" id="bottom-container">
+                    <div class="middle-line"></div>
                     <!--The card at the bottom with subtopic-->
 
 
@@ -141,7 +152,7 @@
 
 
     </div>
-    <script type="text/javascript" src="data.js"></script>
+    <script type="text/javascript" src="../js/data.js"></script>
 </body>
 
 </html>

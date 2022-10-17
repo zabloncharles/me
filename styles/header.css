@@ -1,6 +1,7 @@
 .header {
   display: flex;
   height: 80px;
+  min-height: 80px;
   justify-content: space-between;
   align-items: center;
   margin: 10px 40px;
@@ -56,6 +57,9 @@
 }
 .feature-selected {
     color: white;
+    background-color: chocolate;
+    padding: 2px 8px;
+    border-radius: 4px;
 }
 .feature-label {
   display: flex;
@@ -97,4 +101,32 @@ a{
 }
 a:hover{
     color: #ffffff;
+}
+body {
+  margin: 0;
+} 
+.big-box {
+  height: 100vh;
+  /*background-color: rgb(214, 215, 215);
+  https://images.hdqwalls.com/wallpapers/fox-minimal-qw.jpg
+  https://images.hdqwalls.com/wallpapers/one-moment-4j.jpg
+  https://images.hdqwalls.com/wallpapers/boy-with-dog-o0.jpg
+  https://images.hdqwalls.com/download/valley-river-minimal-8k-xo-1366x768.jpg
+  https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/4bb75b1d-3cb5-445c-bd55-682084d96bbf/dbbacbz-4f11d070-c282-4ff3-906d-5e13eb2e578d.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzRiYjc1YjFkLTNjYjUtNDQ1Yy1iZDU1LTY4MjA4NGQ5NmJiZlwvZGJiYWNiei00ZjExZDA3MC1jMjgyLTRmZjMtOTA2ZC01ZTEzZWIyZTU3OGQucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.ZaOae4jaIfctIOYB3HC9EkaAiAoi0endJC1AQKXeEac
+  
+  thumbnails/deer.jpg
+  https://www.99images.com/download-image/1027578/1920x995
+https://free4kwallpapers.com/uploads/originals/2020/07/05/chillin-fox-wallpaper.jpg
+
+
+
+  */
+
+  background-image: url("https://images.hdqwalls.com/download/mountains-retreat-minimal-beautiful-4k-vl-3840x2160.jpg");
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+
 }

@@ -110,13 +110,14 @@ var noimage = [];
 var haveimages = [];
 
 function getdata() {
-  for (var i = 0; i < topicData.length; i++) {
+  for (var i = 0; i < 5; i++) {
     if (topicData[i].desc == "") {
       break;
     }
     // let elem = document.getElementById("topic-card").cloneNode(true);
     let elem = document.createElement("div");
     elem.setAttribute("class", "topic-card");
+    elem.setAttribute("id", "topic-card-" + i);
     let topicinfo = document.createElement("div");
     topicinfo.setAttribute("class", "topic-info");
     let topicpicture = document.createElement("div");
@@ -181,7 +182,7 @@ var topicNumber = 0;
 var str = topicData[topicNumber].lesson;
 var substrings = str.split("."); //turn subsrting to indexed text
 var aText = substrings; //each sentence array
-var iSpeed = 90; // time delay of print out
+var iSpeed = 70; // time delay of print out
 var iIndex = 0; // start printing array at this position
 
 var inText = 0;
@@ -193,19 +194,42 @@ var iTextPos = 0; // initialise text position
 var sContents = ""; // initialise contents variable
 var iRow; // initialise current row
 var tapped = 0;
-var called = 0;
+
 var button = document.createElement("div");
 button.className = "typing";
 var old = document.createElement("div");
 old.className = "old";
 var blinker = document.createElement("span");
 blinker.className = "blink";
+var doneTyping = 0;
 
 var hold = 0;
+
+var currentLesson = 0;
+
+
+if (currentLesson === 0) {
+  document.getElementById("next-line").innerHTML = "START";
+  document.getElementById("next-button").innerHTML = "GET STARTED";
+}
 function tappedGetStarted() {
+  var nextbutton = document.getElementById("next-button");
+  nextbutton.innerHTML = "NEXT CHAPTER";
+
+  console.log("currentLesson: " + currentLesson);
+  currentLesson++;
+  changetopic(currentLesson);
+
+}
+function tappedGettStarted() {
+
+  
   if (hold == 1) {
     init();
     hold = 0;
+    document
+      .getElementById("typedtext")
+      .removeChild(document.getElementById("tempTyper"));
   }
 
   str = topicData[0].lesson;
@@ -218,34 +242,75 @@ function tappedGetStarted() {
   nextbutton.innerHTML = "Next";
   nextbutton.style.backgroundColor = "#303030";
 
-  inText++;
-  typewriter();
+ // typewriter();
 }
+var destination = document.getElementById("typedtext");
+var tempTyper = document.createElement("div");
+var blinktemp = document.createElement("span");
+var temp = 0;
 
-var changetopic = function () {
+//MARK: Change the topic
+var clickedCard = [];
+var changetopic = function (next) {
   hold = 1;
-  var thenum = this.id.replace(/^\D+/g, "");
-  topicNumber = thenum;
+   
+  if (next > 0) {
+      thenum = next;
+      topicNumber = next;
+  } else {
+     var thenum = this.id.replace(/^\D+/g, "");
+     topicNumber = thenum;
+  }
+
+  clickedCard += thenum;
+  var clen = clickedCard.length;
+ console.log(clickedCard[clen - 1]);
   var consolePrompt = document.getElementById("console-prompt");
   consolePrompt.innerHTML =
     "Lesson " + topicNumber + " : " + topicData[topicNumber].title;
   var nextbutton = document.getElementById("next-button");
   nextbutton.innerHTML = "GET STARTED";
+
+  document.getElementById("lesson-number").innerHTML =
+    "LESSON " + topicData[thenum].num;
   nextbutton.style.backgroundColor = "blue";
   //gets the id of the card button
-  
 
   //changes the page text and topic
   document.getElementById("topic-title").innerHTML = topicData[thenum].title;
   document.getElementById("topic-desc").innerHTML = topicData[thenum].desc;
 
+  if (clickedCard.length > 1) {
+   var buttonLast = document.getElementById(
+     "card-btn-" + clickedCard[clen - 2]
+   );
+    buttonLast.innerHTML = " &#10003; RE-VISIT";
+    buttonLast.setAttribute("class", "re-visit");
+}
+ 
+  var linebutton = document.getElementById("next-line");
+
+  linebutton.innerHTML = "START";
   //Change button color and text to reviewed
   var buttonClicked = document.getElementById("card-btn-" + thenum);
-  buttonClicked.innerHTML = "REVIEW";
+  buttonClicked.innerHTML = "CURRENT";
   buttonClicked.setAttribute("class", "card-button-selected");
 
   old.style.display = "none";
   button.style.display = "none";
+  temp++;
+  setTimeout(function () {
+    //your code to be executed after 1 second
+
+    tempTyper.className = "typing";
+    tempTyper.style.marginTop = "5px";
+    tempTyper.setAttribute("id", "tempTyper");
+
+    blinktemp.className = "blink";
+    blinktemp.innerHTML = "// ";
+    tempTyper.appendChild(blinktemp);
+    destination.appendChild(tempTyper);
+  }, 1000);
 };
 function init() {
   str = topicData[topicNumber].lesson;
@@ -253,10 +318,9 @@ function init() {
   substrings = str.split("."); //turn subsrting to indexed text
 
   aText = substrings; //each sentence array
-  iSpeed = 90; // time delay of print out
+  iSpeed = 70; // time delay of print out
   iIndex = 0; // start printing array at this position
 
-  inText = 0;
   iArrLength = aText[0].length; // the length of the text array
   iScrollAt = aText[0].length; // start scrolling up at this many lines
 
@@ -264,7 +328,7 @@ function init() {
   sContents = ""; // initialise contents variable
   iRow; // initialise current row
   tapped = 0;
-  called = 0;
+
   button = document.createElement("div");
   button.className = "typing";
   button.setAttribute("typinga", "id");
@@ -274,10 +338,24 @@ function init() {
   blinker.className = "blink";
 }
 var loop = 0;
+function handleNextLine() {
+  tappedGettStarted();
+  if (!loop) {
+    typewriter();
+    var linebutton = document.getElementById("next-line");
+    
+    linebutton.innerHTML = ">";
+    
+    
+   
+    
+   
+   
+  }
+}
 function typewriter() {
   loop++;
-
-  called++;
+  //if loop is more than 0 lock this
 
   sContents = " ";
   iRow = Math.max(0, iIndex - iScrollAt);
@@ -291,7 +369,7 @@ function typewriter() {
 
   //MARK: THe button
 
-  if (inText > 1) {
+  if (iIndex > 1) {
     old.innerHTML = "//" + sContents;
   } else {
     old.innerHTML = sContents;
@@ -302,6 +380,7 @@ function typewriter() {
   button.appendChild(blinker);
   blinker.innerHTML = "_";
 
+  //Scroll to bottom of Ide as typing continues
   let scroll_to_bottom = document.getElementById("typedtext");
   scroll_to_bottom.scrollTop = scroll_to_bottom.scrollHeight;
 
@@ -310,9 +389,57 @@ function typewriter() {
     iIndex++;
     if (iIndex != aText.length) {
       //tapped here is us tappin n going to next array
-      iArrLength = aText[inText].length;
+
+      iArrLength = aText[iIndex].length;
+      loop = 0;
+
+      //Change the button color
+      var nextbutton = document.getElementById("next-button");
+      nextbutton.style.backgroundColor = "blue";
+
+      var linebutton = document.getElementById("next-line");
+      linebutton.innerHTML = "NEXT";
+      linebutton.style.color = "orange";
     }
   } else {
     setTimeout("typewriter()", iSpeed);
+    // console.log("every " + loop);
+  }
+  //add the number of words to the ide
+  var numberOfWords = document.getElementById("number-of-words");
+  numberOfWords.innerHTML = iTextPos + "/" + iArrLength;
+}
+
+var randomIde = 0;
+function changeIde() {
+  var ideArray = ["ide-blur", "ide-gloss", "ide-dark", "ide-black", "ide"];
+  var cardArray = [
+    "topic-card-blur",
+    "topic-card-gloss",
+    "topic-card-dark",
+    "topic-card-black",
+    "topic-card",
+  ];
+
+  var ide = document.getElementById("ide");
+
+  console.log(randomIde + "of" + ideArray.length);
+  ide.setAttribute("class", ideArray[randomIde]);
+
+  //Find out how many topics we have
+  var cardlength = document.getElementsByClassName("topic-card");
+
+  //loop through the cards and change the class hence background color
+  for (let index = 0; index < topicData.length; index++) {
+    var card = document.getElementById("topic-card-" + index);
+    card.setAttribute("class", cardArray[randomIde]);
+    console.log(card[index]);
+  }
+  console.log(card);
+
+  if (randomIde == ideArray.length - 1) {
+    randomIde = 0;
+  } else {
+    randomIde++;
   }
 }
