@@ -11,7 +11,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Lobster+Two&family=Monoton&display=swap" rel="stylesheet" />
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -20,84 +19,86 @@
 </head>
 
 <body onload="birds()">
-    <div class="birds">
-        <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_Kqzytj.json" background="transparent"
-            speed="0.5" loop autoplay id="birds"></lottie-player>
-    </div>
+
 
     <div class="big-box">
-        <div class="background-image"></div>
-        <div class="rain">
-            <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_nqozkoiy.json" background="transparent"
-                speed="0.5" loop autoplay id="rain"></lottie-player>
-        </div>
-        <div class="header">
-            <div class="logo-container">
+        <div class="lottie-box">
 
-                <div class="logo"></div>
-                <a href="index.html">
-                    <div class="logo-name">Fusion</div>
+            <div class="header">
+                <div class="logo-container">
+
+                    <div class="logo"></div>
+                    <a href="index.html">
+                        <div class="logo-name">Fusion</div>
+                    </a>
+                </div>
+                <div class="right-header">
+                    <div class="features">
+                        <div class="feature">
+                            <div class="feature-selected">HOME</div>
+                        </div>
+                        <div class="feature">
+
+                            <a href="pages/projects.html">
+                                <div>PROJECTS</div>
+                            </a>
+                        </div>
+                        <div class="feature">
+
+                            <a href="pages/subject.html">
+                                <div>COURSE</div>
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <!--- <div class="button">Contact Us</div> -->
+                    <div class="hamburger">
+                        <img class="hamburger-image"
+                            src="https://icons.veryicon.com/png/o/miscellaneous/linear-icon-45/hamburger-menu-4.png"
+                            alt="" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="welcome-container">
+
+              
+
+
+
+                <!--   <lottie-player src="https://lottie.host/78282acb-fdca-4c6b-8cbb-f1138d294040/bi56yfl8Vk.json"
+                background="transparent" speed="1" loop autoplay class="me"></lottie-player>
+             -->
+                <div class="welcome-title-desc">ZABLON CHARLES</div>
+
+                <div class="welcome-title">WELCOME</div>
+                <div class="orange-text">Master Data Structers & Algorithms.</div>
+
+                <div class="welcome-desc">
+                    <br />Advance your Software
+                    Engineering or Data Science Career by Learning Algorithms through
+                    Programming and Puzzle Solving. Apply the
+                    newly-learned algorithmic techniques to real-life problems, such as
+                    analyzing a huge social network or sequencing a genome of a deadly
+                    pathogen.
+                </div>
+                <a href="pages/subject.html">
+                    <div class="join-button">GET STARTED</div>
                 </a>
             </div>
-            <div class="right-header">
-                <div class="features">
-                    <div class="feature">
-                        <div class="feature-selected">HOME</div>
-                    </div>
-                    <div class="feature">
 
-                        <a href="pages/projects.html">
-                            <div>PROJECTS</div>
-                        </a>
-                    </div>
-                    <div class="feature">
-
-                        <a href="pages/subject.html">
-                            <div>COURSE</div>
-                        </a>
-                    </div>
-
-                </div>
-
-                <!--- <div class="button">Contact Us</div> -->
-                <div class="hamburger">
-                    <img class="hamburger-image"
-                        src="https://icons.veryicon.com/png/o/miscellaneous/linear-icon-45/hamburger-menu-4.png"
-                        alt="" />
-                </div>
+            <div class="welcome-footer">
+                <div class="logo-text">LEARNING GOALS</div>
+                <div class="logo-text">PREREQUISITES</div>
+                <div class="logo-text">CONCEPTS</div>
             </div>
-        </div>
-
-        <div class="welcome-container">
-
-
-
-
-            <!--   <lottie-player src="https://lottie.host/78282acb-fdca-4c6b-8cbb-f1138d294040/bi56yfl8Vk.json"
-                background="transparent" speed="1" loop autoplay class="me"></lottie-player>
--->
-            <div class="welcome-title-desc">ZABLON CHARLES</div>
-
-            <div class="welcome-title">WELCOME</div>
-            <div class="orange-text">Master Data Structers & Algorithms.</div>
-
-            <div class="welcome-desc">
-                <br />Advance your Software
-                Engineering or Data Science Career by Learning Algorithms through
-                Programming and Puzzle Solving. Apply the
-                newly-learned algorithmic techniques to real-life problems, such as
-                analyzing a huge social network or sequencing a genome of a deadly
-                pathogen.
-            </div>
-            <a href="pages/subject.html">
-                <div class="join-button">GET STARTED</div>
-            </a>
-        </div>
-
-        <div class="welcome-footer">
-            <div class="logo-text">LEARNING GOALS</div>
-            <div class="logo-text">PREREQUISITES</div>
-            <div class="logo-text">CONCEPTS</div>
+            <lottie-player class="rain" src="https://assets2.lottiefiles.com/packages/lf20_nqozkoiy.json" background="transparent"
+                speed="0.5" loop autoplay id="rain"></lottie-player>
+            
+            
+            <lottie-player class="birds" src="https://assets7.lottiefiles.com/packages/lf20_Kqzytj.json" background="transparent"
+                speed="0.5" loop autoplay id="birds"></lottie-player>
         </div>
     </div>
 </body>

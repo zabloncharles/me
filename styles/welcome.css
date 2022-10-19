@@ -1,39 +1,41 @@
-
 .button {
   background-color: #f7f6f6;
   padding: 10px 20px;
   border-radius: 19px;
 }
 
+.lottie-box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
 
-.me {
-  height: 190px;
-  margin-top: -150px;
-}
-.birds {
-  width: 900px;
-  height: 900px;
-  position: absolute;
-  bottom: 260px;
-  z-index: 1;
-}
 
 .welcome-container {
   flex: 1;
-  height: 70%;
+
   width: 60%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   padding: 50px;
-  gap:2px;
+  gap: 2px;
   z-index: 100;
-
+}
+.birds {
+  top: 0px;
+  right: 0px;
+  
+  position: absolute;
+  z-index: 1;
 }
 .rain {
   position: absolute;
+  
   filter: contrast(200%);
+  z-index: 1;
 }
 .welcome-title-desc {
   font-size: large;
@@ -47,7 +49,7 @@
   -webkit-text-fill-color: transparent;
 }
 .orange-text {
-  font-family: "Playfair Display", serif;
+ 
   font-size: 1.2rem;
   color: white;
   background-color: orangered;
@@ -56,17 +58,15 @@
   margin-bottom: -12px;
 }
 .welcome-desc {
-  font-family: "Playfair Display", serif;
+  
   font-size: 1.2rem;
   color: white;
   width: 80%;
-  
-  
 }
 .join-button {
   background-color: blue;
   padding: 10px 40px;
-  margin-top:15px;
+  margin-top: 15px;
   border-radius: 20px;
   color: white;
   transition: padding 0.7s, color 0.7s;
@@ -86,50 +86,4 @@
   justify-content: center;
   align-items: center;
   gap: 5%;
-}
-@media (max-width: 468px) {
-  lottie-player {
-    width: 500px;
-    height: 400px;
-    top: 60px;
-  }
-  
-  .welcome-container {
-  height:100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  align-self: center;
-  text-align: center;
-  padding: 10px;
-  gap:2px;
-  z-index: 100;
-  }
-  .welcome-title-desc {
-  font-size: 2.3em;
-  color: rgb(11, 10, 10);
-}
-  .welcome-title {
-    font-size: 10em;
-  }
-  .welcome-desc {
-    font-size: 3.3em;
-    width: 100%;
-  }
-  .orange-text {
-  font-size: 2.2em;
-  border-radius: 2.2em;
-}
-  .join-button {
-    margin-top: 1.3em;
- font-size: 3.3em;
-  padding: 10px 40px;
- 
-  border-radius: 20px;
- 
-}
-.welcome-footer {
-  font-size: 2.2em;
-}
 }

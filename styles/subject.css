@@ -12,7 +12,6 @@
   color: rgb(0, 0, 0);
 }
 .topic-title {
- font-family: "Playfair Display", serif;
   font-size: 70px;
   background: linear-gradient(#f60000, #9fa5e7);
   -webkit-background-clip: text;
@@ -412,7 +411,7 @@ background-color: orangered;
 color: floralwhite;
 }
 .orange-text {
-  font-family: "Playfair Display", serif;
+ 
   font-size: 1.2rem;
   color: white;
   background-color: orangered;
