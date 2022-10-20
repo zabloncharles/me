@@ -5,7 +5,7 @@ var topicData = [
     desc: "In computer programming terms, an algorithm is a set of well-defined instructions to solve a particular problem. It takes a set of input(s) and produces the desired output.o",
     image: "https://images.hdqwalls.com/wallpapers/boy-with-dog-o0.jpg",
     lesson:
-      'An algorithm is a single, specific way of performing a complex task efficiently and repeatedly. The algorithm works by performing all of the smaller steps you need to do to perform the complex task, and is guaranteed to work (something that doesn\'t really work or only works sometimes would just be considered incomplete). To use a non-programming example, consider a manufacturing plant for a cookie company. The machines have pre-determined procedures for making chocolate chip cookies, oatmeal raisin abominations cookies, and sugar cookies. Now imagine that you\'re the guy whose job it is to switch the production lines to a new recipe whenever you change what kind of cookie you\'re making. It would be a huge pain if, every time you had to manually input the recipe, and give the machines instructions like measure 50kg of chocolate chips and move the flour bin at 0.1 m/s until it reaches the mixing bowl, and then rotate it at 0.25°/s until all of the flour is in the mixing bowl. It would take a ton of time, and even if you knew the recipes by heart it would still be way too easy to make a tiny mistake and cover the floor in raisins.Instead, the machine has preset routines. You push the "sugar cookie" button, and it follows the exact steps you gave it to make sugar cookies, every time. You don\'t have to worry about stupid mistakes, and it doesn\'t take you three hours to input the instructions.Algorithms are like those routines. Computer programs have thousands of tasks that are used over and over again. Things like "sort this list of numbers," "draw a triangle with these vertexes and this color," and "save this file." People have worked out efficient, consistent ways of doing those tasks, and now everyone just uses those instead of doing it themselves every time. Some algorithms are designed for less common things, like finding special prime numbers: not things people do all the time, but things where coming up with a better way of doing them is still a big deal.In the end, "algorithm" is basically just a fancy term for "method of doing something complicated/repetitive/irritating."\', \'Things like "sort this list of numbers"',
+      "An algorithm is a single, specific way of performing a complex task efficiently and repeatedly. The algorithm works by performing all of the smaller steps you need to do to perform the complex task, and is guaranteed to work (something that doesn't really work or only works sometimes would just be considered incomplete). To use a non-programming example, consider a manufacturing plant for a cookie company. The machines have pre-determined procedures for making chocolate chip cookies, oatmeal raisin abominations cookies, and sugar cookies. Now imagine that you're the guy whose job it is to switch the production lines to a new recipe whenever you change what kind of cookie you're making. It would be a huge pain if, every time you had to manually input the recipe, and give the machines instructions like measure 50kg of chocolate chips and move the flour bin at 0.1 m/s until it reaches the mixing bowl, and then rotate it at 0.25°/s until all of the flour is in the mixing bowl. It would take a ton of time, and even if you knew the recipes by heart it would still be way too easy to make a tiny mistake and cover the floor in raisins.Instead, the machine has preset routines. You push the sugar cookie button, and it follows the exact steps you gave it to make sugar cookies, every time. You don't have to worry about stupid mistakes, and it doesn't take you three hours to input the instructions.Algorithms are like those routines. Computer programs have thousands of tasks that are used over and over again. Things like sort this list of numbers, draw a triangle with these vertexes and this color,and save this file. People have worked out efficient, consistent ways of doing those tasks, and now everyone just uses those instead of doing it themselves every time. Some algorithms are designed for less common things, like finding special prime numbers: not things people do all the time, but things where coming up with a better way of doing them is still a big deal.In the end, algorithm is basically just a fancy term for method of doing something complicated/repetitive/irritating.', 'Things like 'sort this list of numbers",
   },
   {
     title: "Data Structure and Types",
@@ -14,7 +14,7 @@ var topicData = [
     image:
       "https://static.vecteezy.com/system/resources/thumbnails/002/099/721/small/mountain-beautiful-landscape-background-design-illustration-free-vector.jpg",
     lesson:
-      "Why is life soo wack nowadays.sufgisugfiugfiugsiufgjuhfufhsfufu.fusiufghiufu",
+      "In this article, you will learn about data structure and its types.What are Data Structures?.Data structure is a storage that is used to store and organize data. It is a way of arranging data on a computer so that it can be accessed and updated efficiently.Depending on your requirement and project, it is important to choose the right data structure for your project. For example, if you want to store data sequentially in the memory, then you can go for the Array data structure.Note: Data structure and data types are slightly different. Data structure is the collection of data types arranged in a specific order. Basically, data structures are divided into two categories:Linear data structure and Non-linear data structure.Let's learn about each type in detail.In linear data structures, the elements are arranged in sequence one after the other. Since elements are arranged in particular order, they are easy to implement.However, when the complexity of the program increases, the linear data structures might not be the best choice because of operational complexities.",
   },
   {
     title: "Why learn DSA?",
@@ -104,19 +104,20 @@ var topicData = [
     image: "",
   },
 ];
-var numberofdata = topicData.length;
 
+var numberofdata = topicData.length;
 var noimage = [];
 var haveimages = [];
+var cardsReturned = 8;
 
 function getdata() {
-  for (var i = 0; i < 5; i++) {
+  for (var i = 0; i < cardsReturned; i++) {
     if (topicData[i].desc == "") {
       break;
     }
     // let elem = document.getElementById("topic-card").cloneNode(true);
     let elem = document.createElement("div");
-    elem.setAttribute("class", "topic-card");
+    elem.setAttribute("class", "topic-card-build topic-card");
     elem.setAttribute("id", "topic-card-" + i);
     let topicinfo = document.createElement("div");
     topicinfo.setAttribute("class", "topic-info");
@@ -134,14 +135,12 @@ function getdata() {
     var numtext = document.createTextNode("LESSON " + i);
     num.appendChild(numtext);
     topicpicture.appendChild(num);
-
     topicinfo.appendChild(topicpicture);
 
     var desc = document.createElement("div");
     desc.className = "topic-card-desc";
     var desctext = document.createTextNode(topicData[i].desc);
     desc.appendChild(desctext);
-
     topicinfo.appendChild(desc);
 
     //MARK: THe button
@@ -151,7 +150,6 @@ function getdata() {
     button.addEventListener("click", changetopic);
     var buttontext = document.createTextNode("START");
     button.appendChild(buttontext);
-
     topicinfo.appendChild(button);
 
     var randomimage = Math.floor(Math.random() * haveimages.length);
@@ -177,24 +175,20 @@ function getdata() {
   }
 }
 var topicNumber = 0;
-
 // set up text to print, each item in array is new line
 var str = topicData[topicNumber].lesson;
 var substrings = str.split("."); //turn subsrting to indexed text
 var aText = substrings; //each sentence array
 var iSpeed = 70; // time delay of print out
 var iIndex = 0; // start printing array at this position
-
 var inText = 0;
 var iArrLength = aText[0].length; // the length of the text array
 var iScrollAt = aText[0].length;
 // start scrolling up at this many lines
-
 var iTextPos = 0; // initialise text position
 var sContents = ""; // initialise contents variable
 var iRow; // initialise current row
 var tapped = 0;
-
 var button = document.createElement("div");
 button.className = "typing";
 var old = document.createElement("div");
@@ -202,92 +196,84 @@ old.className = "old";
 var blinker = document.createElement("span");
 blinker.className = "blink";
 var doneTyping = 0;
-
 var hold = 0;
-
 var currentLesson = 0;
-
+var getStartedButton = document.getElementById("next-button");
+var stopTyping = false;
 
 if (currentLesson === 0) {
   document.getElementById("next-line").innerHTML = "START";
-  document.getElementById("next-button").innerHTML = "GET STARTED";
 }
+var clickedCard = [];
+var currentIdeStyle = 0;
+//MARK: TAppedget started button
 function tappedGetStarted() {
-  var nextbutton = document.getElementById("next-button");
-  nextbutton.innerHTML = "NEXT CHAPTER";
-
-  console.log("currentLesson: " + currentLesson);
-  currentLesson++;
-  changetopic(currentLesson);
-
-}
-function tappedGettStarted() {
-
-  
-  if (hold == 1) {
-    init();
-    hold = 0;
-    document
-      .getElementById("typedtext")
-      .removeChild(document.getElementById("tempTyper"));
+  if (loop) {
+    return;
   }
-
-  str = topicData[0].lesson;
-  substrings = str.split(".");
-  var consolePrompt = document.getElementById("console-prompt");
-  consolePrompt.innerHTML =
-    "Lesson " + topicNumber + " : " + topicData[topicNumber].title;
-
-  var nextbutton = document.getElementById("next-button");
-  nextbutton.innerHTML = "Next";
-  nextbutton.style.backgroundColor = "#303030";
-
- // typewriter();
+  if (currentLesson === 0) {
+    getStartedButton.innerHTML = "IN PROGRESS";
+    getStartedButton.style.backgroundColor = "#303030";
+    handleNextLine();
+  } else {
+    changetopic(currentLesson);
+  }
+  currentLesson++;
 }
+
 var destination = document.getElementById("typedtext");
 var tempTyper = document.createElement("div");
 var blinktemp = document.createElement("span");
 var temp = 0;
 
 //MARK: Change the topic
-var clickedCard = [];
+
 var changetopic = function (next) {
+  stopTyping = true;
   hold = 1;
-   
+
   if (next > 0) {
-      thenum = next;
-      topicNumber = next;
+    thenum = next;
+    topicNumber = next;
   } else {
-     var thenum = this.id.replace(/^\D+/g, "");
-     topicNumber = thenum;
+    var thenum = this.id.replace(/^\D+/g, "");
+    topicNumber = thenum;
   }
 
   clickedCard += thenum;
   var clen = clickedCard.length;
- console.log(clickedCard[clen - 1]);
+  console.log(clickedCard[clen - 1]);
   var consolePrompt = document.getElementById("console-prompt");
   consolePrompt.innerHTML =
     "Lesson " + topicNumber + " : " + topicData[topicNumber].title;
-  var nextbutton = document.getElementById("next-button");
-  nextbutton.innerHTML = "GET STARTED";
+
+  getStartedButton.innerHTML = "GET STARTED";
 
   document.getElementById("lesson-number").innerHTML =
     "LESSON " + topicData[thenum].num;
-  nextbutton.style.backgroundColor = "blue";
+  getStartedButton.style.backgroundColor = "blue";
   //gets the id of the card button
 
   //changes the page text and topic
   document.getElementById("topic-title").innerHTML = topicData[thenum].title;
   document.getElementById("topic-desc").innerHTML = topicData[thenum].desc;
 
+  //if the background has an image change it if not put 0
+  console.log(currentIdeStyle);
+  //var ide = document.getElementById("ide");
+  // if (currentIdeStyle < 1 && topicData[topicNumber].image) {
+  // ide.style.backgroundImage =
+  //  'url("' + encodeURI(topicData[topicNumber].image) + '")';
+  //}
+
   if (clickedCard.length > 1) {
-   var buttonLast = document.getElementById(
-     "card-btn-" + clickedCard[clen - 2]
-   );
+    var buttonLast = document.getElementById(
+      "card-btn-" + clickedCard[clen - 2]
+    );
     buttonLast.innerHTML = " &#10003; RE-VISIT";
     buttonLast.setAttribute("class", "re-visit");
-}
- 
+  }
+
   var linebutton = document.getElementById("next-line");
 
   linebutton.innerHTML = "START";
@@ -339,21 +325,38 @@ function init() {
 }
 var loop = 0;
 function handleNextLine() {
-  tappedGettStarted();
+  if (hold == 1) {
+    init();
+    hold = 0;
+    document
+      .getElementById("typedtext")
+      .removeChild(document.getElementById("tempTyper"));
+  }
+
+  str = topicData[0].lesson;
+  substrings = str.split(".");
+  var consolePrompt = document.getElementById("console-prompt");
+  consolePrompt.innerHTML =
+    "Lesson " + topicNumber + " : " + topicData[topicNumber].title;
+
+  var nextbutton = document.getElementById("next-button");
+  //nextbutton.innerHTML = "Next";
+  nextbutton.style.backgroundColor = "#303030";
+
   if (!loop) {
     typewriter();
     var linebutton = document.getElementById("next-line");
-    
+
     linebutton.innerHTML = ">";
-    
-    
-   
-    
-   
-   
   }
 }
+
+var lettersTyped = 0;
 function typewriter() {
+  if (stopTyping) {
+    return;
+  }
+  lettersTyped++;
   loop++;
   //if loop is more than 0 lock this
 
@@ -379,7 +382,7 @@ function typewriter() {
   button.innerHTML = "//" + aText[iIndex].substring(0, iTextPos);
   button.appendChild(blinker);
   blinker.innerHTML = "_";
-
+  //console.log(lettersTyped);
   //Scroll to bottom of Ide as typing continues
   let scroll_to_bottom = document.getElementById("typedtext");
   scroll_to_bottom.scrollTop = scroll_to_bottom.scrollHeight;
@@ -392,7 +395,11 @@ function typewriter() {
 
       iArrLength = aText[iIndex].length;
       loop = 0;
-
+      if (lettersTyped == topicData[topicNumber].lesson.length) {
+        getStartedButton.innerHTML = "NEXT LESSON";
+      } else {
+        getStartedButton.innerHTML = "SKIP LESSON";
+      }
       //Change the button color
       var nextbutton = document.getElementById("next-button");
       nextbutton.style.backgroundColor = "blue";
@@ -410,36 +417,48 @@ function typewriter() {
   numberOfWords.innerHTML = iTextPos + "/" + iArrLength;
 }
 
-var randomIde = 0;
+//MARK:CHANGES THE STYLE OF THE IDE
 function changeIde() {
-  var ideArray = ["ide-blur", "ide-gloss", "ide-dark", "ide-black", "ide"];
+  var ideArray = [
+    "ide-build ide-blur",
+    "ide-build ide-dark",
+    "ide-build ide-gloss",
+    "ide-build ide-black",
+    "ide-build ide",
+  ];
   var cardArray = [
-    "topic-card-blur",
-    "topic-card-gloss",
-    "topic-card-dark",
-    "topic-card-black",
-    "topic-card",
+    "topic-card-build topic-card-blur",
+    "topic-card-build topic-card-dark",
+    "topic-card-build topic-card-gloss",
+    "topic-card-build topic-card-black",
+    "topic-card-build topic-card",
   ];
 
   var ide = document.getElementById("ide");
 
-  console.log(randomIde + "of" + ideArray.length);
-  ide.setAttribute("class", ideArray[randomIde]);
+  //console.log(currentIdeStyle + "of" + ideArray.length);
+  ide.setAttribute("class", ideArray[currentIdeStyle]);
 
   //Find out how many topics we have
   var cardlength = document.getElementsByClassName("topic-card");
 
   //loop through the cards and change the class hence background color
-  for (let index = 0; index < topicData.length; index++) {
+  for (let index = 0; index < cardsReturned; index++) {
     var card = document.getElementById("topic-card-" + index);
-    card.setAttribute("class", cardArray[randomIde]);
-    console.log(card[index]);
+    card.setAttribute("class", cardArray[currentIdeStyle]);
   }
-  console.log(card);
 
-  if (randomIde == ideArray.length - 1) {
-    randomIde = 0;
+  document.getElementById("console-prompt").style.color = "#fff";
+
+  if (currentIdeStyle == 0 || currentIdeStyle == 2) {
+    document
+      .getElementById("console-prompt")
+      .setAttribute("class", "ide-prompt");
+  }
+
+  if (currentIdeStyle == ideArray.length - 1) {
+    currentIdeStyle = 0;
   } else {
-    randomIde++;
+    currentIdeStyle++;
   }
 }

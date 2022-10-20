@@ -1,5 +1,8 @@
 {
   "editor.formatOnSave": true,
   "files.autoSave": "afterDelay",
-  "editor.codeActionsOnSave": {}
+  "editor.codeActionsOnSave": {},
+  "editor.formatOnType": true,
+  "editor.find.cursorMoveOnType": true,
+  "editor.acceptSuggestionOnEnter": "off"
 }

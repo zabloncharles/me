@@ -1,71 +1,9 @@
-.topic-container {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 20px;
-}
-
-.topic-title-desc {
-  font-size: 26px;
-  color: rgb(0, 0, 0);
-}
-.topic-title {
-  font-size: 70px;
-  background: linear-gradient(#f60000, #9fa5e7);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.topic-desc {
-  font-size: 20px;
-  color: white;
-  width: 100%;
-  overflow: scroll;
-}
-.next-buttons{
-  display: flex;
-  gap:20px;
-}
-.topic-button {
-  font-size: 22px;
-  background-color: blue;
-  padding: 10px 30px;
-  border-radius: 10px;
-  color: white;
-  transition: all 0.7s, color 0.7s;
-  cursor: pointer;
-}
-.topic-button:hover {
-  background-color: rgb(41, 41, 106);
-}
-
-.thai {
-  display: flex;
-  font-size: 52px;
-  color: rgba(255, 255, 255, 0.041);
-}
-.join-button:hover {
-  cursor: pointer;
-  border-radius: 50px;
-  background-color: rgb(59, 80, 200);
-  color: black;
-  padding: 10px 23px;
-}
-.topic-footer {
-  flex: 0.1;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 150px;
-}
 .body-contain {
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 10px 40px;
-  height: 100vh;
+  height: 100%;
 }
 .left {
   display: flex;
@@ -107,106 +45,124 @@
 }
 .overview-and-cards {
   display: flex;
+  justify-content: center;
   flex-direction: column;
-  padding-right: 10px;
   height: 100%;
   width: 100%;
 }
-.bottom-container {
-  display: flex;
-  padding: 20px 0px;
-  gap: 15px;
-  border-radius: 20px;
-  overflow: scroll;
-  width: 100%;
-  position: relative;
-}
-.middle-line{
-position: absolute;
-
-  background-color: #ff0707;
-  align-items: center;
-  border: #fb0303 1px solid;
-top: 50%;
-width: 100%;
-bottom: 50%;
-left: 0px;
-right: 0px;
-z-index: 10;
-}
-
 .topic-and-lesson {
   display: flex;
-  gap: 5%;
+  justify-content: space-between;
 }
-.ide-blur {
-  backdrop-filter: blur(12px);
-  color: white;
-  border-radius: 17px;
+.topic-container {
+  flex: 1;
   display: flex;
-  border: rgb(184, 177, 177) solid 1px;
+  padding-right: 15px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.topic-title-desc {
+  font-size: 26px;
+  color: rgb(0, 0, 0);
+}
+.topic-title {
+  font-size: 70px;
+  background: linear-gradient(#f60000, #9fa5e7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.topic-desc {
+  font-size: 20px;
+  color: white;
+  width: 100%;
+  overflow: scroll;
+}
+.next-buttons {
+  display: flex;
+  gap: 20px;
+}
+.topic-button {
+  font-size: 22px;
+  background-color: blue;
+  padding: 10px 30px;
+  border-radius: 10px;
+  color: white;
+  transition: all 0.7s, color 0.7s;
+  cursor: pointer;
+}
+.topic-button:hover {
+  background-color: rgb(41, 41, 106);
+}
+
+.thai {
+  display: flex;
+  font-size: 52px;
+  color: rgba(255, 255, 255, 0.041);
+}
+.join-button:hover {
+  cursor: pointer;
+  border-radius: 50px;
+  background-color: rgb(59, 80, 200);
+  color: black;
+  padding: 10px 23px;
+}
+.topic-footer {
+  flex: 0.1;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 150px;
+}
+.bottom-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0px;
+  gap: 15px;
+  border-radius: 20px;
+  flex-wrap: wrap;
+  overflow: scroll;
+  width: 100%;
+}
+
+.ide-build {
   height: 350px;
   flex-basis: 490px;
   padding: 20px;
-  margin: 40px 10px;
+  margin: 40px 0px;
   font-size: 20px;
   font-family: monospace;
   position: relative;
+  color: white;
+  border-radius: 17px;
+  display: flex;
+}
+.ide-blur {
+  backdrop-filter: blur(12px);
+  border: rgb(210, 202, 202) solid 1px;
 }
 
 .ide-gloss {
   backdrop-filter: blur(12px);
-  color: white;
-  border-radius: 17px;
-  display: flex;
-  border: rgba(184, 177, 177, 0.153) solid 1px;
-  height: 350px;
-  flex-basis: 490px;
-  padding: 20px;
-  margin: 40px 10px;
-  font-size: 20px;
-  font-family: monospace;
-  position: relative;
+  border: rgba(88, 87, 87, 0.74) solid 1px;
 }
 .ide-dark {
   background-color: #121212;
-  color: white;
-  border-radius: 17px;
-  display: flex;
-  border: rgba(184, 177, 177, 0) solid 1px;
-  height: 350px;
-  flex-basis: 490px;
-  padding: 20px;
-  margin: 40px 10px;
-  font-size: 20px;
-  font-family: monospace;
-  position: relative;
+  border: rgba(239, 237, 237, 0) solid 1px;
 }
 .ide-black {
   background-color: rgb(0, 0, 0);
-  color: white;
-  border-radius: 17px;
-  display: flex;
-  height: 350px;
-  flex-basis: 490px;
-  padding: 20px;
-  margin: 40px 10px;
-  font-size: 20px;
-  font-family: monospace;
-  position: relative;
 }
 .ide {
-  background-color: #212020;
+  background-color: rgb(36, 33, 33);
+  /* background-image: ("https://images.hdqwalls.com/wallpapers/boy-with-dog-o0.jpg"); */
+  /* background-size: cover; */
+  /* background-position: left; */
+  /* background-repeat: no-repeat; */
   color: rgb(255, 255, 255);
-  border-radius: 17px;
-  display: flex;
-  height: 350px;
-  flex-basis: 490px;
-  padding: 20px;
-  margin: 40px 10px;
-  font-size: 20px;
-  font-family: monospace;
-  position: relative;
 }
 .ide-button-container {
   position: absolute;
@@ -215,6 +171,13 @@ z-index: 10;
   right: 0px;
   margin: 10px;
   gap: 8px;
+}
+.ide-prompt {
+  background-color: rgb(51, 49, 49);
+  padding: 4px 10px;
+  border-radius: 5px;
+  width: fit-content;
+  color: white;
 }
 .ide-color {
   position: absolute;
@@ -250,75 +213,45 @@ z-index: 10;
   color: #948f8f;
 }
 
-.topic-card {
-  display: flex;
+.topic-card-build {
   flex-direction: column;
   height: 260px;
+  max-width: 190px;
   min-width: 190px;
+  padding: 10px;
+  gap: 1%;
+  border-radius: 13px;
+  z-index: 11;
+}
+.topic-card {
   background: #fdfdfd;
   color: #000000;
   border: 1px solid #e0dbdb;
-  padding: 10px;
-  gap: 1%;
-  border-radius: 13px;
-  z-index: 11;
 }
 .topic-card-blur {
-  display: flex;
-  flex-direction: column;
- height: 260px;
-  min-width: 190px;
   backdrop-filter: blur(12px);
-  border: rgb(184, 177, 177) solid 1px;
+  border: rgb(228, 225, 225) solid 1px;
   color: white;
-  padding: 10px;
-  gap: 1%;
-  border-radius: 13px;
-  z-index: 11;
 }
 .topic-card-gloss {
-  display: flex;
-  flex-direction: column;
-  height: 260px;
-  min-width: 190px;
-   backdrop-filter: blur(32px);
+  backdrop-filter: blur(32px);
   color: #ffffff;
-border: rgba(184, 177, 177, 0.153) solid 1px;
-  padding: 10px;
-  gap: 1%;
-  border-radius: 13px;
-  z-index: 11;
+  border: rgba(184, 177, 177, 0.153) solid 1px;
 }
 .topic-card-dark {
-  display: flex;
-  flex-direction: column;
-  height: 260px;
-  min-width: 190px;
- background-color: #121212;
+  background-color: #121212;
   color: #ffffff;
   border: rgba(184, 177, 177, 0) solid 1px;
-  padding: 10px;
-  gap: 1%;
-  border-radius: 13px;
-  z-index: 11;
 }
 .topic-card-black {
-  display: flex;
-  flex-direction: column;
-  height: 260px;
-  min-width: 190px;
   background: #020202;
   color: #ffffff;
   border: 1px solid #0d0d0d;
-  padding: 10px;
-  gap: 1%;
-  border-radius: 13px;
-  z-index: 11;
 }
 .topic-card-selected {
   display: flex;
   flex-direction: column;
- height: 260px;
+  height: 260px;
   min-width: 190px;
   padding: 10px;
   gap: 1%;
@@ -343,6 +276,7 @@ border: rgba(184, 177, 177, 0.153) solid 1px;
   flex: 1;
   display: flex;
   flex-direction: column;
+
   gap: 9px;
 }
 .topic-card-title-desc {
@@ -360,9 +294,14 @@ border: rgba(184, 177, 177, 0.153) solid 1px;
 }
 .topic-card-desc {
   font-size: small;
-  height: 80px;
-  overflow: hidden;
+
   padding-left: 3px;
+  width: 100%;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .topic-card-button {
   display: flex;
@@ -396,7 +335,7 @@ border: rgba(184, 177, 177, 0.153) solid 1px;
   color: white;
   cursor: pointer;
 }
-.re-visit{
+.re-visit {
   background-color: rgb(45, 45, 46);
   display: flex;
   justify-content: center;
@@ -405,13 +344,13 @@ border: rgba(184, 177, 177, 0.153) solid 1px;
   color: rgb(200, 195, 195);
   cursor: pointer;
 }
-.card-button:hover,.re-visit:hover,
+.card-button:hover,
+.re-visit:hover,
 .card-button-selected:hover {
-background-color: orangered;
-color: floralwhite;
+  background-color: orangered;
+  color: floralwhite;
 }
 .orange-text {
- 
   font-size: 1.2rem;
   color: white;
   background-color: orangered;
