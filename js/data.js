@@ -29,6 +29,7 @@ var topicData = [
     desc: "The efficiency of an algorithm depends on the amount of time, storage and other resources required to execute the algorithm. The efficiency is measured with the help of asymptotic notations.",
     image:
       "https://cdn.pixabay.com/photo/2012/08/27/14/19/mountains-55067__340.png",
+    lesson: "3 3333333 So fucking stressed yoo",
   },
   {
     title: "Master Theorem",
@@ -36,18 +37,21 @@ var topicData = [
     desc: "In this tutorial, you will learn what master theorem is and how it is used for solving recurrence relations.The master method is a formula for solving recurrence relations of the form:",
     image:
       "https://media.istockphoto.com/photos/mountain-landscapes-picture-id108125029?b=1&k=20&m=108125029&s=170667a&w=0&h=L5kspxyBuqkMPMq9NP-0g3iTj7sCWjSXikPe_Kc4Ne8=",
+    lesson: "444444 So fucking stressed yoo",
   },
   {
     title: "Divide and Conquer Algorithm",
     num: "5",
     desc: "The divide and conquer algorithm's operation will be explained in this lesson. To tackle a recursive problem, we will contrast the divide and conquer strategy with various methods.",
     image: "",
+    lesson: "555555So fucking stressed yoo",
   },
   {
     title: "Stack Data Structure",
     num: "6",
     desc: "You will learn about the stack data structure and how it is implemented in Python, Java, and C/C++ in this course.Stacks are linear data structures that adhere to the Last In First Out rule (LIFO). This implies that the last piece to be added to the stack gets eliminated first.",
     image: "",
+    lesson: "6666So fucking stressed yoo",
   },
   {
     title: "Queue Data Structure",
@@ -173,21 +177,53 @@ function getdata() {
     elem.appendChild(topicinfo);
     document.getElementById("bottom-container").appendChild(elem);
   }
+
+  document.getElementById("side-way-time").innerHTML = "0/" + cardsReturned;
 }
 var topicNumber = 0;
 // set up text to print, each item in array is new line
-var str = topicData[topicNumber].lesson;
+var strr = topicData[0].lesson;
+
+var removeurl = strr.split(">");
+
+//get url out of lessont text --------------------------------
+var count = 0;
+var hasNoImage = [];
+var hasImage = [];
+var lessonImages = [];
+var filtered = removeurl.filter(function (strings) {
+  var result = strings.includes("http");
+  if (result) {
+    hasImage += count;
+    lessonImages.push(removeurl[count]);
+  } else {
+    hasNoImage += count;
+  }
+  console.log("array has no image " + hasNoImage);
+  console.log("array has image " + hasImage);
+  count++;
+});
+console.log(lessonImages);
+//add the text back together -------------------------------------
+var withouturl;
+for (var i = 0; i < hasNoImage.length; i++) {
+  withouturl += removeurl[hasNoImage[i]];
+}
+
+//Regular vars ------------------------------------------------
+var strd = withouturl;
+var str = topicData[0].lesson;
 var substrings = str.split("."); //turn subsrting to indexed text
-var aText = substrings; //each sentence array
-var iSpeed = 70; // time delay of print out
+var eachSentence = substrings; //each sentence array
+var typingSpeed = 70; // time delay of print out
 var iIndex = 0; // start printing array at this position
 var inText = 0;
-var iArrLength = aText[0].length; // the length of the text array
-var iScrollAt = aText[0].length;
+var textArrayLength = eachSentence[0].length; // the length of the text array
+var iScrollAt = eachSentence[0].length;
 // start scrolling up at this many lines
 var iTextPos = 0; // initialise text position
-var sContents = ""; // initialise contents variable
-var iRow; // initialise current row
+var typingContent = ""; // initialise contents variable
+var currentRow; // initialise current row
 var tapped = 0;
 var button = document.createElement("div");
 button.className = "typing";
@@ -196,53 +232,89 @@ old.className = "old";
 var blinker = document.createElement("span");
 blinker.className = "blink";
 var doneTyping = 0;
-var hold = 0;
+var topicChanged = 0;
 var currentLesson = 0;
 var getStartedButton = document.getElementById("next-button");
 var stopTyping = false;
+var typingInProgress = 0;
+var ideStartButton = document.getElementById("next-line");
+var currentImage;
+var idePrompt = document.getElementById("console-prompt");
 
+var completedLessons = [];
 if (currentLesson === 0) {
   document.getElementById("next-line").innerHTML = "START";
 }
-var clickedCard = [];
+var alreadyClickedCards = [0];
 var currentIdeStyle = 0;
-//MARK: TAppedget started button
+var canSkipLesson = false;
+var lessonCompleted = false;
+//MARK: TAppedget canSkipLesson button
+getStartedButton.style.animation = "1.5s linear infinite led";
+ideStartButton.style.display = "none";
 function tappedGetStarted() {
-  if (loop) {
+  getStartedButton.style.animation = "none";
+
+  if (typingInProgress) {
     return;
   }
-  if (currentLesson === 0) {
-    getStartedButton.innerHTML = "IN PROGRESS";
-    getStartedButton.style.backgroundColor = "#303030";
-    handleNextLine();
-  } else {
-    changetopic(currentLesson);
-  }
-  currentLesson++;
+  stopTyping = false;
+  getStartedButton.innerHTML = "IN PROGRESS";
+  getStartedButton.style.backgroundColor = "#303030";
+  handleNextLine();
+  console.log(eachSentence[5]);
+  //MARK: FIRST TOPIC HAS BEEN STARTED
+  var startedChapter = document.getElementById("card-btn-0");
+  startedChapter.innerHTML = "CURRENT";
+  startedChapter.style.backgroundColor = "#303030";
 }
 
 var destination = document.getElementById("typedtext");
 var tempTyper = document.createElement("div");
 var blinktemp = document.createElement("span");
+var previousLesson;
 var temp = 0;
 
 //MARK: Change the topic
 
-var changetopic = function (next) {
+var changetopic = function () {
   stopTyping = true;
-  hold = 1;
+  topicChanged = 1;
 
-  if (next > 0) {
-    thenum = next;
-    topicNumber = next;
-  } else {
-    var thenum = this.id.replace(/^\D+/g, "");
-    topicNumber = thenum;
+  //add the number of words to the ide
+
+  var clickedTopic = this.id.replace(/^\D+/g, "");
+  topicNumber = clickedTopic;
+
+  if (currentIdeStyle == 2) {
+    idePrompt.style.backgroundImage = topicData[topicNumber].image
+      ? 'url("' + encodeURI(topicData[topicNumber].image) + '")'
+      : "url(https://cdn.pixabay.com/photo/2012/08/27/14/19/mountains-55067__340.png)";
+    idePrompt.style.backgroundSize = "cover";
+    idePrompt.style.backgroundPosition = "center";
   }
 
-  clickedCard += thenum;
-  var clen = clickedCard.length;
-  console.log(clickedCard[clen - 1]);
+  str = topicData[topicNumber].lesson;
+  if (str) {
+    substrings = str.split("."); //turn subsrting to indexed text
+  } else {
+    var subo = "There is no lesson yet. Come back later!";
+    substrings = subo.split(".");
+  }
+
+  eachSentence = substrings; //each sentence array
+  typingSpeed = 70; // time delay of print out
+  iIndex = 0; // start printing array at this position
+
+  textArrayLength, (iScrollAt = eachSentence[0].length); // the length of the text array
+
+  var numberOfWords = document.getElementById("number-of-words");
+  numberOfWords.innerHTML = iTextPos + "/" + textArrayLength;
+
+  alreadyClickedCards += clickedTopic; //aleady clicked cards
+  var alreadyClickedCardsLength = alreadyClickedCards.length;
+  previousLesson = alreadyClickedCards[alreadyClickedCards.length - 1];
+
   var consolePrompt = document.getElementById("console-prompt");
   consolePrompt.innerHTML =
     "Lesson " + topicNumber + " : " + topicData[topicNumber].title;
@@ -250,69 +322,67 @@ var changetopic = function (next) {
   getStartedButton.innerHTML = "GET STARTED";
 
   document.getElementById("lesson-number").innerHTML =
-    "LESSON " + topicData[thenum].num;
+    "LESSON " + topicData[clickedTopic].num;
   getStartedButton.style.backgroundColor = "blue";
   //gets the id of the card button
 
   //changes the page text and topic
-  document.getElementById("topic-title").innerHTML = topicData[thenum].title;
-  document.getElementById("topic-desc").innerHTML = topicData[thenum].desc;
-
+  document.getElementById("topic-title").innerHTML =
+    topicData[clickedTopic].title;
+  document.getElementById("topic-desc").innerHTML =
+    topicData[clickedTopic].desc;
+  currentImage = topicData[clickedTopic].image;
   //if the background has an image change it if not put 0
-  console.log(currentIdeStyle);
-  //var ide = document.getElementById("ide");
-  // if (currentIdeStyle < 1 && topicData[topicNumber].image) {
-  // ide.style.backgroundImage =
-  //  'url("' + encodeURI(topicData[topicNumber].image) + '")';
-  //}
+  console.log(previousLesson);
+  console.log(alreadyClickedCards);
 
-  if (clickedCard.length > 1) {
+  if (alreadyClickedCards.length > 1) {
     var buttonLast = document.getElementById(
-      "card-btn-" + clickedCard[clen - 2]
+      "card-btn-" + alreadyClickedCards[alreadyClickedCardsLength - 2]
     );
     buttonLast.innerHTML = " &#10003; RE-VISIT";
     buttonLast.setAttribute("class", "re-visit");
   }
 
-  var linebutton = document.getElementById("next-line");
-
-  linebutton.innerHTML = "START";
+  ideStartButton.innerHTML = "START";
   //Change button color and text to reviewed
-  var buttonClicked = document.getElementById("card-btn-" + thenum);
+  var buttonClicked = document.getElementById("card-btn-" + clickedTopic);
   buttonClicked.innerHTML = "CURRENT";
   buttonClicked.setAttribute("class", "card-button-selected");
 
   old.style.display = "none";
   button.style.display = "none";
   temp++;
-  setTimeout(function () {
-    //your code to be executed after 1 second
 
-    tempTyper.className = "typing";
-    tempTyper.style.marginTop = "5px";
-    tempTyper.setAttribute("id", "tempTyper");
+  //your code to be executed after 1 second
 
-    blinktemp.className = "blink";
-    blinktemp.innerHTML = "// ";
-    tempTyper.appendChild(blinktemp);
-    destination.appendChild(tempTyper);
-  }, 1000);
+  tempTyper.className = "typing";
+  tempTyper.style.marginTop = "5px";
+  tempTyper.setAttribute("id", "tempTyper");
+
+  blinktemp.className = "blink";
+  blinktemp.innerHTML = "// ";
+  tempTyper.appendChild(blinktemp);
+  destination.appendChild(tempTyper);
+  //setTimeout(function () {
+
+  //}, 1000);
 };
 function init() {
   str = topicData[topicNumber].lesson;
 
   substrings = str.split("."); //turn subsrting to indexed text
 
-  aText = substrings; //each sentence array
-  iSpeed = 70; // time delay of print out
+  eachSentence = substrings; //each sentence array
+  typingSpeed = 70; // time delay of print out
   iIndex = 0; // start printing array at this position
 
-  iArrLength = aText[0].length; // the length of the text array
-  iScrollAt = aText[0].length; // start scrolling up at this many lines
+  textArrayLength = eachSentence[0].length; // the length of the text array
+  iScrollAt = eachSentence[0].length; // start scrolling up at this many lines
 
   iTextPos = 0; // initialise text position
-  sContents = ""; // initialise contents variable
-  iRow; // initialise current row
+  typingContent = ""; // initialise contents variable
+  currentRow; // initialise current row
   tapped = 0;
 
   button = document.createElement("div");
@@ -323,63 +393,73 @@ function init() {
   blinker = document.createElement("span");
   blinker.className = "blink";
 }
-var loop = 0;
+
 function handleNextLine() {
-  if (hold == 1) {
+  if (typingInProgress) {
+    return;
+  }
+
+  if (topicChanged) {
     init();
-    hold = 0;
+    topicChanged = 0;
     document
       .getElementById("typedtext")
       .removeChild(document.getElementById("tempTyper"));
   }
 
-  str = topicData[0].lesson;
+  str = topicData[topicNumber].lesson;
   substrings = str.split(".");
   var consolePrompt = document.getElementById("console-prompt");
   consolePrompt.innerHTML =
     "Lesson " + topicNumber + " : " + topicData[topicNumber].title;
 
-  var nextbutton = document.getElementById("next-button");
-  //nextbutton.innerHTML = "Next";
-  nextbutton.style.backgroundColor = "#303030";
-
-  if (!loop) {
-    typewriter();
-    var linebutton = document.getElementById("next-line");
-
-    linebutton.innerHTML = ">";
-  }
+  stopTyping = false;
+  ideStartButton.innerHTML = "WAIT";
+  ideStartButton.style.color = "gray";
+  ideStartButton.style.animation = "none";
+  typewriter();
 }
 
 var lettersTyped = 0;
+var b = topicData[0].lesson.split(">");
+var newDiv = document.createElement("div");
+var iDiv = document.createElement("div");
+var lineImage = b[1];
 function typewriter() {
   if (stopTyping) {
+    typingInProgress = 0;
+    lettersTyped = 0;
+    iTextPos = 0;
+    textArrayLength = 0;
+
     return;
   }
   lettersTyped++;
-  loop++;
-  //if loop is more than 0 lock this
+  typingInProgress++;
 
-  sContents = " ";
-  iRow = Math.max(0, iIndex - iScrollAt);
+  //if typingInProgress is more than 0 lock this
+
+  typingContent = " ";
+  currentRow = Math.max(0, iIndex - iScrollAt);
   var destination = document.getElementById("typedtext");
   destination.appendChild(old);
   destination.appendChild(button);
 
-  while (iRow < iIndex) {
-    sContents += aText[iRow++] + ".<br /> <br>";
+  while (currentRow < iIndex) {
+    typingContent += eachSentence[currentRow++] + ".<br /> <br>";
   }
 
   //MARK: THe button
 
   if (iIndex > 1) {
-    old.innerHTML = "//" + sContents;
+    old.innerHTML = "//" + typingContent;
   } else {
-    old.innerHTML = sContents;
+    old.innerHTML = typingContent;
   }
 
-  button.innerHTML = "//" + aText[iIndex].substring(0, iTextPos) + "_";
-  button.innerHTML = "//" + aText[iIndex].substring(0, iTextPos);
+  button.innerHTML = "//" + eachSentence[iIndex].substring(0, iTextPos) + "_";
+  button.innerHTML = "//" + eachSentence[iIndex].substring(0, iTextPos);
+
   button.appendChild(blinker);
   blinker.innerHTML = "_";
   //console.log(lettersTyped);
@@ -387,34 +467,53 @@ function typewriter() {
   let scroll_to_bottom = document.getElementById("typedtext");
   scroll_to_bottom.scrollTop = scroll_to_bottom.scrollHeight;
 
-  if (iTextPos++ == iArrLength) {
+  if (iTextPos++ == textArrayLength) {
     iTextPos = 0;
     iIndex++;
-    if (iIndex != aText.length) {
+    if (iIndex != eachSentence.length) {
       //tapped here is us tappin n going to next array
 
-      iArrLength = aText[iIndex].length;
-      loop = 0;
-      if (lettersTyped == topicData[topicNumber].lesson.length) {
-        getStartedButton.innerHTML = "NEXT LESSON";
-      } else {
-        getStartedButton.innerHTML = "SKIP LESSON";
-      }
+      textArrayLength = eachSentence[iIndex].length;
+
       //Change the button color
       var nextbutton = document.getElementById("next-button");
       nextbutton.style.backgroundColor = "blue";
+    }
 
-      var linebutton = document.getElementById("next-line");
-      linebutton.innerHTML = "NEXT";
-      linebutton.style.color = "orange";
+    typingInProgress = 0;
+    var ideStartButton = document.getElementById("next-line");
+    if (lettersTyped >= topicData[topicNumber].lesson.length) {
+      getStartedButton.innerHTML = "COMPLETED";
+      completedLessons += topicNumber;
+      console.log("completed " + completedLessons);
+      ideStartButton.style.display = "none";
+      lessonCompleted = true;
+    } else {
+      ideStartButton.style.display = "";
+      ideStartButton.innerHTML = "CONTINUE";
+      ideStartButton.style.color = "orange";
+      ideStartButton.style.animation = "led 1.5s infinite linear";
+
+      //nextbutton.innerHTML = "Next";
+      getStartedButton.style.animation = "none";
+      getStartedButton.innerHTML = "IN PROGRESS";
+      getStartedButton.style.backgroundColor = "#303030";
+      lessonCompleted = false;
+
+      //    if (the line has a image) {
+      //    var ideArea = document.getElementById("typedtext");
+      //   var newdv = document.createElement("div");
+      //  newdv.setAttribute("class", "ide-image");
+      //  ideArea.appendChild(newdv);
+      //  }
     }
   } else {
-    setTimeout("typewriter()", iSpeed);
-    // console.log("every " + loop);
+    setTimeout("typewriter()", typingSpeed);
+    // console.log("every " + typingInProgress);
   }
   //add the number of words to the ide
   var numberOfWords = document.getElementById("number-of-words");
-  numberOfWords.innerHTML = iTextPos + "/" + iArrLength;
+  numberOfWords.innerHTML = iTextPos + "/" + textArrayLength;
 }
 
 //MARK:CHANGES THE STYLE OF THE IDE
@@ -434,15 +533,43 @@ function changeIde() {
     "topic-card-build topic-card",
   ];
 
+  var buttonArray = [
+    "topic-card-blur",
+    "topic-card-dark",
+    "topic-card-gloss",
+    "topic-card-black",
+    "ide",
+  ];
+
   var ide = document.getElementById("ide");
 
   //console.log(currentIdeStyle + "of" + ideArray.length);
   ide.setAttribute("class", ideArray[currentIdeStyle]);
 
+  var ideButton = document.getElementById("change-id");
+  ideButton.setAttribute(
+    "class",
+    buttonArray[currentIdeStyle] + " " + "ide-color"
+  );
+  var ideButton3 = document.getElementById("next-line");
+  ideButton3.setAttribute(
+    "class",
+    buttonArray[currentIdeStyle] + " " + "ide-button"
+  );
+  var ideButton2 = document.getElementById("number-of-words");
+  ideButton2.setAttribute(
+    "class",
+    buttonArray[currentIdeStyle] + " " + "ide-button"
+  );
+
+  idePrompt.setAttribute(
+    "class",
+    buttonArray[currentIdeStyle] + " " + "ide-prompt"
+  );
   //Find out how many topics we have
   var cardlength = document.getElementsByClassName("topic-card");
 
-  //loop through the cards and change the class hence background color
+  //typingInProgress through the cards and change the class hence background color
   for (let index = 0; index < cardsReturned; index++) {
     var card = document.getElementById("topic-card-" + index);
     card.setAttribute("class", cardArray[currentIdeStyle]);
@@ -451,6 +578,10 @@ function changeIde() {
   document.getElementById("console-prompt").style.color = "#fff";
 
   if (currentIdeStyle == 0 || currentIdeStyle == 2) {
+    document.getElementById("change-id").style.backgroundColor = "transparent";
+    ideButton2.style.backgroundColor = "transparent";
+    ideButton3.style.backgroundColor = "transparent";
+
     document
       .getElementById("console-prompt")
       .setAttribute("class", "ide-prompt");

@@ -21,7 +21,7 @@
 </head>
 
 <body onload="getdata()">
-    <div class="big-box">
+    <div class="big-boox">
 
         <div class="header">
             <div class="logo-container">
@@ -69,7 +69,7 @@
                     <div class="unselected-circle"></div>
                     <div class="unselected-circle"></div>
                 </div>
-                <div class="time">00/05</div>
+                <div class="time" id="side-way-time">00/05</div>
             </div>
             <div class="overview-and-cards">
 
@@ -92,12 +92,14 @@
                     <div class="ide-build ide" id="ide">
                         <!--<div class="lesson" id="typedtext"> -->
                         <div class="lesson" id="typedtext">
-
+                          <!-- <div class="typing">
+                            <div class="ide-image"></div>
+                           </div> -->
                             <div id="console-prompt">Get Started<a class="blink">?</a></div>
                             <div class="ide-color" id="change-id" onclick="changeIde()">IDE</div>
                             <div class="ide-button-container">
-                                <div class="ide-button" id="number-of-words">0/35</div>
-                                <div class="ide-button" id="next-line" onclick="handleNextLine()">Next</div>
+                                <div class="ide-button-nobg" id="number-of-words">0/00</div>
+                                <div class="ide-button" id="next-line" onclick="handleNextLine()">START</div>
 
                             </div>
                         </div>

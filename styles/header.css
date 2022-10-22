@@ -132,4 +132,12 @@ https://free4kwallpapers.com/uploads/originals/2020/07/05/chillin-fox-wallpaper.
     BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
     "Open Sans", "Helvetica Neue", sans-serif;
     overflow: hidden;
+    padding: 0px 10px;
+}
+.orange-text {
+  font-size: 1.2rem;
+  color: white;
+  background-color: orangered;
+  padding: 1px 10px;
+  border-radius: 7px;
 }
