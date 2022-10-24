@@ -21,7 +21,7 @@ var topicData = [
     num: "2",
     desc: "In this article, we will learn why every programmer should learn data structures and algorithms with the help of examples.This article is for those who have just started learning algorithms and wondered how impactful it will be to boost their career/programming skills.",
     image: "",
-    lesson: "So fucking stressed yoo",
+    lesson: "What are data structures?\n\nSimply put, data structures are ways in which we can organize information to make use of it for computation. Data structures and Algorithms are the core pillars of Computer Science. Almost all code consists of some sort of algorithms operating on one or more data structures. As a real-life example of a data structure, consider a dictionary. A dictionary is a book which associates words with definitions of those words, and is organized alphabetically. The way it is organized allows you to search for a particular word quickly, and access the definition for that word. In programming, we actually have a data structure called a dictionary, also known as an \"associative array\" or a \"hash table\", which does something similar. There are lots of other data structures such as linked lists, arrays, trees and so on which all have different strengths and weaknesses. As you learn more about programming you will become familiar with several of the most common data structures no doubt.\n\nIs it a piece of code? Is it particular to one language?\n\nA data structure is really a theoretical construct. In textbooks and computer science papers you can find lots of definitions of data structures which are completely abstracted away from any particular real-world programming language. In principle any data structure could be implemented in any programming language.\n\nHowever life is not all theory. In practical programming we need to use various data structures all the time. So every programming language include concrete implementations of different data structures, either as a built-in part of the language or with the standard libraries. All programming languages support some primitive data structures but which ones precisely and how they are implemented depends on the language.\n\nWho comes up with a better data structure?\n\nAlgorithms and data structures go hand-in-hand and both are very much still active areas of research. Computer science researchers are always trying to come up with better data structures that can solve various problems. There are many many specialized data structures that are relevant in different fields from databases to artificial intelligence to computer graphics, computational biology, etc. A lot of computer science papers are essentially like: \"We identified a problem, so we created this new algorithm based on this new data structure that is some % faster than the previous best one, here are some benchmark results.\"\n\nCan all programmers write data structures?\n\nA programmer with a formal education in computer science will certainly know how to write their own implementations of all the classic data structures. However in the industry, programmers don't often have to resort to reinventing the wheel. For most problems you will encounter as you make your iPhone app or your web service or whatever you might be working on you will be able to use the very finely-tuned, efficient, thoroughly tested and debugged data structures provided with your language or there will be some library available that gives you what you need.\n\nWhat makes one better than another?\n\nSometimes two data structures can be used to solve the same problem, but one will be faster than the other at the cost of taking up more memory. Often times it there will be tradeoffs like that which a programmer has to weigh up against one another as they choose the best approach to the task. Every data structure supports a certain set of operations that allow you to read from / write to / change the structure. Each structure can do some operations faster than others, and which structure you choose usually has to do with what exactly you intend to use it for.\n\nWay out on the cutting edge you can find some data structures that are very specialized, intended to be used on exotic hardware or for special problems such as weather simulation on a supercomputer, or machine learning on a quantum computer, or for an MRI machine scanning the brain."
   },
   {
     title: "Asymptotic Analysis: Big-O Notation and More",
@@ -29,7 +29,7 @@ var topicData = [
     desc: "The efficiency of an algorithm depends on the amount of time, storage and other resources required to execute the algorithm. The efficiency is measured with the help of asymptotic notations.",
     image:
       "https://cdn.pixabay.com/photo/2012/08/27/14/19/mountains-55067__340.png",
-    lesson: "3 3333333 So fucking stressed yoo",
+    lesson: "In this tutorial, you will learn what asymptotic notations are. Also, you will learn about Big-O notation, Theta notation and Omega notation.\n\nThe efficiency of an algorithm depends on the amount of time, storage and other resources required to execute the algorithm. The efficiency is measured with the help of asymptotic notations.\n\nAn algorithm may not have the same performance for different types of inputs. With the increase in the input size, the performance will change.\n\nThe study of change in performance of the algorithm with the change in the order of the input size is defined as asymptotic analysis.\n\nAsymptotic notations are the mathematical notations used to describe the running time of an algorithm when the input tends towards a particular value or a limiting value.\n\nFor example: In bubble sort, when the input array is already sorted, the time taken by the algorithm is linear i.e. the best case.\n\nBut, when the input array is in reverse condition, the algorithm takes the maximum time (quadratic) to sort the elements i.e. the worst case.\n\nWhen the input array is neither sorted nor in reverse order, then it takes average time. These durations are denoted using asymptotic notations.\n\nThere are mainly three asymptotic notations:\n\nBig-O notation.\nOmega notation.\nand Theta notation.\nBig-O notation represents the upper bound of the running time of an algorithm. Thus, it gives the worst-case complexity of an algorithm. This is basically the worst time our algorythm can take to complete a simple task.\nBig-O gives the upper bound of a function.\nO(g(n)) = { f(n): there exist positive constants c and n0\n            such that 0 ≤ f(n) ≤ cg(n) for all n ≥ n0 }.\n            The above expression can be described as a function f(n) belongs to the set O(g(n)) if there exists a positive constant c such that it lies between 0 and cg(n), for sufficiently large n.\n            For any value of n, the running time of an algorithm does not cross the time provided by O(g(n)).\n\nSince it gives the worst-case running time of an algorithm, it is widely used to analyze an algorithm as we are always interested in the worst-case scenario.\nOmega notation represents the lower bound of the running time of an algorithm. Thus, it provides the best case complexity of an algorithm.\nOmega gives the lower bound of a function.\nΩ(g(n)) = { f(n): there exist positive constants c and n0 \n            such that 0 ≤ cg(n) ≤ f(n) for all n ≥ n0 }.\n            The above expression can be described as a function f(n) belongs to the set Ω(g(n)) if there exists a positive constant c such that it lies above cg(n), for sufficiently large n.\n\nFor any value of n, the minimum time required by the algorithm is given by Omega Ω(g(n)).\nTheta Notation (Θ-notation).\nTheta notation encloses the function from above and below. Since it represents the upper and the lower bound of the running time of an algorithm, it is used for analyzing the average-case complexity of an algorithm.\nFor a function g(n), Θ(g(n)) is given by the relation:\n\nΘ(g(n)) = { f(n): there exist positive constants c1, c2 and n0\n            such that 0 ≤ c1g(n) ≤ f(n) ≤ c2g(n) for all n ≥ n0 }.\nThe above expression can be described as a function f(n) belongs to the set Θ(g(n)) if there exist positive constants c1 and c2 such that it can be sandwiched between c1g(n) and c2g(n), for sufficiently large n.\n\nIf a function f(n) lies anywhere in between c1g(n) and c2g(n) for all n ≥ n0, then f(n) is said to be asymptotically tight bound.",
   },
   {
     title: "Master Theorem",
@@ -215,7 +215,7 @@ var strd = withouturl;
 var str = topicData[0].lesson;
 var substrings = str.split("."); //turn subsrting to indexed text
 var eachSentence = substrings; //each sentence array
-var typingSpeed = 70; // time delay of print out
+var typingSpeed = 60; // time delay of print out
 var iIndex = 0; // start printing array at this position
 var inText = 0;
 var textArrayLength = eachSentence[0].length; // the length of the text array
@@ -264,9 +264,12 @@ function tappedGetStarted() {
   handleNextLine();
   console.log(eachSentence[5]);
   //MARK: FIRST TOPIC HAS BEEN STARTED
-  var startedChapter = document.getElementById("card-btn-0");
+  if (topicNumber == 0) {
+    var startedChapter = document.getElementById("card-btn-0");
   startedChapter.innerHTML = "CURRENT";
   startedChapter.style.backgroundColor = "#303030";
+  }
+  
 }
 
 var destination = document.getElementById("typedtext");
@@ -303,7 +306,7 @@ var changetopic = function () {
   }
 
   eachSentence = substrings; //each sentence array
-  typingSpeed = 70; // time delay of print out
+  typingSpeed = 60; // time delay of print out
   iIndex = 0; // start printing array at this position
 
   textArrayLength, (iScrollAt = eachSentence[0].length); // the length of the text array
@@ -336,7 +339,7 @@ var changetopic = function () {
   console.log(previousLesson);
   console.log(alreadyClickedCards);
 
-  if (alreadyClickedCards.length > 1) {
+  if (alreadyClickedCards.length > 0) {
     var buttonLast = document.getElementById(
       "card-btn-" + alreadyClickedCards[alreadyClickedCardsLength - 2]
     );
@@ -374,7 +377,7 @@ function init() {
   substrings = str.split("."); //turn subsrting to indexed text
 
   eachSentence = substrings; //each sentence array
-  typingSpeed = 70; // time delay of print out
+  typingSpeed = 60; // time delay of print out
   iIndex = 0; // start printing array at this position
 
   textArrayLength = eachSentence[0].length; // the length of the text array
@@ -513,7 +516,8 @@ function typewriter() {
   }
   //add the number of words to the ide
   var numberOfWords = document.getElementById("number-of-words");
-  numberOfWords.innerHTML = iTextPos + "/" + textArrayLength;
+  //numberOfWords.innerHTML = iTextPos + "/" + textArrayLength + "of" + topicData[topicNumber].lesson.length;
+  numberOfWords.innerHTML = lettersTyped + "/" + topicData[topicNumber].lesson.length;
 }
 
 //MARK:CHANGES THE STYLE OF THE IDE
