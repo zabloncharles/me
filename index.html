@@ -16,50 +16,55 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant&family=Lobster+Two&family=Playfair+Display&display=swap"
         rel="stylesheet" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-<body onload="birds()">
-
-
-    <div class="big-box">
+<body>
+    <div class="big-box" id="big-box">
         <div class="lottie-box">
 
-            <div class="header">
-                <div class="logo-container">
+         
+        <div class="header">
+            <div class="logo-container">
+                <div class="logo"></div>
+                <a href="../index.html">
+                    <div class="logo-name">Fusion</div>
+                </a>
+            </div>
+            <div class="right-header">
+                <div class="features" id="features">
+                    <div class="feature">
+                        <div class="feature-selected">
+                            <a href="../index.html">
+                                <div>HOME</div>
+                            </a>
+                        </div>
 
-                    <div class="logo"></div>
-                    <a href="index.html">
-                        <div class="logo-name">Fusion</div>
-                    </a>
+
+                    </div>
+                    <div class="feature">
+                        <a href="../pages/projects.html">
+                            <div>PROJECTS</div>
+                        </a>
+                    </div>
+                    <div class="feature-label">
+                        <div>COURSE</div>
+                    </div>
+
+
                 </div>
-                <div class="right-header">
-                    <div class="features">
-                        <div class="feature">
-                            <div class="feature-selected">HOME</div>
-                        </div>
-                        <div class="feature">
 
-                            <a href="pages/projects.html">
-                                <div>PROJECTS</div>
-                            </a>
-                        </div>
-                        <div class="feature">
-
-                            <a href="pages/subject.html">
-                                <div>COURSE</div>
-                            </a>
-                        </div>
-
-                    </div>
-
-                    <!--- <div class="button">Contact Us</div> -->
-                    <div class="hamburger">
-                        <img class="hamburger-image"
-                            src="https://icons.veryicon.com/png/o/miscellaneous/linear-icon-45/hamburger-menu-4.png"
-                            alt="" />
-                    </div>
+                <!--- <div class="button">Contact Us</div> -->
+                <div class="hamburger" id="hamburger" onclick="handleMenuClick()">
+                    <img class="hamburger-image"
+                        src="https://icons.veryicon.com/png/o/miscellaneous/linear-icon-45/hamburger-menu-4.png" alt="">
                 </div>
             </div>
+            <div class="mobile-menu">
+                <div class="menu-item">HOME</div>
+                <div class="menu-item">PROJECTS</div>
+            </div>
+        </div>
 
             <div class="welcome-container">
 
@@ -84,15 +89,28 @@
                     pathogen.
                 </div>
                 <a href="pages/subject.html">
-                    <div class="join-button">GET STARTED</div>
+                    <div class="join-button">
+                        <div class="button-icon"></div>
+                        <div class="button-text">
+                            <div class="button-item-1">GET STARTED</div>
+                            <div class="button-item-2">Learn like a pro</div>
+                        </div>
+                       
+                    </div>
                 </a>
+                <div class="after-button-text">
+                    <br />Learn the best tools and platforms.Make your code efficient and learn new methodologies in programming. 
+                </div>
             </div>
 
             <div class="welcome-footer">
-                <div class="logo-text">LEARNING GOALS</div>
-                <div class="logo-text">PREREQUISITES</div>
-                <div class="logo-text">CONCEPTS</div>
+                <div class="logo-text">SET GOALS</div>
+                <div class="logo-text">LEARN PREREQUISITES</div>
+                <div class="logo-text">UNDERSTAND CONCEPTS</div>
             </div>
+
+
+            <div class="dark-button" id="dark-button" onclick="handleDarkButton()"></div>
             <lottie-player class="rain" src="https://assets2.lottiefiles.com/packages/lf20_nqozkoiy.json" background="transparent"
                 speed="0.5" loop autoplay id="rain"></lottie-player>
             
@@ -102,7 +120,8 @@
         </div>
     </div>
 </body>
-<script type="text/javascript" src="birds.js"></script>
+<script type="text/javascript" src="../js/birds.js"></script>
+<script type="text/javascript" src="../js/menu.js"></script>
 <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
 </html>

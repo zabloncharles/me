@@ -47,6 +47,11 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+.text-gradient {
+  background: linear-gradient(#af7777, #2e3ffb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 .topic-desc {
   font-size: 20px;
   color: white;
@@ -116,7 +121,9 @@
   color: rgb(242, 242, 243);
   font-size: 0.9em;
 }
-
+.box:first-child,.box:nth-child(2) {
+  font-size: 14px;
+}
 .tech-icon-row {
   flex: 1;
   display: flex;
@@ -160,7 +167,7 @@
   flex-basis: 350px;
   border: 1px solid black;
   padding: 20px;
-  background-color: rgb(29, 29, 62);
+  background-color: rgb(12, 12, 35);
   border-radius: 15px;
   color: white;
   gap: 6px;
@@ -194,7 +201,7 @@
 
 /* section  */
 .projects-grid {
-  background-color: #1a193b;
+  backdrop-filter: blur(12px);
 
   /*grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));*/
 
@@ -207,32 +214,58 @@
 .project-row {
   display: flex;
   padding: 20px;
-  gap: 20px;
+  gap: 10px;
 }
-
+.margin-btm {
+  margin-bottom: 40px;
+}
 .project-grid-box {
-  min-width: 200px;
-  padding: 20px;
+  background-repeat: no-repeat;
+  background-color: #14181f;
+  background-position: left;
+  background-size: cover;
+  width: 140px;
+  max-width: 140px;
+  padding: 33px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  border: solid 1px #000000d4;
   cursor: pointer;
   height: 300px;
-  border-radius: 16px;
-
-  background: #0d0e0e;
-  box-shadow: 20px 20px 20px #0a101a, -20px -20px 20px #0e1623;
+  border-radius: 12px;
   position: relative;
-  border: #262729 solid 1px;
-  transition: all 1s;
+  transition: transform 0.3s, box-shadow 0.8S ;
 }
 .project-grid-box:hover {
-  min-width: 199px;
-  height: 299px;
-  border: #373c45 solid 0.4px;
-  box-shadow: 0px 351px 10px #eb191952;
+  transform: scale(1.02);
+  box-shadow: 0px 5px 10px #fc070752;
 }
+.project-title{
+color: #fff;
+font-size: 15px;
+font-weight: bold;
+}
+.project-small-title{
+color:rgb(173, 168, 168);
+font-size: 10px;
+text-align: center;
+background-color: #121216;
+padding: 10px 15px;
+border-radius: 5px;
+}
+
+
+.project-grid-box:nth-child(1) {
+  text-transform: uppercase;
+  font-size: 55%;
+}
+.project-grid-box:nth-child(2) {
+  text-transform: uppercase;
+  font-size: 0px;
+}
+
 .orange-background {
   background-color: tomato;
   border-radius: 0.2em;
@@ -250,25 +283,26 @@
   top: 0px;
   right: 0px;
   margin: 10px;
-  height: 30px;
-  width: 30px;
+  height: 20px;
+  width: 20px;
   padding: 8px;
   border-radius: 50%;
   background: #161a21;
 }
 .project-lang-icon {
-  height: 30px;
-  width: 30px;
+  height: 20px;
+  width: 20px;
   background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-
-  box-shadow: 20px 20px 60px #14181f, -20px -20px 60px #1a2029;
 }
 .project-svg {
   width: 120px;
   height: 120px;
+  backdrop-filter: blur(22px);
+  border: #2f2a2a49 solid 1px;
+  border-radius: 50%;
 }
 .project-description {
   display: flex;

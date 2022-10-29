@@ -29,7 +29,7 @@
 .logo-name {
   font-size: 29px;
   font-family: "Playfair Display", serif;
-  color: rgb(3, 3, 3);
+  color: rgb(255, 255, 255);
 }
 .right-header {
   display: flex;
@@ -106,7 +106,7 @@ body {
 }
 .big-box {
   height: 100vh;
-  background-image: url("../thumbnails/deer.jpg");
+  background-image: url("https://i.pinimg.com/originals/82/3a/15/823a15beda15bfddbec9da6f767ca04a.jpg");
   background-position: left bottom;
   background-repeat: no-repeat;
   background-size: cover;
@@ -116,8 +116,8 @@ body {
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif, -apple-system,
     BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
     "Open Sans", "Helvetica Neue", sans-serif;
-    overflow: hidden;
-    padding: 0px 10px;
+  overflow: hidden;
+  padding: 0px 10px;
 }
 .orange-text {
   font-size: 1.2rem;
@@ -182,6 +182,7 @@ body {
   gap: 30px;
   height: 100%;
   width: 100%;
+  margin-top:30px;
 }
 .topic-and-lesson {
   display: flex;
@@ -195,12 +196,12 @@ body {
   justify-content: center;
   align-items: flex-start;
   gap: 20px;
-  margin-right:20px;
+  margin-right: 20px;
 }
 
 .topic-title-desc {
   font-size: 26px;
-  color: rgb(0, 0, 0);
+  color: rgb(199, 194, 194);
 }
 .topic-title {
   font-size: 70px;
@@ -372,9 +373,9 @@ body {
   z-index: 11;
 }
 .topic-card {
-  background: #f3abab;
-  color: #000000;
-  border: 1px solid #e0dbdb8f;
+  background: #181616;
+  color: #ede5e5;
+  border: 1px solid #2f2b2b8f;
 }
 .topic-card-blur {
   backdrop-filter: blur(12px);
@@ -434,11 +435,11 @@ body {
 .topic-card-title {
   text-transform: uppercase;
   font-size: auto;
-  color: #fefdfd;
+  color: #ffffff;
   width: fit-content;
 }
 .topic-card-ln {
-  color: #ebb462;
+  color: #fd9800;
 }
 .topic-card-desc {
   font-size: small;
@@ -512,24 +513,30 @@ body {
 }
 @media (max-width: 600px) {
   .header {
-   position: fixed;
-   top: 0;
-   left: 0;
-   right: 0;
-   color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    color: #fff;
+    margin: 0px 19px;
+    border-bottom: none;
   }
-.features,.left {
-  display: none;
-}
-.topic-title,.topic-title-desc,.logo-name {
-  color: #fff;
-}
+
+  .features,
+  .left {
+    display: none;
+  }
+  .topic-title,
+  .topic-title-desc,
+  .logo-name {
+    color: #fff;
+  }
   .topic-container {
     justify-content: center;
     align-items: center;
-   color:#fff;
+    color: #fff;
     text-align: center;
-    margin-right:0px;
+    margin-right: 0px;
   }
   .ide-build {
     height: 220px;
@@ -537,33 +544,27 @@ body {
     flex-basis: auto;
   }
   .body-contain {
-    margin-top:190px;
-  
-    
+    margin-top: 190px;
   }
   .big-box {
-    height:100%;
+    height: 100%;
     background-image: none;
     background-color: #03071d;
     background-position: left bottom;
     background-repeat: no-repeat;
     background-size: cover;
+  }
+  .overview-and-cards {
+    height: 100%;
+    overflow: visible;
     
   }
-.overview-and-cards {
-height: 100%;
-overflow: visible;
-  
-}
   .bottom-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
     padding: 10px 0px;
     gap: 15px;
     border-radius: 20px;
-    
-   
-   
   }
   .topic-card-build {
     flex-direction: column;
@@ -575,19 +576,45 @@ overflow: visible;
     z-index: 11;
   }
   .topic-and-lesson {
-    
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 20px;
+   
   }
+ 
 }
 
 .blink {
   color: rgb(255, 255, 255);
   animation: 1.5s linear infinite condemned_blink_effect;
 }
-
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 70px;
+  right: 0px;
+  text-align: end;
+  background-color: rgb(14, 15, 21);
+  border-radius: 10px;
+  padding: 15px;
+  gap:5px;
+}
+.menu-item {
+  display: flex;
+  color: #fff;
+  border-radius: 10px;
+  padding: 10px;
+}
+.menu-item-selected {
+  display: flex;
+  color: #fff;
+  background-color: rgb(14, 19, 35);
+  border-radius: 10px;
+  padding: 10px;
+   
+}
 @keyframes condemned_blink_effect {
   0% {
     visibility: hidden;

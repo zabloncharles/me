@@ -21,8 +21,17 @@
   justify-content: center;
   align-items: flex-start;
   padding: 50px;
-  gap: 2px;
+  gap: 3px;
   z-index: 100;
+}
+.after-button-text{
+  color: rgba(238, 230, 230, 0.7);
+  font-style: normal;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 130%;
+    margin: 0px;
+    max-width: 380px;
 }
 .birds {
   top: 0px;
@@ -33,7 +42,6 @@
 }
 .rain {
   position: absolute;
-  
   filter: contrast(200%);
   z-index: 1;
 }
@@ -44,7 +52,7 @@
 .welcome-title {
   font-family: "Playfair Display", serif;
   font-size: 5.3rem;
-  background: -webkit-linear-gradient(rgb(255, 255, 255), rgb(125, 88, 23));
+  background: -webkit-linear-gradient(rgb(255 255 255), rgb(255 97 0));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -64,20 +72,52 @@
   width: 80%;
 }
 .join-button {
-  background-color: blue;
-  padding: 10px 40px;
+  background-color: rgb(221, 221, 239);
+  padding: 10px 60px 10px 15px;
   margin-top: 15px;
-  border-radius: 20px;
-  color: white;
+  border-radius: 12px;
+  color: rgb(8, 6, 6);
   transition: padding 0.7s, color 0.7s;
   z-index: 10;
+  gap: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.button-icon {
+  background-image: url("https://cdn-icons-png.flaticon.com/512/73/73940.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 29px;
+  width: 29px;
+
+}
+.button-item-1 {
+  font-style: normal;
+  font-size: 15px;
+  line-height: 18px;
+  margin: 0px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: black;
+}
+.button-item-2 {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 130%;
+  margin: 0px;
+  color: rgb(89, 92, 123);
+}
+.button-icon:hover {
+  transform: rotate(-0.25turn);
 }
 .join-button:hover {
   cursor: pointer;
-  border-radius: 50px;
-  background-color: rgb(59, 80, 200);
-  color: black;
-  padding: 10px 23px;
+  padding: 10px 70px 10px 15px;
+background-color: rgb(153, 169, 248);
+
+ 
 }
 .welcome-footer {
   flex: 0.1;
@@ -86,4 +126,74 @@
   justify-content: center;
   align-items: center;
   gap: 5%;
+}
+.dark-button {
+  background-image: url(../thumbnails/sun.svg);
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+filter: contrast(0);
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+
+  position: fixed;
+  bottom:30px;
+  right:20px;
+  z-index: 200;
+}
+.dark-button:hover {
+  filter: contrast(1);
+  cursor: pointer;
+
+}
+
+@media (max-width: 600px) {
+  .rain {
+    display: none;
+  }
+  .join-button {
+    background-color: blue;
+    padding: 15px 45px;
+    margin-top: 15px;
+    font-size: larger;
+    border-radius: 25px;
+    color: white;
+    transition: padding 0.7s, color 0.7s;
+    z-index: 10;
+  }
+  .welcome-title-desc {
+    font-size: 22px;
+    color: white;
+  }
+.welcome-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  gap: 2px;
+  z-index: 100;
+}
+.welcome-footer {
+  flex: 0.1;
+  color: rgb(125, 120, 120);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  text-align: center;
+}
+.logo-text {
+  flex:1;
+}
+.birds {
+  top: 0px;
+  right: 0px;
+  
+  position: absolute;
+  z-index: 1;
+}
 }
