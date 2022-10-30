@@ -1,127 +1,138 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <title>Fusion: Learn Data Structures & Algorithms</title>
-    <link rel="icon" type="image/x-icon" href="thumbnails/cloudcode.png">
+    <link rel="icon" type="image/x-icon" href="thumbnails/cloudcode.png" />
     <link rel="stylesheet" href="styles/welcome.css" />
-    <link rel="stylesheet" href="styles/header.css" />
+    <link rel="stylesheet" href="styles/layout.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two&family=Monoton&display=swap" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant&family=Lobster+Two&family=Playfair+Display&display=swap"
-        rel="stylesheet" />
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
+      href="https://fonts.googleapis.com/css2?family=Lobster+Two&family=Monoton&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant&family=Lobster+Two&family=Playfair+Display&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
 
-<body>
+  <body id="body">
     <div class="big-box" id="big-box">
-        <div class="lottie-box">
-
-         
+      <div class="lottie-box">
         <div class="header">
-            <div class="logo-container">
-                <div class="logo"></div>
-                <a href="../index.html">
-                    <div class="logo-name">Fusion</div>
+          <div class="logo-container">
+            <div class="logo"></div>
+            <a href="../index.html">
+              <div class="logo-name">Fusion</div>
+            </a>
+          </div>
+          <div class="right-header">
+            <div class="features" id="features">
+              <div class="feature">
+                <div class="feature-selected">
+                  <a href="../index.html">
+                    <div class="white">HOME</div>
+                  </a>
+                </div>
+              </div>
+              <div class="feature-label">
+                <a href="../pages/projects.html">
+                  <div>PROJECTS</div>
                 </a>
+              </div>
+              <div class="feature-label">
+                <a href="../pages/subject.html">
+                  <div>COURSE</div>
+                </a>
+              </div>
             </div>
-            <div class="right-header">
-                <div class="features" id="features">
-                    <div class="feature">
-                        <div class="feature-selected">
-                            <a href="../index.html">
-                                <div>HOME</div>
-                            </a>
-                        </div>
 
-
-                    </div>
-                    <div class="feature">
-                        <a href="../pages/projects.html">
-                            <div>PROJECTS</div>
-                        </a>
-                    </div>
-                    <div class="feature-label">
-                        <div>COURSE</div>
-                    </div>
-
-
-                </div>
-
-                <!--- <div class="button">Contact Us</div> -->
-                <div class="hamburger" id="hamburger" onclick="handleMenuClick()">
-                    <img class="hamburger-image"
-                        src="https://icons.veryicon.com/png/o/miscellaneous/linear-icon-45/hamburger-menu-4.png" alt="">
-                </div>
+            <!--- <div class="button">Contact Us</div> -->
+            <div class="hamburger" id="hamburger" onclick="handleMenuClick()">
+              <img
+                class="hamburger-image"
+                src="https://icons.veryicon.com/png/o/miscellaneous/linear-icon-45/hamburger-menu-4.png"
+                alt=""
+              />
             </div>
-            <div class="mobile-menu">
-                <div class="menu-item">HOME</div>
-                <div class="menu-item">PROJECTS</div>
-            </div>
+          </div>
+          <div class="mobile-menu">
+            <div class="menu-item">HOME</div>
+            <div class="menu-item">PROJECTS</div>
+          </div>
         </div>
 
-            <div class="welcome-container">
-
-              
-
-
-
-                <!--   <lottie-player src="https://lottie.host/78282acb-fdca-4c6b-8cbb-f1138d294040/bi56yfl8Vk.json"
+        <div class="welcome-container">
+          <!--   <lottie-player src="https://lottie.host/78282acb-fdca-4c6b-8cbb-f1138d294040/bi56yfl8Vk.json"
                 background="transparent" speed="1" loop autoplay class="me"></lottie-player>
              -->
-                <div class="welcome-title-desc">ZABLON CHARLES</div>
+          <div class="welcome-title-desc">ZABLON CHARLES</div>
 
-                <div class="welcome-title">WELCOME</div>
-                <div class="orange-text">Master Data Structers & Algorithms.</div>
+          <div class="welcome-title">WELCOME</div>
+          <div class="orange-text">Master Data Structers & Algorithms.</div>
 
-                <div class="welcome-desc">
-                    <br />Advance your Software
-                    Engineering or Data Science Career by Learning Algorithms through
-                    Programming and Puzzle Solving. Apply the
-                    newly-learned algorithmic techniques to real-life problems, such as
-                    analyzing a huge social network or sequencing a genome of a deadly
-                    pathogen.
-                </div>
-                <a href="pages/subject.html">
-                    <div class="join-button">
-                        <div class="button-icon"></div>
-                        <div class="button-text">
-                            <div class="button-item-1">GET STARTED</div>
-                            <div class="button-item-2">Learn like a pro</div>
-                        </div>
-                       
-                    </div>
-                </a>
-                <div class="after-button-text">
-                    <br />Learn the best tools and platforms.Make your code efficient and learn new methodologies in programming. 
-                </div>
+          <div class="welcome-desc">
+            <br />Advance your Software Engineering or Data Science Career by
+            Learning Algorithms through Programming and Puzzle Solving. Apply
+            the newly-learned algorithmic techniques to real-life problems, such
+            as analyzing a huge social network or sequencing a genome of a
+            deadly pathogen.
+          </div>
+          <a href="pages/subject.html">
+            <div class="join-button">
+              <div class="button-icon"></div>
+              <div class="button-text">
+                <div class="button-item-1">GET STARTED</div>
+                <div class="button-item-2">Learn like a pro</div>
+              </div>
             </div>
-
-            <div class="welcome-footer">
-                <div class="logo-text">SET GOALS</div>
-                <div class="logo-text">LEARN PREREQUISITES</div>
-                <div class="logo-text">UNDERSTAND CONCEPTS</div>
-            </div>
-
-
-            <div class="dark-button" id="dark-button" onclick="handleDarkButton()"></div>
-            <lottie-player class="rain" src="https://assets2.lottiefiles.com/packages/lf20_nqozkoiy.json" background="transparent"
-                speed="0.5" loop autoplay id="rain"></lottie-player>
-            
-            
-            <lottie-player class="birds" src="https://assets7.lottiefiles.com/packages/lf20_Kqzytj.json" background="transparent"
-                speed="0.5" loop autoplay id="birds"></lottie-player>
+          </a>
+          <div class="after-button-text">
+            <br />Learn the best tools and platforms.Make your code efficient
+            and learn new methodologies in programming.
+          </div>
         </div>
-    </div>
-</body>
-<script type="text/javascript" src="../js/birds.js"></script>
-<script type="text/javascript" src="../js/menu.js"></script>
-<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
+        <div class="welcome-footer">
+          <div class="logo-text">SET GOALS</div>
+          <div class="logo-text">LEARN PREREQUISITES</div>
+          <div class="logo-text">UNDERSTAND CONCEPTS</div>
+        </div>
+
+        <div
+          class="dark-button"
+          id="dark-button"
+          onclick="handleDarkButton()"
+        ></div>
+        <lottie-player
+          class="rain"
+          src="https://assets2.lottiefiles.com/packages/lf20_nqozkoiy.json"
+          background="transparent"
+          speed="0.5"
+          loop
+          autoplay
+          id="rain"
+        ></lottie-player>
+
+        <lottie-player
+          class="birds"
+          src="https://assets7.lottiefiles.com/packages/lf20_Kqzytj.json"
+          background="transparent"
+          speed="0.5"
+          loop
+          autoplay
+          id="birds"
+        ></lottie-player>
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript" src="../js/birds.js"></script>
+  <script type="text/javascript" src="../js/menu.js"></script>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </html>

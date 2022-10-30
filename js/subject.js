@@ -1,7 +1,7 @@
 var numberofdata = topicData.length;
 var noimage = [];
 var haveimages = [];
-var cardsReturned = 8;
+var cardsReturned = 12;
 
 function getdata() {
   for (var i = 0; i < cardsReturned; i++) {

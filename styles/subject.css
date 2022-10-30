@@ -1,192 +1,18 @@
-.header {
-  display: flex;
-  height: 80px;
-  min-height: 80px;
-  justify-content: space-between;
-  align-items: center;
-  margin: 10px 40px;
-  border-bottom: #c2bfbf 1px solid;
-  z-index: 100;
-}
-.logo-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
-  gap: 5px;
-}
-.logo {
-  background-image: url(../thumbnails/cloudcode.png);
-  height: 40px;
-  width: 40px;
-  background-repeat: no-repeat;
-  background-position: bottom;
-  background-size: contain;
-  align-items: bottom;
-  padding-top: 10px;
-  justify-content: center;
-}
-.logo-name {
-  font-size: 29px;
-  font-family: "Playfair Display", serif;
-  color: rgb(255, 255, 255);
-}
-.right-header {
-  display: flex;
-  gap: 15px;
-  justify-content: center;
-  align-items: center;
-}
-.features {
-  display: flex;
-  gap: 15px;
-  align-items: center;
-  justify-content: center;
-}
 
-.feature-container {
-  display: flex;
-  flex-direction: column;
-}
-.feature {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.feature-selected {
-  color: white;
-  background-color: chocolate;
-  padding: 2px 8px;
-  border-radius: 4px;
-}
-.feature-label {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0px;
-  font-size: 16px;
-}
-
-.tab-selected {
-  color: #ebb462;
-}
-.tab-unselected {
-  color: #bebebe;
-  display: none;
-}
-.hamburger,
-.hamburger-image {
-  width: 40px;
-  height: 40px;
-  transition: all 0.7s;
-}
-.hamburger-image,
-.feature-label:hover {
-  cursor: pointer;
-  color: #fffffe;
-}
-.hamburger-image:hover {
-  width: 42px;
-  height: 42px;
-  cursor: pointer;
-  background-blend-mode: color-dodge;
-  background-color: #f7f6f682;
-  border-radius: 10px;
-}
-a {
-  text-decoration: none;
-  color: #000;
-}
-a:hover {
-  color: #ffffff;
-}
-body {
-  margin: 0;
-}
-.big-box {
-  height: 100vh;
-  background-image: url("https://i.pinimg.com/originals/82/3a/15/823a15beda15bfddbec9da6f767ca04a.jpg");
-  background-position: left bottom;
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif, -apple-system,
-    BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
-    "Open Sans", "Helvetica Neue", sans-serif;
-  overflow: hidden;
-  padding: 0px 10px;
-}
-.orange-text {
-  font-size: 1.2rem;
-  color: white;
-  background-color: orangered;
-  padding: 1px 10px;
-  border-radius: 7px;
-}
-.body-contain {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 10px 40px;
-}
-.left {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 80vh;
-  color: white;
-  gap: 5px;
-  position: fixed;
-  left: 15px;
-  top: 15%;
-  bottom: 50%;
-}
-
-.time {
-  writing-mode: vertical-lr;
-  text-orientation: sideways-left;
-  margin-right: 18px;
-}
-.left-header {
-  flex: 1;
-  background-color: #cdcacab5;
-  width: 3px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  border: #000000 1px solid;
-  margin-right: 20px;
-}
-.circle {
-  width: 15px;
-  height: 30px;
-  background-color: inherit;
-  border-radius: 30px;
-}
-.unselected-circle {
-  width: 10px;
-  height: 10px;
-  background-color: inherit;
-  border-radius: 30px;
-}
 .overview-and-cards {
+  flex:1;
   display: flex;
   justify-content: center;
   flex-direction: column;
   overflow: scroll;
   gap: 30px;
-  height: 100%;
-  width: 100%;
-  margin-top:30px;
+  margin: 0px 40px;
 }
 .topic-and-lesson {
   display: flex;
   justify-content: space-between;
+  gap: 7rem;
 }
 .topic-container {
   flex: 1;
@@ -360,13 +186,13 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
   padding: 10px 0px;
-  gap: 15px;
+  gap: 10px;
   border-radius: 20px;
 }
 .topic-card-build {
   flex-direction: column;
   height: 260px;
-  min-width: 190px;
+  
   padding: 10px;
   gap: 1%;
   border-radius: 13px;
@@ -511,26 +337,48 @@ body {
   padding: 10px 20px;
   border-radius: 19px;
 }
-@media (max-width: 600px) {
+@media (max-width: 1400px) {
+  body {
+      height:max-content !important;
+    }
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      color: #fff;
+      margin: 0px 19px;
+    }
+    .overview-and-cards {
+      margin-top:140px;
+      margin-bottom:40px;
+    }
+    .topic-container {
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      
+    }
+    .topic-and-lesson {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+    }
+    .ide-build {
+      height: 320px;
+      width: 90%;
+      flex-basis: auto;
+    }
+}
+@media (max-width: 700px) {
+  body {
+    height:max-content !important;
+  }
   .header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    color: #fff;
-    margin: 0px 19px;
-    border-bottom: none;
+    background-color: #03071d;
   }
-
-  .features,
-  .left {
-    display: none;
-  }
-  .topic-title,
-  .topic-title-desc,
-  .logo-name {
-    color: #fff;
-  }
+ 
   .topic-container {
     justify-content: center;
     align-items: center;
@@ -543,9 +391,6 @@ body {
     width: 90%;
     flex-basis: auto;
   }
-  .body-contain {
-    margin-top: 190px;
-  }
   .big-box {
     height: 100%;
     background-image: none;
@@ -555,15 +400,15 @@ body {
     background-size: cover;
   }
   .overview-and-cards {
-    height: 100%;
-    overflow: visible;
+    padding-top: 150px;
+    
     
   }
   .bottom-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
     padding: 10px 0px;
-    gap: 15px;
+    gap: 10px;
     border-radius: 20px;
   }
   .topic-card-build {

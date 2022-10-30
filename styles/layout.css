@@ -1,3 +1,7 @@
+:root {
+--my-background-color: #03071d;
+}
+
 .header {
   display: flex;
   height: 80px;
@@ -27,7 +31,7 @@
   justify-content: center;
 }
 .logo-name {
-  font-size: 29px;
+  font-size: 1.8rem;
   font-family: "Playfair Display", serif;
   color: rgb(255, 255, 255);
 }
@@ -36,6 +40,7 @@
   gap: 15px;
   justify-content: center;
   align-items: center;
+  
 }
 .features {
   display: flex;
@@ -55,7 +60,7 @@
   justify-content: center;
 }
 .feature-selected {
-  color: white;
+  color: #fff;
   background-color: chocolate;
   padding: 2px 8px;
   border-radius: 4px;
@@ -75,10 +80,12 @@
   color: #bebebe;
   display: none;
 }
-.hamburger,
-.hamburger-image {
+.hamburger{
+    background-image: url("https://cdn4.iconfinder.com/data/icons/two-colour-thin-minimalist-design-volume-1-32-elem/110/01-02-menu-512.png");
+    background-size: cover;
   width: 40px;
   height: 40px;
+  filter: invert();
   transition: all 0.7s;
 }
 .hamburger-image,
@@ -96,36 +103,35 @@
 }
 a {
   text-decoration: none;
-  color: #000;
+  color: inherit;
 }
-a:hover {
-  color: #ffffff;
-}
+
 body {
   margin: 0;
-}
-.big-box {
-  height: 100vh;
-  /*background-color: rgb(214, 215, 215);
-  https://images.hdqwalls.com/wallpapers/fox-minimal-qw.jpg
-  https://images.hdqwalls.com/wallpapers/one-moment-4j.jpg
-  https://images.hdqwalls.com/wallpapers/boy-with-dog-o0.jpg
-  https://images.hdqwalls.com/download/valley-river-minimal-8k-xo-1366x768.jpg
-  https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/4bb75b1d-3cb5-445c-bd55-682084d96bbf/dbbacbz-4f11d070-c282-4ff3-906d-5e13eb2e578d.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzRiYjc1YjFkLTNjYjUtNDQ1Yy1iZDU1LTY4MjA4NGQ5NmJiZlwvZGJiYWNiei00ZjExZDA3MC1jMjgyLTRmZjMtOTA2ZC01ZTEzZWIyZTU3OGQucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.ZaOae4jaIfctIOYB3HC9EkaAiAoi0endJC1AQKXeEac
-  
-  thumbnails/deer.jpg
-  https://www.99images.com/download-image/1027578/1920x995
-https://free4kwallpapers.com/uploads/originals/2020/07/05/chillin-fox-wallpaper.jpg
-
-
-
-  */
-
   background-image: url("https://i.pinimg.com/originals/82/3a/15/823a15beda15bfddbec9da6f767ca04a.jpg");
   background-position: left;
   background-repeat: no-repeat;
   background-size: cover;
+  height: 100vh;
   display: flex;
+  justify-content: center;
+}
+.big-box {
+  height: 100%;
+  max-width: 1402px;
+  
+  /*background-color: rgb(214, 215, 215);
+    https://images.hdqwalls.com/wallpapers/fox-minimal-qw.jpg
+    https://images.hdqwalls.com/wallpapers/one-moment-4j.jpg
+    https://images.hdqwalls.com/wallpapers/boy-with-dog-o0.jpg
+    https://images.hdqwalls.com/download/valley-river-minimal-8k-xo-1366x768.jpg
+    https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/4bb75b1d-3cb5-445c-bd55-682084d96bbf/dbbacbz-4f11d070-c282-4ff3-906d-5e13eb2e578d.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzRiYjc1YjFkLTNjYjUtNDQ1Yy1iZDU1LTY4MjA4NGQ5NmJiZlwvZGJiYWNiei00ZjExZDA3MC1jMjgyLTRmZjMtOTA2ZC01ZTEzZWIyZTU3OGQucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.ZaOae4jaIfctIOYB3HC9EkaAiAoi0endJC1AQKXeEac
+    thumbnails/deer.jpg
+    https://www.99images.com/download-image/1027578/1920x995
+  https://free4kwallpapers.com/uploads/originals/2020/07/05/chillin-fox-wallpaper.jpg
+    */
+  display: flex;
+  justify-content: center;
   flex-direction: column;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif, -apple-system,
@@ -135,7 +141,6 @@ https://free4kwallpapers.com/uploads/originals/2020/07/05/chillin-fox-wallpaper.
   padding: 0px 10px;
 }
 .orange-text {
-
   color: white;
   background-color: orangered;
   padding: 5px 10px;
@@ -144,6 +149,10 @@ https://free4kwallpapers.com/uploads/originals/2020/07/05/chillin-fox-wallpaper.
 .white {
   color: white;
 }
+.grayed {
+  color: rgb(102, 99, 99);
+}
+
 .mobile-menu {
   display: none;
   flex-direction: column;
@@ -154,7 +163,7 @@ https://free4kwallpapers.com/uploads/originals/2020/07/05/chillin-fox-wallpaper.
   background-color: rgb(14, 15, 21);
   border-radius: 10px;
   padding: 15px;
-  gap:5px;
+  gap: 5px;
 }
 .menu-item {
   display: flex;
@@ -168,9 +177,20 @@ https://free4kwallpapers.com/uploads/originals/2020/07/05/chillin-fox-wallpaper.
   background-color: rgb(14, 19, 35);
   border-radius: 10px;
   padding: 10px;
-   
 }
-@media (max-width: 600px) {
+
+.orange-text-with-size {
+  font-size: 1.2rem;
+  color: white;
+  background-color: orangered;
+  padding: 1px 10px;
+  border-radius: 7px;
+}
+
+@media (max-width: 700px) {
+    body {
+      height:max-content !important;
+    }
   .header {
     position: fixed;
     top: 0;
@@ -178,18 +198,61 @@ https://free4kwallpapers.com/uploads/originals/2020/07/05/chillin-fox-wallpaper.
     right: 0;
     color: #fff;
     margin: 0px 19px;
+    background-color: var(--my-background-color);
   }
 
   .features,
   .left {
-    display: none;
+    display: none !important;
+    
   }
 }
 
-
 /* generic styling */
-
-.flex-columnq {
+.flex-column {
   display: flex;
   flex-direction: column;
 }
+
+.left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    color: white;
+    gap: 5px;
+    position: fixed;
+    left: 15px;
+    top: 15%;
+    bottom: 50%;
+  }
+  
+  .time {
+    writing-mode: vertical-lr;
+    text-orientation: sideways-left;
+    margin-right: 18px;
+  }
+  .left-header {
+    flex: 1;
+    background-color: #cdcacab5;
+    width: 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border: #000000 1px solid;
+    margin-right: 20px;
+  }
+  .circle {
+    width: 15px;
+    height: 30px;
+    background-color: inherit;
+    border-radius: 30px;
+  }
+  .unselected-circle {
+    width: 10px;
+    height: 10px;
+    background-color: inherit;
+    border-radius: 30px;
+  }

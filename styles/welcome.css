@@ -72,17 +72,23 @@
   width: 80%;
 }
 .join-button {
-  background-color: rgb(221, 221, 239);
-  padding: 10px 60px 10px 15px;
+  backdrop-filter: blur(30px);
+  padding: 10px 40px 10px 15px;
   margin-top: 15px;
-  border-radius: 12px;
-  color: rgb(8, 6, 6);
+  border-radius: 13px;
+  color: rgb(255, 254, 254);
+  border: #f7f6f64d 1px solid;
   transition: padding 0.7s, color 0.7s;
   z-index: 10;
-  gap: 10px;
+  gap: 15px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
+}
+.join-button:hover {
+  cursor: pointer;
+  transform: scale(1.02);
+  background-color: rgb(27, 58, 60);
 }
 .button-icon {
   background-image: url("https://cdn-icons-png.flaticon.com/512/73/73940.png");
@@ -90,7 +96,7 @@
   background-size: cover;
   height: 29px;
   width: 29px;
-
+  filter: invert(3);
 }
 .button-item-1 {
   font-style: normal;
@@ -99,7 +105,7 @@
   margin: 0px;
   font-weight: 600;
   text-transform: uppercase;
-  color: black;
+  color: rgb(255, 254, 254);
 }
 .button-item-2 {
   font-style: normal;
@@ -112,13 +118,7 @@
 .button-icon:hover {
   transform: rotate(-0.25turn);
 }
-.join-button:hover {
-  cursor: pointer;
-  padding: 10px 70px 10px 15px;
-background-color: rgb(153, 169, 248);
 
- 
-}
 .welcome-footer {
   flex: 0.1;
   color: rgb(125, 120, 120);
