@@ -13,11 +13,13 @@
 
 .welcome-container {
   flex: 1;
+
   width: 60%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  padding: 50px;
   gap: 3px;
   z-index: 100;
 }
@@ -142,4 +144,52 @@
   cursor: pointer;
 }
 
+@media (max-width: 700px) {
+  .rain {
+    display: none;
+  }
+  .join-button {
+    background-color: blue;
+    padding: 15px 45px;
+    margin-top: 15px;
+    font-size: larger;
+    border-radius: 25px;
+    color: white;
+    transition: padding 0.7s, color 0.7s;
+    z-index: 10;
+  }
+  .welcome-title-desc {
+    font-size: 22px;
+    color: white;
+  }
+  .welcome-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    gap: 2px;
+    z-index: 100;
+  }
+  .welcome-footer {
+    flex: 0.1;
+    color: rgb(125, 120, 120);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    text-align: center;
+  }
+  .logo-text {
+    flex: 1;
+  }
+  .birds {
+    top: 0px;
+    right: 0px;
 
+    position: absolute;
+    z-index: 1;
+  }
+}
