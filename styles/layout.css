@@ -35,6 +35,8 @@ body {
 }
 
 .content {
+  height: 100%;
+  padding:0px 10px;
   padding-top: 160px;
   z-index: 100;
   overflow: scroll;
@@ -428,6 +430,11 @@ display: flex;
   .d-row-to-column {
     flex-direction: column;
     align-items: center;
+  }
+  .header-and-content {
+  margin:0;
+  
+
   }
 
 }
