@@ -11,32 +11,29 @@
   height: 100%;
 }
 
-
 .welcome-container {
   flex: 1;
-
   width: 60%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding: 50px;
   gap: 3px;
   z-index: 100;
 }
-.after-button-text{
+.after-button-text {
   color: rgba(238, 230, 230, 0.7);
   font-style: normal;
-    font-weight: normal;
-    font-size: 17px;
-    line-height: 130%;
-    margin: 0px;
-    max-width: 380px;
+  font-weight: normal;
+  font-size: 17px;
+  line-height: 130%;
+  margin: 0px;
+  max-width: 380px;
 }
 .birds {
   top: 0px;
   right: 0px;
-  
+
   position: absolute;
   z-index: 1;
 }
@@ -57,7 +54,6 @@
   -webkit-text-fill-color: transparent;
 }
 .orange-text {
- 
   font-size: 1.2rem;
   color: white;
   background-color: orangered;
@@ -66,7 +62,6 @@
   margin-bottom: -12px;
 }
 .welcome-desc {
-  
   font-size: 1.2rem;
   color: white;
   width: 80%;
@@ -129,71 +124,22 @@
 }
 .dark-button {
   background-image: url(../thumbnails/sun.svg);
-background-position: center;
-background-repeat: no-repeat;
-background-size: cover;
-filter: contrast(0);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: contrast(0);
   height: 30px;
   width: 30px;
   border-radius: 50%;
 
   position: fixed;
-  bottom:30px;
-  right:20px;
+  bottom: 30px;
+  right: 20px;
   z-index: 200;
 }
 .dark-button:hover {
   filter: contrast(1);
   cursor: pointer;
-
 }
 
-@media (max-width: 600px) {
-  .rain {
-    display: none;
-  }
-  .join-button {
-    background-color: blue;
-    padding: 15px 45px;
-    margin-top: 15px;
-    font-size: larger;
-    border-radius: 25px;
-    color: white;
-    transition: padding 0.7s, color 0.7s;
-    z-index: 10;
-  }
-  .welcome-title-desc {
-    font-size: 22px;
-    color: white;
-  }
-.welcome-container {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 10px;
-  gap: 2px;
-  z-index: 100;
-}
-.welcome-footer {
-  flex: 0.1;
-  color: rgb(125, 120, 120);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
-  text-align: center;
-}
-.logo-text {
-  flex:1;
-}
-.birds {
-  top: 0px;
-  right: 0px;
-  
-  position: absolute;
-  z-index: 1;
-}
-}
+

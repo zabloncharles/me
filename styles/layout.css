@@ -1,16 +1,163 @@
+/* Colors */
 :root {
---my-background-color: #03071d;
+  --my-background-color: #03071d;
+  --my-title-color: #03071d;
+  --my-desc-color: #03071d;
+  --my-uns-btn-color: #03071d;
+  --my-sel-btn-color: #03071d;
+  --my-logo-color: #ffffff;
+  --my-brand-color: rgb(255, 99, 71);
+
+  --marginbetween: 20px;
+  --bodymargin: 0px 70px;
+  }
+.white {
+  color: aliceblue;
+}
+.black {
+  color: black;
+}
+
+/* Gradients */
+.text-gradient {
+  background: linear-gradient(#af7777, #2e3ffb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Body Element */
+body {
+  background-image: url("../thumbnails/digideer.jpeg");
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height:100vh;
+}
+
+.content {
+  padding-top: 160px;
+  z-index: 100;
+  overflow: scroll;
+  scroll-behavior: smooth;
+}
+
+/* layout */
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+.flex-row {
+  display: flex;
+}
+.d-flex-row {
+  display: flex;
+}
+.d-center-text {
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.d-left-to-center {
+  flex: 0.8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+}
+.d-row-to-column {
+  flex-direction: row;
+}
+.center-row {
+  justify-content: center;
+}
+.center-column {
+  align-items: center;
+}
+.center-div {
+  justify-content: center;
+  align-items: center;
+}
+.asc {
+  align-self: center;
+}
+.jsc {
+  justify-self: center;
+}
+.jcsb {
+  justify-content: space-between;
+}
+.jcc {
+  justify-content: space-between;
+}
+.gap-10 {
+  gap: 10px;
+}
+.gap-15 {
+  gap: 15px;
+}
+.gap-20 {
+  gap: 20px;
+}
+
+/* Padding and Space */
+.default-padding {
+  padding: 10px 20px;
+}
+
+/* Buttons */
+
+.get-started-btn {
+  background-color: blue;
+  font-size: 20px;
+  padding: 14px 35px;
+  width: 130px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 20px;
+  border-radius: 10px;
+  color: white;
+  transition: transform 0.7s, color 0.7s;
+  cursor: pointer;
+}
+.get-started-btn:hover {
+  transform: scale(1.05);
+  background-color: rgb(31, 31, 132);
 }
 
 .header {
+  position: fixed;
+  left:0;
+  right:0;
   display: flex;
   height: 80px;
   min-height: 80px;
   justify-content: space-between;
   align-items: center;
   margin: 10px 40px;
-  border-bottom: #c2bfbf 1px solid;
-  z-index: 100;
+  border-bottom: #bbb3b3 1px solid;
+  z-index: 200;
+
+}
+.header-and-content {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+  Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif, -apple-system,
+  BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+  "Open Sans", "Helvetica Neue", sans-serif;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  max-width: 1402px;
+  margin: 10px 40px;
+  height: 100%;
+  
 }
 .logo-container {
   display: flex;
@@ -71,6 +218,7 @@
   align-items: center;
   gap: 0px;
   font-size: 16px;
+  color:rgb(192, 182, 182);
 }
 
 .tab-selected {
@@ -108,18 +256,20 @@ a {
 
 body {
   margin: 0;
-  background-image: url("https://i.pinimg.com/originals/82/3a/15/823a15beda15bfddbec9da6f767ca04a.jpg");
-  background-position: left;
+  padding: 0;
+  text-decoration: none;
+}
+
+.myvh {
+  background-image: url("../thumbnails/digideer.jpeg");
+  background-position: top left;
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
-  display: flex;
-  justify-content: center;
 }
 .big-box {
   height: 100%;
   max-width: 1402px;
-  
   /*background-color: rgb(214, 215, 215);
     https://images.hdqwalls.com/wallpapers/fox-minimal-qw.jpg
     https://images.hdqwalls.com/wallpapers/one-moment-4j.jpg
@@ -151,6 +301,13 @@ body {
 }
 .grayed {
   color: rgb(102, 99, 99);
+}
+.fr {
+display: flex;
+}
+.fc {
+  display: flex;
+  flex-direction: column;
 }
 
 .mobile-menu {
@@ -187,26 +344,7 @@ body {
   border-radius: 7px;
 }
 
-@media (max-width: 700px) {
-    body {
-      height:max-content !important;
-    }
-  .header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    color: #fff;
-    margin: 0px 19px;
-    background-color: var(--my-background-color);
-  }
 
-  .features,
-  .left {
-    display: none !important;
-    
-  }
-}
 
 /* generic styling */
 .flex-column {
@@ -256,3 +394,49 @@ body {
     background-color: inherit;
     border-radius: 30px;
   }
+
+  @media (max-width: 700px) {
+  .d-flex-row {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .d-center-text {
+   
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .d-left-to-center {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .d-center-div {
+    justify-content: center;
+    align-items: center;
+    
+  }
+  .d-off {
+    display: none;
+  }
+  .d-row-to-column {
+    flex-direction: column;
+    align-items: center;
+  }
+
+}
+
+
+/* animations */
+.birds {
+  top: 0px;
+  right: 0px;
+  position: absolute;
+  z-index: 1;
+}

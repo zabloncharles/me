@@ -1,11 +1,18 @@
 
+.big-boxx {
+  overflow: scroll;
+  padding: 0px 10px;
+  height: 100%;
+  scroll-behavior: smooth;
+}
 
 .overview-and-cards {
-  flex:1;
+  padding: 20px 0px;
+  flex: 1;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  overflow: scroll;
+
   gap: 30px;
   margin: 0px 40px;
 }
@@ -192,7 +199,7 @@
 .topic-card-build {
   flex-direction: column;
   height: 260px;
-  
+
   padding: 10px;
   gap: 1%;
   border-radius: 13px;
@@ -337,97 +344,38 @@
   padding: 10px 20px;
   border-radius: 19px;
 }
-@media (max-width: 1400px) {
-  body {
-      height:max-content !important;
-    }
-    .header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      color: #fff;
-      margin: 0px 19px;
-    }
-    .overview-and-cards {
-      margin-top:140px;
-      margin-bottom:40px;
-    }
-    .topic-container {
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      
-    }
-    .topic-and-lesson {
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 20px;
-    }
-    .ide-build {
-      height: 320px;
-      width: 90%;
-      flex-basis: auto;
-    }
-}
 @media (max-width: 700px) {
   body {
-    height:max-content !important;
+    height: max-content !important;
   }
   .header {
-    background-color: #03071d;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    color: #fff;
+    margin: 0px 19px;
   }
- 
+  .overview-and-cards {
+    margin-top: 140px;
+    margin-bottom: 40px;
+  }
   .topic-container {
     justify-content: center;
     align-items: center;
-    color: #fff;
     text-align: center;
-    margin-right: 0px;
-  }
-  .ide-build {
-    height: 220px;
-    width: 90%;
-    flex-basis: auto;
-  }
-  .big-box {
-    height: 100%;
-    background-image: none;
-    background-color: #03071d;
-    background-position: left bottom;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-  .overview-and-cards {
-    padding-top: 150px;
-    
-    
-  }
-  .bottom-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-    padding: 10px 0px;
-    gap: 10px;
-    border-radius: 20px;
-  }
-  .topic-card-build {
-    flex-direction: column;
-    flex-basis: 290px;
-    padding: 10px;
-    gap: 1%;
-    font-size: 1rem;
-    border-radius: 13px;
-    z-index: 11;
   }
   .topic-and-lesson {
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 20px;
-   
   }
- 
+  .ide-build {
+    height: 320px;
+    width: 90%;
+    flex-basis: auto;
+  }
 }
 
 .blink {
@@ -444,7 +392,7 @@
   background-color: rgb(14, 15, 21);
   border-radius: 10px;
   padding: 15px;
-  gap:5px;
+  gap: 5px;
 }
 .menu-item {
   display: flex;
@@ -458,7 +406,6 @@
   background-color: rgb(14, 19, 35);
   border-radius: 10px;
   padding: 10px;
-   
 }
 @keyframes condemned_blink_effect {
   0% {

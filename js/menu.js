@@ -14,7 +14,7 @@ function handleMenuClick() {
 }
 let changedPic = false;
 function handleDarkButton() {
-    
+    return;
     if (!changedPic) {
         document.getElementById("body").style.backgroundImage = "url(https://images.hdqwalls.com/download/night-mountains-minimalist-8k-wo-1920x1080.jpg)";
         changedPic = true;

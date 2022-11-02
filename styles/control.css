@@ -1,0 +1,395 @@
+
+.title {
+  font-size: large;
+  color: rgb(118, 115, 115);
+}
+.user-info {
+  background-color: antiquewhite;
+  border-radius: 10px;
+  transition: transform 0.2s;
+}
+
+.grid-content {
+  display: flex;
+  border-radius: 12px;
+  backdrop-filter: blur(30px);
+  overflow: scroll;
+  padding: 0px 10px;
+  height: 100%;
+  scroll-behavior: smooth;
+}
+.left-section {
+  flex: 0.3;
+  border-right: 1px solid rgb(170, 169, 169);
+}
+.middle-section {
+  overflow: scroll;
+  flex: 2.5;
+  border-right: 1px solid rgb(170, 169, 169);
+}
+.right-section {
+  flex: 1;
+}
+
+.user-picture {
+  background-image: url("https://i.pinimg.com/originals/82/3a/15/823a15beda15bfddbec9da6f767ca04a.jpg");
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 39px;
+  width: 39px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.menu-section {
+  flex: 1;
+  gap: 15px;
+}
+
+.teams-section {
+  flex: 1;
+}
+.general-section {
+  flex: 1;
+}
+.light-or-dark-section {
+  flex: 0.6;
+}
+.icon-and-label {
+  gap: 7px;
+  display: flex;
+  transition: border 0.2s, padding 0.2s;
+}
+.ial {
+  gap: 7px;
+  display: flex;
+  transition: border 0.2s, padding 0.2s;
+}
+.task-label-and-date {
+  color: white;
+  background-color: rgb(40, 40, 37);
+  padding: 10px 10px;
+  border-radius: 9px;
+}
+.title-label {
+  font-size: large;
+}
+.title-desc {
+  font-size: medium;
+}
+.icon-and-label-selected {
+  display: flex;
+  gap: 7px;
+  border: 1px solid #fff;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.ial:hover {
+  border: 1px solid #fff;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.settings-icon {
+  height: 20px;
+  width: 20px;
+  filter: invert();
+}
+.settings-label {
+  color: aliceblue;
+}
+.light-or-dark-section {
+  color: white;
+}
+.rounded {
+  border: 1px solid rgba(48, 47, 47, 0.649);
+  padding: 5px 7px;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+.message-icon,
+.alert-icon {
+  background-color: rgb(245, 150, 9);
+  padding: 10px;
+  border-radius: 20%;
+  cursor: pointer;
+}
+.bgs {
+  background-color: tomato;
+  padding: 5px 10px;
+  border-radius: 18px;
+}
+.search-bar-section {
+  flex: 0.1;
+  display: flex;
+  padding: 5px 15px;
+}
+.search-bar {
+  flex: 1;
+  padding: 5px 16px;
+  height: 20px;
+
+  border: rgba(226, 222, 222, 0.006) 1px solid;
+  border-radius: 20px;
+  font-size: 15px;
+}
+
+.project-section {
+  flex: 0.4;
+  /* the project second section */
+}
+.project-cards-section {
+  padding: 0px 20px 10px 30px;
+  overflow: scroll;
+}
+.project-title-and-button {
+  justify-content: space-between;
+}
+.project-button {
+  justify-self: center;
+  align-self: center;
+  background-color: rgba(255, 99, 71, 0.858);
+  padding: 1px 15px;
+  height: 30px;
+  border-radius: 8px;
+  gap: 5px;
+}
+.project-card {
+  background-color: rgb(255, 180, 7);
+  border-radius: 10px;
+  height: 180px;
+  min-width: 240px;
+  justify-content: space-between;
+}
+
+.calendar-teams-fav-section {
+  flex: 1;
+  gap: 10px;
+}
+.label-section {
+  padding: 20px 0px 0px 20px;
+}
+.label-title {
+  color: white;
+  padding: 20px 0px;
+}
+.label-title:hover,
+.label-title-selected:hover {
+  color: rgb(235, 77, 3);
+  cursor: pointer;
+  border-bottom: 2px solid rgb(234, 228, 228);
+}
+.label-title-selected {
+  color: white;
+  padding: 20px 0px;
+  border-bottom: 2px solid rgb(234, 228, 228);
+}
+.date-and-alerts-section {
+  flex: 0.1;
+}
+.add-button {
+  background-color: rgb(16, 255, 255);
+  padding: 10px 15px;
+  border-radius: 5px;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  text-align: center;
+  font-size: small;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+}
+/* Todays task info */
+.todays-task-section {
+  flex: 0.1;
+  color: white;
+}
+.task-option {
+  flex: 0.04;
+  color: white;
+}
+/* Card section starts here */
+.task-cards-section {
+  flex: 1;
+  padding: 0px 0px;
+  padding-bottom: 70px;
+  overflow: scroll;
+}
+.task-card {
+  background-image: url("https://wallpaperaccess.com/full/1261770.jpg");
+  background-size: cover;
+  background-color: antiquewhite;
+  padding: 10px 15px;
+  margin: 3px 20px;
+  border-radius: 9px;
+  height: 70px;
+  width: 260px;
+  justify-content: center;
+  position: relative;
+  transition: transform 0.2s;
+}
+.task-card:hover,
+.add-button:hover,
+.project-button:hover,
+.message-icon:hover,
+.alert-icon:hover,
+.label-and-amount:hover,
+.user-info:hover {
+  transform: scale(1.04);
+  cursor: pointer;
+}
+.task-card-title {
+  font-size: large;
+  color: aliceblue;
+}
+.task-card-desc {
+  font-size: small;
+  color: rgb(18, 18, 17);
+  width: 80%;
+}
+.task-status {
+  background-color: rgba(198, 202, 198, 0.211);
+  color: rgba(26, 25, 23, 0.209);
+  border-radius: 50%;
+  padding: 3px 7px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.project-grid-box {
+  background-repeat: no-repeat;
+  background-color: #14181f;
+  background-position: left;
+  background-size: cover;
+  width: 150px;
+  max-width: 150px;
+  min-width: 150px;
+  padding: 33px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  border: solid 1px #000000d4;
+  cursor: pointer;
+  height: 300px;
+  border-radius: 12px;
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.8s;
+}
+
+.project-svg {
+  width: 120px;
+  height: 120px;
+  backdrop-filter: blur(22px);
+  border: #2f2a2a49 solid 1px;
+  border-radius: 50%;
+}
+.project-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.project-title {
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+}
+.project-small-title {
+  color: rgb(173, 168, 168);
+  font-size: 10px;
+  text-align: center;
+  background-color: #121216;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+.topic-card-build {
+  flex-direction: column;
+  height: 280px;
+  padding: 15px 15px;
+  margin: 3px 20px;
+
+  gap: 5px;
+  border-radius: 13px;
+  z-index: 11;
+}
+.topic-card {
+  background: #000000;
+  color: #ede5e5;
+  border: 1px solid #0e0e0e8f;
+}
+.topic-picture {
+  background-color: rgb(107, 68, 68);
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  background-image: url("https://images.hdqwalls.com/wallpapers/one-moment-4j.jpg");
+  background-size: cover;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.topic-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
+  gap: 9px;
+}
+.topic-card-title-desc {
+  font-size: medium;
+  color: #f8f4f4;
+}
+.card-button {
+  background-color: rgb(138, 35, 16);
+  width: 80px;
+  height: 30px;
+  display: flex;
+  align-self: center;
+  align-items: center;
+  border-radius: 5px;
+  justify-content: center;
+}
+.topic-card-title {
+  text-transform: uppercase;
+  font-size: auto;
+  color: #ffffff;
+  width: fit-content;
+}
+.topic-card-ln {
+  color: #fd9800;
+}
+.topic-card-desc {
+  font-size: small;
+
+  padding-left: 3px;
+  width: 100%;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.topic-card-button {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 10px;
+  color: #000;
+  transition: color 0.7s;
+  cursor: pointer;
+}
