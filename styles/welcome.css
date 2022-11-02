@@ -44,17 +44,8 @@
   filter: contrast(200%);
   z-index: 1;
 }
-.welcome-title-desc {
-  font-size: large;
-  color: white;
-}
-.welcome-title {
-  font-family: "Playfair Display", serif;
-  font-size: 5.3rem;
-  background: -webkit-linear-gradient(rgb(255 255 255), rgb(255 97 0));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+
+
 .orange-text {
   font-size: 1.2rem;
   color: white;
@@ -63,10 +54,13 @@
   border-radius: 7px;
   margin-bottom: -12px;
 }
+.welcome-title{
+  font-family: "Playfair Display", serif;
+}
 .welcome-desc {
-  font-size: 1.2rem;
+  width: 75%;
   color: white;
-  width: 80%;
+ 
 }
 .join-button {
   backdrop-filter: blur(30px);
@@ -116,13 +110,19 @@
   transform: rotate(-0.25turn);
 }
 
-.welcome-footer {
+.footer {
   flex: 0.1;
+  position: absolute;
+  bottom:30px;
+  left:0;
+  right:0;
   color: rgb(125, 120, 120);
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 5%;
+  padding: 0px 40px;
+  text-align: center;
+  gap: 40px;
 }
 .dark-button {
   background-image: url(../thumbnails/sun.svg);
@@ -144,52 +144,4 @@
   cursor: pointer;
 }
 
-@media (max-width: 700px) {
-  .rain {
-    display: none;
-  }
-  .join-button {
-    background-color: blue;
-    padding: 15px 45px;
-    margin-top: 15px;
-    font-size: larger;
-    border-radius: 25px;
-    color: white;
-    transition: padding 0.7s, color 0.7s;
-    z-index: 10;
-  }
-  .welcome-title-desc {
-    font-size: 22px;
-    color: white;
-  }
-  .welcome-container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 10px;
-    gap: 2px;
-    z-index: 100;
-  }
-  .welcome-footer {
-    flex: 0.1;
-    color: rgb(125, 120, 120);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    text-align: center;
-  }
-  .logo-text {
-    flex: 1;
-  }
-  .birds {
-    top: 0px;
-    right: 0px;
 
-    position: absolute;
-    z-index: 1;
-  }
-}

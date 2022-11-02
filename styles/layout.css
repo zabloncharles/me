@@ -17,6 +17,14 @@
 .black {
   color: black;
 }
+/* fonts sizes */
+.fonts-title {
+  font-size: 72px;
+  
+  background: -webkit-linear-gradient(rgb(255 255 255), rgb(255 97 0));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
 /* Gradients */
 .text-gradient {
@@ -65,7 +73,6 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  gap: 30px;
 }
 .d-row-to-column {
   flex-direction: row;
@@ -100,6 +107,15 @@ body {
 }
 .gap-20 {
   gap: 20px;
+}
+.gap-30 {
+  gap: 30px;
+}
+.dw {
+  font-size: 1.4rem;
+  color: white;
+  width: 50%;
+
 }
 
 /* Padding and Space */
@@ -269,6 +285,7 @@ body {
   background-size: cover;
   height: 100vh;
 }
+
 .big-box {
   height: 100%;
   max-width: 1402px;
@@ -297,6 +314,17 @@ body {
   background-color: orangered;
   padding: 5px 10px;
   border-radius: 7px;
+}
+.topic-desc {
+  font-size: 1.4rem;
+  color: white;
+  width: 90%;
+  overflow: scroll;
+}
+.section-row {
+  display: flex;
+ height: 100vh;
+ 
 }
 .white {
   color: white;
@@ -412,14 +440,14 @@ display: flex;
   .d-top {
     margin-top:160px;
   }
-  .d-left-to-center {
+  .d-left-to-center{
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
     align-items: center;
-    gap: 30px;
+
   }
 
   .d-center-div {
@@ -436,12 +464,31 @@ display: flex;
   }
   .header-and-content {
   margin:0;
-  
+  overflow: hidden;
+  }
 
+  /* font sizes */
+  .fonts-title {
+font-size: 72px;
+  }
+
+  /* buttons */
+  .get-started-btn {
+   
+    font-size: 17px;
+    padding: 10px 20px;
+    width: 120px;
+    
   }
 
 }
 
+
+/* @media (max-width: 430px) {
+  .fonts-title {
+    font-size: 52px;
+      }
+} */
 
 /* animations */
 .birds {
