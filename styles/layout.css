@@ -73,6 +73,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  z-index: 200;
 }
 .d-row-to-column {
   flex-direction: row;
