@@ -14,7 +14,7 @@
   flex-direction: column;
 
   gap: 30px;
-  margin: 0px 40px;
+  margin: 130px 40px 20px 40px;
 }
 .topic-and-lesson {
   display: flex;
