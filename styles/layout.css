@@ -45,7 +45,7 @@ body {
 .content {
   height: 100%;
   padding:0px 10px;
-  padding-top: 160px;
+  padding-top: 10px;
   z-index: 100;
   overflow: scroll;
   scroll-behavior: smooth;
@@ -152,7 +152,6 @@ body {
 }
 
 .header {
-  position: fixed;
   left:0;
   right:0;
   display: flex;
@@ -173,8 +172,8 @@ body {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  max-width: 1402px;
-  margin: 10px 40px;
+  max-width: 100%;
+  margin: 10px 290px;
   height: 100%;
   
 }
@@ -324,7 +323,8 @@ body {
 }
 .section-row {
   display: flex;
- height: 100vh;
+ height: 100%;
+ margin: 0px 40px;
  
 }
 .white {
@@ -431,7 +431,9 @@ display: flex;
     display: flex;
     flex-direction: column;
   }
-
+.features {
+  display: none;
+}
   .d-center-text {
    
     justify-content: center;
