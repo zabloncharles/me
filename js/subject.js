@@ -4,10 +4,24 @@ var haveimages = [];
 var cardsReturned = 12;
 
 function getdata() {
+  // let loadingWrapper = document.createElement("div");
+  // loadingWrapper.setAttribute("class", "loading");
+
+  // let loadingIcon = document.createElement("div");
+  // loadingIcon.setAttribute("class", "spinner");
+  // loadingWrapper.appendChild(loadingIcon);
+
+  
   for (var i = 0; i < cardsReturned; i++) {
+
+    if ( cardsReturned - 1 === i) {
+      document.getElementById("loading").style.display = "none";
+    }
     if (topicData[i].desc == "") {
       break;
     }
+
+    
     // let elem = document.getElementById("topic-card").cloneNode(true);
     let elem = document.createElement("div");
     elem.setAttribute("class", "topic-card-build topic-card");
@@ -63,11 +77,17 @@ function getdata() {
         'url("' + encodeURI(topicData[i].image) + '")';
     }
 
-    elem.appendChild(topicinfo);
-    document.getElementById("bottom-container").appendChild(elem);
-  }
+    
 
-  document.getElementById("side-way-time").innerHTML = "0/" + cardsReturned;
+
+  
+      elem.appendChild(topicinfo);
+      document.getElementById("bottom-container").appendChild(elem);
+
+
+    // Show the container if it has children
+    // loadingWrapper.style.display = "none";
+  }
 }
 var topicNumber = 0;
 // set up text to print, each item in array is new line
@@ -88,11 +108,10 @@ var filtered = removeurl.filter(function (strings) {
   } else {
     hasNoImage += count;
   }
-  console.log("array has no image " + hasNoImage);
-  console.log("array has image " + hasImage);
+
   count++;
 });
-console.log(lessonImages);
+
 //add the text back together -------------------------------------
 var withouturl;
 for (var i = 0; i < hasNoImage.length; i++) {
@@ -123,7 +142,7 @@ blinker.className = "blink";
 var doneTyping = 0;
 var topicChanged = 0;
 var currentLesson = 0;
-var getStartedButton = document.getElementById("next-button");
+
 var stopTyping = false;
 var typingInProgress = 0;
 var ideStartButton = document.getElementById("next-line");
@@ -131,29 +150,23 @@ var currentImage;
 var idePrompt = document.getElementById("console-prompt");
 
 var completedLessons = [];
-if (currentLesson === 0) {
-  document.getElementById("next-line").innerHTML = "START";
-}
+// if (currentLesson === 0) {
+//   document.getElementById("next-line").innerHTML = "START";
+// }
 var alreadyClickedCards = [0];
 var currentIdeStyle = 0;
 var canSkipLesson = false;
 var lessonCompleted = false;
 //MARK: TAppedget canSkipLesson button
-getStartedButton.style.animation = "1.5s linear infinite led";
-ideStartButton.style.display = "none";
-function tappedGetStarted() {
-  getStartedButton.style.animation = "none";
 
+function tappedGetStarted() {
   if (typingInProgress) {
     return;
   }
   stopTyping = false;
   if (lessonCompleted) {
   } else {
-    getStartedButton.innerHTML = "IN PROGRESS";
-    getStartedButton.style.backgroundColor = "#303030";
     handleNextLine();
-    console.log(eachSentence[5]);
   }
 
   //MARK: FIRST TOPIC HAS BEEN STARTED
@@ -206,11 +219,9 @@ function changetopic() {
   consolePrompt.innerHTML =
     "Lesson " + topicNumber + " : " + topicData[topicNumber].title;
 
-  getStartedButton.innerHTML = "GET STARTED";
-
   document.getElementById("lesson-number").innerHTML =
     "LESSON " + topicData[clickedTopic].num;
-  getStartedButton.style.backgroundColor = "blue";
+
   //gets the id of the card button
 
   //changes the page text and topic
@@ -227,7 +238,7 @@ function changetopic() {
     var buttonLast = document.getElementById(
       "card-btn-" + alreadyClickedCards[alreadyClickedCardsLength - 2]
     );
-    buttonLast.innerHTML = " &#10003; RE-VISIT";
+    buttonLast.innerHTML = " &#10003; COMPLETED";
     buttonLast.setAttribute("class", "re-visit");
   }
 
@@ -237,6 +248,8 @@ function changetopic() {
   buttonClicked.innerHTML = "CURRENT";
   buttonClicked.setAttribute("class", "card-button-selected");
 
+  var currentCard = document.getElementById("topic-card-" + clickedTopic);
+  currentCard.setAttribute("class", "topic-card-build topic-card-selected");
   old.style.display = "none";
   button.style.display = "none";
   temp++;
@@ -363,16 +376,13 @@ function typewriter() {
       textArrayLength = eachSentence[iIndex].length;
 
       //Change the button color
-      var nextbutton = document.getElementById("next-button");
-      nextbutton.style.backgroundColor = "blue";
     }
 
     typingInProgress = 0;
     var ideStartButton = document.getElementById("next-line");
     if (lettersTyped >= topicData[topicNumber].lesson.length) {
-      getStartedButton.innerHTML = "COMPLETED";
       completedLessons += topicNumber;
-      console.log("completed " + completedLessons);
+      // console.log("completed " + completedLessons);
       ideStartButton.style.display = "none";
       lessonCompleted = true;
     } else {
@@ -382,9 +392,6 @@ function typewriter() {
       ideStartButton.style.animation = "led 1.5s infinite linear";
 
       //nextbutton.innerHTML = "Next";
-      getStartedButton.style.animation = "none";
-      getStartedButton.innerHTML = "IN PROGRESS";
-      getStartedButton.style.backgroundColor = "#303030";
       lessonCompleted = false;
 
       //    if (the line has a image) {
@@ -412,14 +419,12 @@ function changeIde() {
     "ide-build ide-dark",
     "ide-build ide-gloss",
     "ide-build ide-black",
-    "ide-build ide",
   ];
   var cardArray = [
     "topic-card-build topic-card-blur",
     "topic-card-build topic-card-dark",
     "topic-card-build topic-card-gloss",
     "topic-card-build topic-card-black",
-    "topic-card-build topic-card",
   ];
 
   var buttonArray = [
@@ -427,7 +432,6 @@ function changeIde() {
     "topic-card-dark",
     "topic-card-gloss",
     "topic-card-black",
-    "ide",
   ];
 
   var ide = document.getElementById("ide");

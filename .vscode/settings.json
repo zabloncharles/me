@@ -4,5 +4,5 @@
   "editor.codeActionsOnSave": {},
   "editor.formatOnType": true,
   "editor.find.cursorMoveOnType": true,
-  "editor.acceptSuggestionOnEnter": "off"
+  "editor.acceptSuggestionOnEnter": "on"
 }

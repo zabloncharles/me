@@ -1,27 +1,79 @@
+body {
+  background: linear-gradient(to top, #000000, #000, #06041a);
+}
+.header-and-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+.intro-background {
+  background-image: url(../waves/two-waves.svg);
+  /* background-repeat: no-repeat; */
+  /* background-size: cover; */
+  background-blend-mode: color-dodge;
+  background-position: bottom;
+  background-repeat: repeat-x;
+}
 .button {
   background-color: #f7f6f6;
   padding: 10px 20px;
   border-radius: 19px;
 }
 
+.allstars{
+  height: 200px;;
+}
+.center {
+  justify-content: flex-start;
+}
+.section-left-to-center {
+  width: 700px;
+  display: flex;
+  line-height: 1.5;
+  flex-direction: column;
+  align-items: flex-start;
+
+  z-index: 200;
+}
+.welcome-button {
+  font-size: 20px;
+  padding: 14px 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 20px;
+  border-radius: 10px;
+  color: white;
+  transition: transform 0.7s, color 0.7s;
+  cursor: pointer;
+  background: #473b2e2e;
+  box-shadow: 0px 0px 1px #615f5c00, 0px 0px 2px #ffc67b;
+  transition: all 0.6s;
+}
+.welcome-button:hover {
+  background: #8d602e2e;
+  padding: 14px 45px;
+}
 .lottie-box {
   position: relative;
   display: flex;
   flex-direction: column;
   height: 100%;
 }
-
-.welcome-container {
-  flex: 1;
-
-  width: 60%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 50px;
-  gap: 3px;
-  z-index: 100;
+.blurred-desc {
+  padding: 20px;
+  font-size: 1.2rem;
+  font-family: "Bodoni Moda", serif;
+  color: white;
+  overflow: scroll;
+  background-color: #100f0e47;
+  /* padding: 20px; */
+  border-radius: 12px;
+  backdrop-filter: blur(20px);
 }
 .after-button-text {
   color: rgba(238, 230, 230, 0.7);
@@ -45,22 +97,29 @@
   z-index: 1;
 }
 
-
-.orange-text {
+.welome-name-text {
   font-size: 1.2rem;
   color: white;
-  background-color: orangered;
+  background: #0e0482;
+box-shadow:  5px 5px 10px #060237,
+             -5px -5px 10px #1606cd;
   padding: 1px 10px;
   border-radius: 7px;
   margin-bottom: -12px;
 }
-.welcome-title{
+.welcome-3d-text {
+  font-size: 72px;
+    background: linear-gradient(to right, rgb(255 255 255), rgb(249 146 84));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 1px -1px #06022a;
+}
+.welcome-title {
   font-family: "Playfair Display", serif;
 }
 .welcome-desc {
   width: 75%;
   color: white;
- 
 }
 .join-button {
   backdrop-filter: blur(30px);
@@ -110,20 +169,6 @@
   transform: rotate(-0.25turn);
 }
 
-.footer {
-  flex: 0.1;
-  position: absolute;
-  bottom:30px;
-  left:0;
-  right:0;
-  color: rgb(125, 120, 120);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0px 40px;
-  text-align: center;
-  gap: 40px;
-}
 .dark-button {
   background-image: url(../thumbnails/sun.svg);
   background-position: center;
@@ -144,4 +189,46 @@
   cursor: pointer;
 }
 
+@media (max-width: 1200px) {
+  .first-section {
+    justify-content: center;
+  }
 
+  .center {
+    justify-content: center;
+  }
+  .section-left-to-center {
+    max-width: 600px;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.container {
+  position: relative;
+}
+
+.text {
+  font-family: "Roboto Mono", monospace;
+  font-size: 1.3rem;
+  color: #383737;
+}
+
+.text_hide {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgb(0, 0, 0);
+}
+
+.text_cursor {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: transparent;
+  border-left: 3px solid rgb(235, 229, 229);
+}

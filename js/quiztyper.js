@@ -3,17 +3,32 @@ var noimage = [];
 var haveimages = [];
 var cardsReturned = 12;
 
+
+var topicNumber = 0;
+// set up text to print, each item in array is new line
 function getdata() {
+  // let loadingWrapper = document.createElement("div");
+  // loadingWrapper.setAttribute("class", "loading");
+
+  // let loadingIcon = document.createElement("div");
+  // loadingIcon.setAttribute("class", "spinner");
+  // loadingWrapper.appendChild(loadingIcon);
+
   for (var i = 0; i < cardsReturned; i++) {
-    if (topicData[i].desc == "") {
-      break;
+    if (cardsReturned - 1 === i) {
+      document.getElementById("loading").style.display = "none";
     }
+   if (!topicData[i] || !topicData[i].desc || topicData[i].desc.trim() === "") {
+     // topicData[i] is undefined, or its desc property is empty or contains only whitespace
+     return;
+   }
+
     // let elem = document.getElementById("topic-card").cloneNode(true);
     let elem = document.createElement("div");
     elem.setAttribute("class", "topic-card-build topic-card");
     elem.setAttribute("id", "topic-card-" + i);
     let topicinfo = document.createElement("div");
-    topicinfo.setAttribute("class", "topic-info");
+    topicinfo.setAttribute("class", "topic-info-quiz");
     let topicpicture = document.createElement("div");
     topicpicture.setAttribute("class", "topic-picture");
 
@@ -65,15 +80,15 @@ function getdata() {
 
     elem.appendChild(topicinfo);
     document.getElementById("bottom-container").appendChild(elem);
+
+    // Show the container if it has children
+    // loadingWrapper.style.display = "none";
   }
-
-  document.getElementById("side-way-time").innerHTML = "0/" + cardsReturned;
 }
-var topicNumber = 0;
-// set up text to print, each item in array is new line
-var strr = topicData[0].lesson;
-
-var removeurl = strr.split(">");
+var questionNumber = 0;
+var questionarray = topicData[0].lesson[questionNumber];
+var answerKey = topicData[0].answerKey;
+var removeurl = questionarray.split(">");
 
 //get url out of lessont text --------------------------------
 var count = 0;
@@ -88,11 +103,11 @@ var filtered = removeurl.filter(function (strings) {
   } else {
     hasNoImage += count;
   }
-  console.log("array has no image " + hasNoImage);
-  console.log("array has image " + hasImage);
+  // console.log("array has no image " + hasNoImage);
+  // console.log("array has image " + hasImage);
   count++;
 });
-console.log(lessonImages);
+//console.log(lessonImages);
 //add the text back together -------------------------------------
 var withouturl;
 for (var i = 0; i < hasNoImage.length; i++) {
@@ -101,10 +116,10 @@ for (var i = 0; i < hasNoImage.length; i++) {
 
 //Regular vars ------------------------------------------------
 var strd = withouturl;
-var str = topicData[0].lesson;
+var str = questionarray;
 var substrings = str.split("."); //turn subsrting to indexed text
 var eachSentence = substrings; //each sentence array
-var typingSpeed = 60; // time delay of print out
+var typingSpeed = 30; // time delay of print out
 var iIndex = 0; // start printing array at this position
 var inText = 0;
 var textArrayLength = eachSentence[0].length; // the length of the text array
@@ -118,6 +133,7 @@ var button = document.createElement("div");
 button.className = "typing";
 var old = document.createElement("div");
 old.className = "old";
+
 var blinker = document.createElement("span");
 blinker.className = "blink";
 var doneTyping = 0;
@@ -138,9 +154,13 @@ var alreadyClickedCards = [0];
 var currentIdeStyle = 0;
 var canSkipLesson = false;
 var lessonCompleted = false;
+var howManyQuestions = topicData[0].lesson.length;
+
 //MARK: TAppedget canSkipLesson button
 getStartedButton.style.animation = "1.5s linear infinite led";
-ideStartButton.style.display = "none";
+//ideStartButton.style.display = "none";
+
+//typerwriter has started typing
 function tappedGetStarted() {
   getStartedButton.style.animation = "none";
 
@@ -152,8 +172,8 @@ function tappedGetStarted() {
   } else {
     getStartedButton.innerHTML = "IN PROGRESS";
     getStartedButton.style.backgroundColor = "#303030";
+
     handleNextLine();
-    console.log(eachSentence[5]);
   }
 
   //MARK: FIRST TOPIC HAS BEEN STARTED
@@ -169,8 +189,363 @@ var tempTyper = document.createElement("div");
 var blinktemp = document.createElement("span");
 var previousLesson;
 var temp = 0;
+var lettersTyped = 0;
 
-//MARK: Change the topic
+var answerletter = ["A", "B", "C", "D"];
+var answer = "C";
+var currentQuestion = "question0";
+var questionInt = 0;
+
+function init(questionNumber) {
+  str = topicData[topicNumber].lesson[questionNumber];
+
+  substrings = str.split("."); //turn subsrting to indexed text
+
+  eachSentence = substrings; //each sentence array
+  typingSpeed = 30; // time delay of print out
+  iIndex = 0; // start printing array at this position
+
+  textArrayLength = eachSentence[0].length; // the length of the text array
+  iScrollAt = eachSentence[0].length; // start scrolling up at this many lines
+
+  iTextPos = 0; // initialise text position
+  typingContent = ""; // initialise contents variable
+  currentRow; // initialise current row
+  tapped = 0;
+
+  button = document.createElement("div");
+  button.className = "typing";
+  button.setAttribute("typinga", "id");
+  old = document.createElement("div");
+  old.className = "old";
+  blinker = document.createElement("span");
+  blinker.className = "blink";
+}
+
+function handleNextLine() {
+  if (typingInProgress) {
+    return;
+  }
+
+  substrings = str.split(".");
+  var consolePrompt = document.getElementById("console-prompt");
+  consolePrompt.innerHTML =
+    "Lesson " + topicNumber + " : " + topicData[topicNumber].title;
+
+  stopTyping = false;
+  ideStartButton.innerHTML = "WAIT";
+  ideStartButton.style.color = "gray";
+  ideStartButton.style.animation = "none";
+  init(questionNumber);
+  document.getElementById("topic-big-title").classList.remove("blink");
+    document.getElementById("topic-big-title").innerHTML =
+      "'00:" + "10" + " + <br/> + TIME'";
+  typewriter();
+}
+
+function typewriter() {
+  lettersTyped++;
+  typingInProgress++;
+  typingContent = " ";
+  currentRow = Math.max(0, iIndex - iScrollAt);
+  destination.appendChild(old);
+
+  if (questionNumber == 0) {
+ //old.style.backgroundColor = "black";
+  } else {
+    //old.style.backgroundColor =  #131212
+  }
+ 
+  destination.appendChild(button);
+  //adds a line break between each typed answer
+  while (currentRow < iIndex) {
+    typingContent += eachSentence[currentRow++] + ".<br /> <br>";
+  }
+
+  button.innerHTML = ">" + eachSentence[iIndex].substring(0, iTextPos);
+
+  //console.log(lettersTyped);
+  //Scroll to bottom of Ide as typing continues
+  let scroll_to_bottom = document.getElementById("typedtext");
+  scroll_to_bottom.scrollTop = scroll_to_bottom.scrollHeight;
+
+  if (iTextPos++ == textArrayLength) {
+    iTextPos = 0;
+    iIndex++;
+    if (iIndex != eachSentence.length) {
+      //tapped here is us tappin n going to next array
+
+      textArrayLength = eachSentence[iIndex].length;
+
+      //Change the button color
+      var nextbutton = document.getElementById("next-button");
+      nextbutton.style.backgroundColor = "blue";
+    }
+
+    typingInProgress = 0;
+    var ideStartButton = document.getElementById("next-line");
+
+    if (lettersTyped >= str.length + 1) {
+      //IF THE TYPEWRITER HAS FINISHED TYPING-------------------
+      updateTimer();
+      getStartedButton.innerHTML = "COMPLETED";
+      completedLessons += topicNumber;
+      // ideStartButton.style.display = "none";
+      ideStartButton.innerHTML = "NEXT";
+      ideStartButton.style.color = "white";
+      lessonCompleted = true;
+      blinker.innerHTML = "";
+      questionNumber++;
+      lettersTyped = 0;
+      typingInProgress = 0;
+      typingContent = " ";
+      currentRow = Math.max(0, iIndex - iScrollAt);
+      button.remove();
+      //------------------------------------------------------------------------
+    } else {
+      if (lettersTyped != str.length + 1 && iIndex > 1) {
+        var newDiv = document.createElement("div");
+        newDiv.className = "already-typed-answer";
+        newDiv.setAttribute("id", answerletter[iIndex - 2]);
+        newDiv.innerHTML = eachSentence[iIndex - 1];
+
+        newDiv.addEventListener("click", function () {
+          // Retrieve the id of the clicked div
+          const divId = this.id;
+
+          if (answer === divId) {
+            // console.log("you got the right answer " + divId);
+            newDiv.style.backgroundColor = "#3afa8d";
+          } else {
+            newDiv.style.backgroundColor = "#ff6464";
+          }
+        });
+        old.setAttribute("id", "question" + questionNumber);
+        currentQuestion = "question" + questionNumber;
+        questionInt = questionNumber;
+        old.appendChild(newDiv);
+      } else {
+        var newDiv = document.createElement("div");
+        newDiv.className = "question";
+
+        newDiv.innerHTML = eachSentence[iIndex - 1];
+
+        old.appendChild(newDiv);
+      }
+
+      button.appendChild(blinker);
+      blinker.innerHTML = "_";
+      ideStartButton.style.display = "";
+      ideStartButton.innerHTML = "CONTINUE";
+      ideStartButton.style.color = "orange";
+      ideStartButton.style.animation = "led 1.5s infinite linear";
+      getStartedButton.style.animation = "none";
+      getStartedButton.innerHTML = "IN PROGRESS";
+      getStartedButton.style.backgroundColor = "#303030";
+      lessonCompleted = false;
+      typewriter();
+    }
+  } else {
+    setTimeout("typewriter()", typingSpeed);
+  }
+  //add the number of words to the ide
+  var numberOfWords = document.getElementById("number-of-words");
+  numberOfWords.innerHTML = lettersTyped + "/" + str.length;
+}
+
+// Get the element with the class "timer"
+const timerElement = document.querySelector(".timer");
+
+// Set the initial countdown value (30 seconds)
+
+let countdown = 9;
+var topic = document.getElementById("topic-big-title");
+// Function to update the timer and handle countdown
+function updateTimer() {
+  if (countdown >= 0) {
+    // Update the innerHTML of the timer element with the current countdown value
+document.getElementById("topic-big-title").innerHTML =
+  "'00:0" + countdown + " + <br/> + TIME'";
+    
+    timerElement.innerHTML = countdown;
+    // topic.innerHTML = countdown;
+   // topic.style.fontFamily = "Monoton, cursive";
+    if (countdown > 2 && countdown < 5) {
+      ideStartButton.innerHTML = "HURRY!";
+      
+    }
+
+    if (countdown < 2) {
+       timerElement.classList.add("blink");
+      
+    }
+
+    if (countdown == 0) {
+     document.getElementById("topic-big-title").classList.add("blink");
+    }
+
+    // Decrease the countdown value by 1 second
+    countdown--;
+
+    // Call the function again after 1 second (1000 milliseconds)
+    setTimeout(updateTimer, 1000);
+  } else {
+    // When the countdown reaches 0, you can perform any desired action here
+    //timerElement.innerHTML = "Time's up!";
+    countdown = 9;
+   var vbutton = document.createElement("div");
+   vbutton.className = "typing";
+   vbutton.setAttribute("typinga", "id");
+   destination.appendChild(vbutton);
+    // Get the parent element by its ID
+typeWriterEffectWithDelete("You lost the game", vbutton);
+    console.log(currentQuestion);
+    // Get the parent element by its ID
+    var parentElement = document.getElementById(currentQuestion);
+
+    // Select all the div elements with class "divToChange" within the parent element
+    var divsToChange = parentElement.querySelectorAll(".already-typed-answer");
+
+    //change the id to a number
+    var str = questionNumber;
+
+    // Check if a match is found
+
+    // Apply a new background color to the selected div elements
+    divsToChange.forEach(function (div) {
+      console.log(answerKey[questionInt]);
+      if (div.id === answerKey[questionInt]) {
+        // Change the background color to green for the div with ID "D"
+        div.style.backgroundColor = "#3afa8d";
+      } else {
+        // Change the background color to red for other divs
+        div.style.backgroundColor = "#433d3d";
+      }
+    });
+
+    timerElement.classList.remove("blink");
+    ideStartButton.innerHTML = "NEXT";
+  }
+}
+//just a typerwriter
+// Function to display and delete text with typewriter effect
+// function typeWriterEffectWithDelete(
+//   text,
+//   element,typeanddelete = false,
+//   typeDelay = 40,
+//   deleteDelay = 40
+// ) {
+//   let charIndex = 0;
+
+//   if (typeanddelete == false) {
+//     function type() {
+//       if (charIndex < text.length) {
+//         element.innerHTML += text.charAt(charIndex);
+//         charIndex++;
+//         setTimeout(type, typeDelay);
+//       }
+//     }
+
+//     type();
+
+    
+//   } 
+// }
+
+ // Function to display and delete text with typewriter effect
+        function typeWriterEffectWithDelete(text, element, typeDelay = 40, deleteDelay = 90) {
+            let charIndex = 0;
+
+            function type() {
+                if (charIndex < text.length) {
+                    element.innerHTML += text.charAt(charIndex);
+                    charIndex++;
+                    setTimeout(deleter, typeDelay);
+                }
+            }
+
+            function deleteCharacters(count) {
+                let currentText = element.innerHTML;
+                if (currentText.length > 0) {
+                    element.innerHTML = currentText.slice(0, -count);
+                    setTimeout(type, deleteDelay);
+                }
+            }
+
+            function deleter() {
+                if (element.innerHTML === text) {
+                    const charsToDelete = Math.min(
+                      element.innerHTML.length,
+                      1
+                    ); // Delete up to 3 characters at a time
+                    deleteCharacters(charsToDelete);
+                } else {
+                    setTimeout(type, typeDelay);
+                }
+            }
+
+            type();
+        }
+//MARK:CHANGES THE STYLE OF THE IDE
+function changeIde() {
+  var ideArray = [
+    "ide-build ide-blur",
+    "ide-build ide-dark",
+    "ide-build ide-gloss",
+    "ide-build ide-black",
+    "ide-build ide",
+  ];
+
+  var buttonArray = [
+    "topic-card-blur",
+    "topic-card-dark",
+    "topic-card-gloss",
+    "topic-card-black",
+    "ide",
+  ];
+
+  var ide = document.getElementById("ide");
+
+  //console.log(currentIdeStyle + "of" + ideArray.length);
+  ide.setAttribute("class", ideArray[currentIdeStyle]);
+
+  var ideButton = document.getElementById("change-id");
+  ideButton.setAttribute(
+    "class",
+    buttonArray[currentIdeStyle] + " " + "ide-color"
+  );
+  var ideButton3 = document.getElementById("next-line");
+  ideButton3.setAttribute(
+    "class",
+    buttonArray[currentIdeStyle] + " " + "ide-button"
+  );
+  var ideButton2 = document.getElementById("number-of-words");
+  ideButton2.setAttribute(
+    "class",
+    buttonArray[currentIdeStyle] + " " + "ide-button"
+  );
+
+  idePrompt.setAttribute(
+    "class",
+    buttonArray[currentIdeStyle] + " " + "ide-prompt"
+  );
+  
+
+  document.getElementById("console-prompt").style.color = "#fff";
+
+  if (currentIdeStyle == 0 || currentIdeStyle == 2) {
+    document.getElementById("change-id").style.backgroundColor = "transparent";
+    ideButton2.style.backgroundColor = "transparent";
+    ideButton3.style.backgroundColor = "transparent";
+
+    document
+      .getElementById("console-prompt")
+      .setAttribute("class", "ide-prompt");
+  }
+currentIdeStyle = Math.floor(Math.random() * ideArray.length);
+
+
+}
 
 function changetopic() {
   stopTyping = true;
@@ -180,7 +555,7 @@ function changetopic() {
   var clickedTopic = this.id.replace(/^\D+/g, "");
   topicNumber = clickedTopic;
 
-  str = topicData[topicNumber].lesson;
+  // str = topicData[topicNumber].lesson[1];
 
   if (str) {
     substrings = str.split("."); //turn subsrting to indexed text
@@ -220,8 +595,8 @@ function changetopic() {
     topicData[clickedTopic].desc;
   currentImage = topicData[clickedTopic].image;
   //if the background has an image change it if not put 0
-  console.log(previousLesson);
-  console.log(alreadyClickedCards);
+  // console.log(previousLesson);
+  // console.log(alreadyClickedCards);
 
   if (alreadyClickedCards.length > 0) {
     var buttonLast = document.getElementById(
@@ -251,234 +626,4 @@ function changetopic() {
   blinktemp.innerHTML = "// ";
   tempTyper.appendChild(blinktemp);
   destination.appendChild(tempTyper);
-  //setTimeout(function () {
-
-  //}, 1000);
-}
-function init() {
-  str = topicData[topicNumber].lesson;
-
-  substrings = str.split("."); //turn subsrting to indexed text
-
-  eachSentence = substrings; //each sentence array
-  typingSpeed = 60; // time delay of print out
-  iIndex = 0; // start printing array at this position
-
-  textArrayLength = eachSentence[0].length; // the length of the text array
-  iScrollAt = eachSentence[0].length; // start scrolling up at this many lines
-
-  iTextPos = 0; // initialise text position
-  typingContent = ""; // initialise contents variable
-  currentRow; // initialise current row
-  tapped = 0;
-
-  button = document.createElement("div");
-  button.className = "typing";
-  button.setAttribute("typinga", "id");
-  old = document.createElement("div");
-  old.className = "old";
-  blinker = document.createElement("span");
-  blinker.className = "blink";
-}
-
-function handleNextLine() {
-  if (typingInProgress) {
-    return;
-  }
-
-  if (topicChanged) {
-    init();
-    topicChanged = 0;
-    document
-      .getElementById("typedtext")
-      .removeChild(document.getElementById("tempTyper"));
-  }
-
-  str = topicData[topicNumber].lesson;
-  substrings = str.split(".");
-  var consolePrompt = document.getElementById("console-prompt");
-  consolePrompt.innerHTML =
-    "Lesson " + topicNumber + " : " + topicData[topicNumber].title;
-
-  stopTyping = false;
-  ideStartButton.innerHTML = "WAIT";
-  ideStartButton.style.color = "gray";
-  ideStartButton.style.animation = "none";
-  typewriter();
-}
-
-var lettersTyped = 0;
-var b = topicData[0].lesson.split(">");
-var newDiv = document.createElement("div");
-var iDiv = document.createElement("div");
-var lineImage = b[1];
-function typewriter() {
-  if (stopTyping) {
-    typingInProgress = 0;
-    lettersTyped = 0;
-    iTextPos = 0;
-    textArrayLength = 0;
-
-    return;
-  }
-  lettersTyped++;
-  typingInProgress++;
-
-  //if typingInProgress is more than 0 lock this
-
-  typingContent = " ";
-  currentRow = Math.max(0, iIndex - iScrollAt);
-  var destination = document.getElementById("typedtext");
-  destination.appendChild(old);
-  destination.appendChild(button);
-
-  while (currentRow < iIndex) {
-    typingContent += eachSentence[currentRow++] + ".<br /> <br>";
-  }
-
-  //MARK: THe button
-
-  if (iIndex > 1) {
-    old.innerHTML = "//" + typingContent;
-  } else {
-    old.innerHTML = typingContent;
-  }
-
-  button.innerHTML = "//" + eachSentence[iIndex].substring(0, iTextPos) + "_";
-  button.innerHTML = "//" + eachSentence[iIndex].substring(0, iTextPos);
-
-  button.appendChild(blinker);
-  blinker.innerHTML = "_";
-  //console.log(lettersTyped);
-  //Scroll to bottom of Ide as typing continues
-  let scroll_to_bottom = document.getElementById("typedtext");
-  scroll_to_bottom.scrollTop = scroll_to_bottom.scrollHeight;
-
-  if (iTextPos++ == textArrayLength) {
-    iTextPos = 0;
-    iIndex++;
-    if (iIndex != eachSentence.length) {
-      //tapped here is us tappin n going to next array
-
-      textArrayLength = eachSentence[iIndex].length;
-
-      //Change the button color
-      var nextbutton = document.getElementById("next-button");
-      nextbutton.style.backgroundColor = "blue";
-    }
-
-    typingInProgress = 0;
-    var ideStartButton = document.getElementById("next-line");
-    if (lettersTyped >= topicData[topicNumber].lesson.length) {
-      getStartedButton.innerHTML = "COMPLETED";
-      completedLessons += topicNumber;
-      console.log("completed " + completedLessons);
-      ideStartButton.style.display = "none";
-      lessonCompleted = true;
-    } else {
-      ideStartButton.style.display = "";
-      ideStartButton.innerHTML = "CONTINUE";
-      ideStartButton.style.color = "orange";
-      ideStartButton.style.animation = "led 1.5s infinite linear";
-
-      //nextbutton.innerHTML = "Next";
-      getStartedButton.style.animation = "none";
-      getStartedButton.innerHTML = "IN PROGRESS";
-      getStartedButton.style.backgroundColor = "#303030";
-      lessonCompleted = false;
-
-      //    if (the line has a image) {
-      //    var ideArea = document.getElementById("typedtext");
-      //   var newdv = document.createElement("div");
-      //  newdv.setAttribute("class", "ide-image");
-      //  ideArea.appendChild(newdv);
-      //  }
-    }
-  } else {
-    setTimeout("typewriter()", typingSpeed);
-    // console.log("every " + typingInProgress);
-  }
-  //add the number of words to the ide
-  var numberOfWords = document.getElementById("number-of-words");
-  //numberOfWords.innerHTML = iTextPos + "/" + textArrayLength + "of" + topicData[topicNumber].lesson.length;
-  numberOfWords.innerHTML =
-    lettersTyped + "/" + topicData[topicNumber].lesson.length;
-}
-
-//MARK:CHANGES THE STYLE OF THE IDE
-function changeIde() {
-  var ideArray = [
-    "ide-build ide-blur",
-    "ide-build ide-dark",
-    "ide-build ide-gloss",
-    "ide-build ide-black",
-    "ide-build ide",
-  ];
-  var cardArray = [
-    "topic-card-build topic-card-blur",
-    "topic-card-build topic-card-dark",
-    "topic-card-build topic-card-gloss",
-    "topic-card-build topic-card-black",
-    "topic-card-build topic-card",
-  ];
-
-  var buttonArray = [
-    "topic-card-blur",
-    "topic-card-dark",
-    "topic-card-gloss",
-    "topic-card-black",
-    "ide",
-  ];
-
-  var ide = document.getElementById("ide");
-
-  //console.log(currentIdeStyle + "of" + ideArray.length);
-  ide.setAttribute("class", ideArray[currentIdeStyle]);
-
-  var ideButton = document.getElementById("change-id");
-  ideButton.setAttribute(
-    "class",
-    buttonArray[currentIdeStyle] + " " + "ide-color"
-  );
-  var ideButton3 = document.getElementById("next-line");
-  ideButton3.setAttribute(
-    "class",
-    buttonArray[currentIdeStyle] + " " + "ide-button"
-  );
-  var ideButton2 = document.getElementById("number-of-words");
-  ideButton2.setAttribute(
-    "class",
-    buttonArray[currentIdeStyle] + " " + "ide-button"
-  );
-
-  idePrompt.setAttribute(
-    "class",
-    buttonArray[currentIdeStyle] + " " + "ide-prompt"
-  );
-  //Find out how many topics we have
-  var cardlength = document.getElementsByClassName("topic-card");
-
-  //typingInProgress through the cards and change the class hence background color
-  for (let index = 0; index < cardsReturned; index++) {
-    var card = document.getElementById("topic-card-" + index);
-    card.setAttribute("class", cardArray[currentIdeStyle]);
-  }
-
-  document.getElementById("console-prompt").style.color = "#fff";
-
-  if (currentIdeStyle == 0 || currentIdeStyle == 2) {
-    document.getElementById("change-id").style.backgroundColor = "transparent";
-    ideButton2.style.backgroundColor = "transparent";
-    ideButton3.style.backgroundColor = "transparent";
-
-    document
-      .getElementById("console-prompt")
-      .setAttribute("class", "ide-prompt");
-  }
-
-  if (currentIdeStyle == ideArray.length - 1) {
-    currentIdeStyle = 0;
-  } else {
-    currentIdeStyle++;
-  }
 }

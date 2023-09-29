@@ -4,12 +4,11 @@
 <head>
     <title>Fusion: Learn Data Structures & Algorithms</title>
     <link rel="icon" type="image/x-icon" href="../thumbnails/cloudcode.png">
-    <link rel="stylesheet" href="../styles/subject.css" />
+    <link rel="stylesheet" href="../styles/quiz.css" />
+   
     <link rel="stylesheet" href="../styles/layout.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+   
+   
     <link href="https://fonts.googleapis.com/css2?family=Lobster+Two&family=Monoton&display=swap" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,11 +34,11 @@
                     <div class="feature">
                         <div class="feature-label">
                             <a href="../index.html">
-                                <div >HOME</div>
+                                <div>HOME</div>
                             </a>
                         </div>
-        
-        
+
+
                     </div>
                     <div class="feature">
                         <div class="feature-label">
@@ -47,8 +46,8 @@
                                 <div>PORTFOLIO</div>
                             </a>
                         </div>
-                    
-                    
+
+
                     </div>
                     <div class="feature">
                         <div class="feature-label">
@@ -56,23 +55,22 @@
                                 <div>PROJECTS</div>
                             </a>
                         </div>
-        
-        
+
+
                     </div>
                     <div class="feature">
                         <a href="/pages/subject.html">
                             <div class="feature-label">
-                             <div class="feature-selected" >COURSES</div>  
+                                <div class="feature-selected">COURSES</div>
                         </a>
                     </div>
-        
-        
+
+
                 </div>
-        
-        
+
+
             </div>
-        
-            <!--- <div class="button">Contact Us</div> -->
+
             <!--- <div class="button">Contact Us</div> -->
             <div class="dropdown">
                 <div class="hamburger">
@@ -105,13 +103,16 @@
         <div class="d-margin topic-and-lesson">
             <div class="topic-container">
                 <div class="topic-title-desc" id="topic-title">DATA STRUCTURES & ALGORITHM</div>
-                <div class="font-sa topic-title" id="topic-big-title">OVERVIEW</div>
+                <div class="font-sa topic-title" >OVERVIEW</div>
                 <div class="orange-text" id="lesson-number">LESSON ONE</div>
                 <div>
                     <h1 class="matrix-heading" data-target-resolver></h1>
                 </div>
 
+<div class="next-buttons">
+    <div class="topic-button" id="next-button" onclick="tappedGetStarted()">GET STARTED</div>
 
+</div>
 
                 <!-- <div class="next-buttons">
                     <div class="topic-button" id="next-button" onclick="tappedGetStarted()">GET STARTED</div>
@@ -119,18 +120,24 @@
                 </div> -->
 
             </div>
-            <div class="ide-build ide" id="ide">
+            <div class="ide-build ide-black" id="ide">
                 <!--<div class="lesson" id="typedtext"> -->
                 <div class="lesson" id="typedtext">
                     <!-- <div class="typing">
-                            <div class="ide-image"></div>
-                           </div> -->
-                    <div id="console-prompt">Get Started<a class="blink">?</a></div>
-                    <div class="ide-color" id="change-id" onclick="changeIde()">IDE</div>
+                                        <div class="ide-image"></div>
+                                       </div> -->
+                    <div class="prompt-and-timer-container">
+                        <div class="topic-card-black" id="console-prompt"> > Get Started<a class="blink">?</a>
+                        </div>
+                        <div class="timer">30</div>
+                    </div>
+            
+                    <div class="topic-card-black ide-color" id="change-id" onclick="changeIde()">IDE</div>
                     <div class="ide-button-container">
                         <div class="ide-button-nobg" id="number-of-words">0/00</div>
-                        <div class="ide-button" id="next-line" onclick="handleNextLine()">START</div>
-
+                        <div class="topic-card-black ide-button" id="next-line" onclick="handleNextLine()">START
+                        </div>
+            
                     </div>
                 </div>
             </div>
@@ -139,7 +146,7 @@
     </div>
 
     <div class="d-margin thai-wrapper">
-        <div class="thai">Happy Learning! :)</div>
+        <div class="thai" id="topic-big-title">Happy Learning! :)</div>
     </div>
 
 
@@ -303,13 +310,15 @@
 
 
     </div>
-    <lottie-player class="birds" src="https://assets7.lottiefiles.com/packages/lf20_Kqzytj.json" background="transparent"
-        speed="0.5" loop autoplay id="birds"></lottie-player>
+    <lottie-player class="birds" src="https://assets7.lottiefiles.com/packages/lf20_Kqzytj.json"
+        background="transparent" speed="0.5" loop autoplay id="birds"></lottie-player>
 
-        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <script type="text/javascript" src="../js/allData.js"></script>
-    <script type="text/javascript" src="../js/subject.js"></script>
+   
     <script type="text/javascript" src="../js/subjectmatrix.js"></script>
+    <script type="text/javascript" src="../js/quiztyperdata.js"></script>
+    <script type="text/javascript" src="../js/quiztyper.js"></script>
     <script type="text/javascript" src="../js/menu.js"></script>
 
 

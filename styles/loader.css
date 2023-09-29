@@ -1,0 +1,24 @@
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* You can adjust this to center it vertically on the page */
+}
+
+.spinner {
+  width: 65px;
+  height: 65px;
+  border: 6px solid transparent;
+  border-top: 6px solid #4285f4; /* You can set your desired color here */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

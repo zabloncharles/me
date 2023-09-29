@@ -1,30 +1,35 @@
-var imagesFromData = [];
+// Function to generate a random bright color
+function getRandomBrightColor() {
+  const r = Math.floor(Math.random() * 100 + 100); // Ensures brighter colors
+  const g = Math.floor(Math.random() * 155 + 100); // Ensures brighter colors
+  const b = Math.floor(Math.random() * 155 + 100); // Ensures brighter colors
 
-
-//lets get the images from the list of images
-for (var i = 0; i < topicData.length; i++) {
-    if (topicData[i].image != "") {
-        imagesFromData.push(topicData[i].image);
-    }
+  return `rgb(${r}, ${g}, ${b})`;
 }
 
-var projectCards = document.getElementsByClassName("project-grid-box");
-var pickThisImages = ["https://iphoneswallpapers.com/wp-content/uploads/2022/06/Sun-Rise-and-Mountains-iPhone-Wallpaper.jpg","https://iphoneswallpapers.com/wp-content/uploads/2019/01/Winter-Sunset-Snow-Minimal-iPhone-Wallpaper.jpg","https://iphoneswallpapers.com/wp-content/uploads/2021/06/Night-Forest-Art-iPhone-Wallpaper.jpg","https://i.pinimg.com/736x/9d/4c/12/9d4c1272544b5cafe7eaf4abe30346a8.jpg","https://iphoneswallpapers.com/wp-content/uploads/2020/08/Road-to-Paradise.jpg"];
-console.log(projectCards.length);
+function getRandomDarkColor() {
+  const r = Math.floor(Math.random() * 125); // Values closer to 0 for darker colors
+  const g = Math.floor(Math.random() * 10); // Values closer to 0 for darker colors
+  const b = Math.floor(Math.random() * 20); // Values closer to 0 for darker colors
 
-
-
-for (var i = 0; i < projectCards.length; i++) {
-   // projectCards[i].setAttribute("id", "project-card-" + i);
-   // var randomImage = getRandomInt(0, (pickThisImages.length - 1));
-    //set background image if it exists
-        projectCards[i].style.backgroundImage = "url(" + pickThisImages[i] + ")";
-    
+  return `rgb(${r}, ${g}, ${b})`;
 }
 
-//get random numbers based on the min and max values
-function getRandomInt(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+// Function to create a linear gradient from black to bright
+function getRandomLinearGradient() {
+  const color1 = getRandomBrightColor(); // Black at the bottom
+  const color2 = getRandomDarkColor();
+
+  const gradient = `linear-gradient(45deg, ${color1}, transparent)`;
+
+  return gradient;
+}
+
+// Get all the project cards and apply random gradients from black to bright
+const projectCards = document.getElementsByClassName("project-grid-box");
+
+for (let i = 0; i < projectCards.length; i++) {
+  const card = projectCards[i];
+  const randomGradient = getRandomLinearGradient();
+  card.style.background = randomGradient;
 }
