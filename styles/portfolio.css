@@ -53,6 +53,7 @@
   height: 500px;
   overflow: hidden;
 }
+
 .bio {
   font-style: normal;
   font-size: 16px;
@@ -376,7 +377,6 @@
 .timeline h2 {
   font: 500 300% "Raleway";
   padding-bottom: 100px;
- 
 }
 
 .timeline h6 {
@@ -430,7 +430,7 @@
 }
 
 .timeline article:last-of-type h2 {
-  color: #696868 ;
+  color: #696868;
   /* text-transform: uppercase; */
 }
 
@@ -812,27 +812,112 @@
   flex: 1;
 }
 
-
-
 .footer-card {
-  
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-content: space-between;
-    padding: 9px;
-    /* gap: 19px; */
-    width: 180px;
-    gap: 9px;
-    background-color: #b1618a14;
-    background: linear-gradient(178deg, #b55f8b2b,#000, transparent);
-    backdrop-filter: blur(20px);
-    backdrop-filter: blur(12px);
-    /* border: rgba(228, 225, 225, 0.109) solid 1px; */
-    border-radius: 14px;
-    color: white;
-    overflow: hidden;
-    height: 90%;
-    backdrop-filter: blur(20px);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: space-between;
+  padding: 5px;
+  width: 180px;
+  gap: 9px;
+  background-color: #b1618a14;
+  background: linear-gradient(178deg, #aaaaaa66, #000, #0e1438);
+  border-radius: 15px;
+  color: white;
+  overflow: hidden;
+  backdrop-filter: blur(20px);
+  margin-bottom: 40px;
+}
+
+@media (max-width: 436px) {
+  .header-background {
+    background-image: url(../waves/header-stars.svg);
+    background-size: contain;
+    /* background-position: center; */
+    height: 600px;
+    position: absolute;
+    width: 100vw;
+    top: 0px;
+}
+.portfolio-first-section {
+padding-top: 123px;
+}
+.bottom-container {
+    
+    padding: 0; 
+    flex-direction: row;
+    display: flex !important;
+    overflow: scroll;
+}
+
+.undersea-wrapper {
+  overflow: hidden;
+  margin-top: -112px;
+}
+.two-sections-row {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
+article h2{
+  display: none;
+}
+.timeline article {
+overflow: visible;
+}
+.timeline p, .timeline ol {
+ text-align: start;
+    width: 140px;
+    font-size: 13px;
+    color: #c8c4b6 !important;
+}
+.d-flex-row {
+   flex-direction: column;
+}
+.character2 {
+}
+article:before , article:after{
+  display: none !important;
+}
+.timeline {
+    width: 48vw;
+    left: 112px;
+}
+.timeline h6 {
+font-size: 16px;
+}
+#cvs3 {
+opacity: 0;
+height: 240px;
+}
+.d-bg-1 {
+  background: #0e0d0d  !important; 
+   
+
+}
+.courses-topic {
+  flex-direction: column-reverse;
+  align-items: center;
+  margin-top: -121px !important;
+  gap: 51px;
+}
+.tech-desc {
+  text-align: center;
+}
+.footer-card {
+  margin-bottom: 0px;
+}
+.resume-blend {
+  mix-blend-mode: luminosity;
+}
+
+
+.timeline figcaption {
+  margin-bottom: -32px;
+}
+
+.footer  {
+     flex-direction: row !important;
+    
+}
 }

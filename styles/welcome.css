@@ -232,3 +232,32 @@ box-shadow:  5px 5px 10px #060237,
   background-color: transparent;
   border-left: 3px solid rgb(235, 229, 229);
 }
+
+/* IPHONE VERSION */
+@media (max-width: 436px) {
+  .intro-background {
+    background-position: top;
+    margin-top: 170px;
+  }
+  .header-background {
+    background-image: url(../waves/header-stars.svg);
+    /* background-size: contain; */
+    /* background-position: center; */
+    height: 600px;
+    position: absolute;
+    /* display: flex; */
+    /* top: 52px; */
+    width: 100vw;
+}
+  .d-flex-row {
+     flex-direction: row !important;
+    
+}
+.footer {
+  font-size: 13px;
+  color: rgba(238, 230, 230, 0.7) !important;
+}
+.dark-button {
+  display: none;
+}
+}

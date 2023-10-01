@@ -290,3 +290,54 @@
   background-position: bottom;
   background-size: cover;
 }
+
+@media (max-width: 436px) {
+    .header-background {
+    background-image: url(../waves/header-stars.svg);
+    background-size: contain;
+    /* background-position: center; */
+    height: 600px;
+    position: absolute;
+    width: 100vw;
+    top: 0px;
+}
+.portfolio-first-section {
+padding-top: 123px;
+}
+.bottom-container {
+    
+    padding: 0; 
+    flex-direction: row;
+    display: flex !important;
+    overflow: scroll;
+}
+.undersea-wrapper {
+  overflow: hidden;
+  margin-top: -112px;
+}
+.intro-background {
+  margin-top: 171px;
+}
+.blur-background {
+      padding: 4px 23px;
+}
+.projects-grid {
+  height: 360px;
+  overflow: scroll;
+}
+.project-row {
+    display: flex;
+   
+    flex-direction: row;
+}
+.project-grid-box {
+  width: 169px;
+}
+.footer {
+  flex-direction: row !important;
+    margin-top: -30px;
+}
+.closer-row {
+  margin: 99px 0px;
+}
+}

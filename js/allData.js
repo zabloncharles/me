@@ -1,26 +1,30 @@
 // Get references to the button and the menu
-document.addEventListener("click", function (event) {
+document.addEventListener("DOMContentLoaded", function () {
   const dropdown = document.querySelector(".dropdown");
-  
-    const dropdownContent = dropdown.querySelector(".dropdown-content");
-    dropdownContent.style.display = "block";
-  
+  const dropdownContent = dropdown.querySelector(".dropdown-content");
+  let isOpen = false;
+
+  // Add a click event listener to the dropdown
+  dropdown.addEventListener("click", function (event) {
+    event.stopPropagation(); // Prevent the click event from propagating to the document
+    if (!isOpen) {
+      dropdownContent.style.display = "block";
+    } else {
+      dropdownContent.style.display = "none";
+    }
+    isOpen = !isOpen; // Toggle the isOpen flag
+  });
+
+  // Add a click event listener to the document to close the dropdown when clicking elsewhere
+  document.addEventListener("click", function (event) {
+    if (isOpen && event.target !== dropdown) {
+      dropdownContent.style.display = "none";
+      isOpen = false;
+    }
+  });
 });
 
 // ANIMATE ON NAP: 
-const dropdown = document.querySelector(".dropdown");
-
-dropdown.addEventListener("mouseenter", () => {
-  // Play the animation on hover
-  const dropdownContent = dropdown.querySelector(".dropdown-content");
-    dropdownContent.style.display = "block";
-});
-const dropdownContent = dropdown.querySelector(".dropdown-content");
-dropdownContent.addEventListener("mouseleave", () => {
-  // Pause the animation when the mouse leaves
-  const dropdownContent = dropdown.querySelector(".dropdown-content");
-  dropdownContent.style.display = "none";
-});
 
 var topicData = [
   {
