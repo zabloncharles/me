@@ -589,3 +589,43 @@ position: absolute;
     right: 24px;
     top: 33px;
 }
+.after-button-text {
+  color: rgba(238, 230, 230, 0.7);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 17px;
+  line-height: 130%;
+  margin: 0px;
+  max-width: 380px;
+}
+
+
+/* IPHONE VERSION */
+@media (max-width: 436px) {
+  .matrix-heading {
+max-width: 90vw;
+height: 100px;
+text-transform:none;
+font-size: 18px;
+
+}
+.topic-container {
+width: auto;
+margin-top: 637px;
+}
+.ide-build {
+      min-height: 300px;
+      margin-bottom: 380px;
+}
+.bottom-container {
+  margin-top: 220px !important;
+  display: flex !important;
+  flex-direction: row;
+  margin-bottom: 0px !important;
+  
+
+}
+.subjects-background {
+  overflow: scroll;
+}
+}

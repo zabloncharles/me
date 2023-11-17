@@ -905,10 +905,17 @@ a {
   overflow: hidden;
 }
 .cross-section-row {
-  display: flex;
+  /* display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 200px;
+  height: 200px; */
+  display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 84px;
+    border: #f0f8ff1a 1px solid;
+    border-radius: 160px;
+    margin: 10px 248px;
 }
 .company-icon-container {
   width: 40px;
@@ -931,8 +938,8 @@ a {
   flex-direction: column;
   justify-content: center;
   gap: 15px;
-  width: 300px;
-
+  
+width: 50vw;
   text-align: center;
   height: 190px;
 }
@@ -1009,37 +1016,9 @@ article {
   position: relative;
 }
 
-article:after {
-  content: "";
-  display: block;
-  position: absolute;
-  width: 30em;
-  left: 50%;
-  font-size: 1em;
-  border-bottom: 1px solid #ccc;
-  margin-left: -15em;
-  bottom: 0;
-  z-index: 1;
-}
 
-article:before {
-  content: "\021D5";
-  display: block;
-  position: absolute;
-  text-align: center;
-  color: #ccc;
-  font-size: 1.4em;
-  top: 100%;
-  left: 50%;
-  width: 1.6em;
-  height: 1.5em;
-  padding: 0.1em 0 0;
-  margin: -0.8em 0 0 -0.8em;
-  border-radius: 50%;
-  border: 1px solid #ccc;
-  background: #fff;
-  z-index: 2;
-}
+
+
 
 article:last-child:after,
 article:last-child:before {
@@ -1115,5 +1094,8 @@ article:last-child:before {
 .footer {
   font-size: 13px;
   color: rgba(238, 230, 230, 0.7) !important;
+}
+.closer-section {
+  width: 300px;
 }
 }
